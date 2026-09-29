@@ -1,36 +1,37 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gazetka Cyber: archiwum</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<title>Gazetka Cyber — archiwum</title>
 <style>
-  :root { --bg: #f5f3ef; --paper: #fffdf9; --ink: #1b1a18; --muted: #6a655c; --rule: #dad4c7; --accent: #b3261e; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #141312; --paper: #1c1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #36322d; --accent: #ff8a80; } }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
-  h1 { font-family: Fraunces, Georgia, serif; font-size: clamp(38px, 9vw, 64px); line-height: 1; margin: 0 0 24px; text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; }
-  h1 span { color: var(--accent); }
-  .latest { display: block; background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 8px; padding: 20px 22px; text-decoration: none; }
-  .latest span { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
-  .latest b { font-family: Fraunces, Georgia, serif; font-size: 28px; }
-  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 32px 0 8px; }
-  ul { list-style: none; padding: 0; margin: 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
-  li { border-top: 1px solid var(--rule); } li:first-child { border-top: 0; }
-  li a { display: block; padding: 12px 18px; text-decoration: none; }
-  li a:hover { color: var(--accent); }
-  a { color: inherit; }
+  :root { --bg:#f6f3ec; --paper:#fffdf8; --ink:#1c1a17; --muted:#6b665d; --rule:#d9d3c5; --ai:#1d4ed8; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151412; --paper:#1d1b19; --ink:#ece8e1; --muted:#a39d92; --rule:#37332e; --ai:#8fb0ff; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 Inter,system-ui,sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:48px 20px 80px; }
+  h1 { font:800 clamp(30px,6vw,52px)/1.05 Georgia,serif; letter-spacing:-.02em; margin:0 0 6px; }
+  .sub { color:var(--muted); margin:0 0 28px; }
+  .card { background:var(--paper); border:1px solid var(--rule); border-radius:10px; padding:8px 4px; }
+  ul { list-style:none; margin:0; padding:0; }
+  li { border-top:1px solid var(--rule); }
+  li:first-child { border-top:0; }
+  li a { display:block; padding:16px 20px; text-decoration:none; color:var(--ink); font-weight:600; }
+  li a:hover { background:var(--bg); }
+  li.latest a::after { content:'najnowsze'; float:right; font:600 11px/1.6 Inter,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:#fff; background:var(--ai); padding:1px 8px; border-radius:999px; }
+  footer { color:var(--muted); font-size:13px; margin-top:24px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Gazetka <span>Cyber</span></h1>
-  <a class="latest" href="gazetka-cyber-2026-09-29.html"><span>Najnowsze wydanie</span><b>wtorek, 29 września 2026</b></a>
-  <h2>Archiwum</h2>
-  <ul>
-      <li><a href="gazetka-cyber-2026-09-29.html">wtorek, 29 września 2026</a></li>
-  </ul>
-</div>
+  <div class="wrap">
+    <h1>Gazetka Cyber</h1>
+    <p class="sub">Codzienny przegląd newsów o cyberbezpieczeństwie. Archiwum wydań:</p>
+    <div class="card">
+      <ul>
+      <li class="latest"><a href="gazetka-cyber-2026-09-29.html">29 września 2026</a></li>
+      </ul>
+    </div>
+    <footer>Aktualizowane automatycznie. Ostatnie wydanie: <a href="gazetka-cyber-2026-09-29.html">29 września 2026</a>.</footer>
+  </div>
 </body>
 </html>
