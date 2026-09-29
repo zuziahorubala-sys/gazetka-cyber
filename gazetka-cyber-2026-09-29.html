@@ -973,7 +973,7 @@
     });
 
     // filtrowanie po kategorii: liczniki na stronie 1 i chipy w „Wszystkie newsy”
-    document.querySelectorAll('.lang-pl, .lang-en').forEach(function (block) {
+    document.querySelectorAll('div.lang-pl, div.lang-en').forEach(function (block) {
       var note = block.querySelector('.filter-note');
       var current = 'all';
       function apply(f) {
