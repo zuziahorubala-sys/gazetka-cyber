@@ -109,6 +109,7 @@
   .chips button:hover { color: var(--ink); border-color: var(--ink); }
   .chips button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
   .f-off { display: none !important; }
+  .pair.solo { grid-template-columns: 1fr; }
   .filter-note { display: none; margin: 16px 0 0; font-size: 14px; color: var(--muted); }
   .filter-note.show { display: block; }
   .filter-note button { font: 600 13px Inter, sans-serif; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
@@ -986,7 +987,9 @@
         }
         block.querySelectorAll('article.full').forEach(function (a) { a.classList.toggle('f-off', !match(a)); });
         block.querySelectorAll('.pair').forEach(function (p) {
-          p.classList.toggle('f-off', !p.querySelector('article.full:not(.f-off)'));
+          var shown = p.querySelectorAll('article.full:not(.f-off)').length;
+          p.classList.toggle('f-off', shown === 0);
+          p.classList.toggle('solo', shown === 1);
         });
         block.querySelectorAll('section.cat').forEach(function (s) { s.classList.toggle('f-off', !match(s)); });
         block.querySelectorAll('[data-filter]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-filter') === f && f !== 'all'); });
