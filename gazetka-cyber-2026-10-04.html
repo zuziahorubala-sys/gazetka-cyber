@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber — 04.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ef; --paper: #fffdf9; --ink: #1b1a18; --muted: #6a655c; --rule: #dad4c7;
+    --accent: #b3261e; --accent-soft: #fbe9e7; --hot: #8a1c14;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea; --pl: #7a2e8c; --pl-soft: #f4e8f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312; --paper: #1c1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #36322d;
+      --accent: #ff8a80; --accent-soft: #3a1f1d; --hot: #ffb4ab;
+      --ok: #7fd49b; --ok-soft: #18301f; --pl: #e2a8f0; --pl-soft: #33203a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { position: relative; text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(38px, 8vw, 72px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead h1 .red { color: var(--accent); }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 820px) { .front { grid-template-columns: 1fr; } }
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(24px, 3.8vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero.second h2 { font-size: clamp(21px, 3vw, 26px); }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--accent); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+  .kicker.pl { color: var(--pl); }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+
+  /* liczniki na stronie 1 */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0 0; }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+  .stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1.1; }
+  .stat span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(21px, 3vw, 27px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 820px) { .pair { grid-template-columns: 1fr; } }
+
+  /* wszystkie newsy */
+  .news-tools { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 12px 0; display: flex; flex-direction: column; gap: 10px; }
+  .news-filter { width: 100%; font: 15px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 14px; }
+  .news-filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips a { font-size: 12px; font-weight: 600; text-decoration: none; padding: 4px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); }
+  .chips a:hover { color: var(--ink); border-color: var(--ink); }
+  .cat { scroll-margin-top: 110px; }
+  .cat h3 { font-family: Fraunces, Georgia, serif; font-size: 22px; margin: 28px 0 0; display: flex; align-items: baseline; gap: 10px; }
+  .cat h3 .count { font: 600 12px Inter, sans-serif; color: var(--muted); }
+  .cat.pl h3 { color: var(--pl); }
+  ul.brief { list-style: none; padding: 0; margin: 10px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 12px 18px; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.5; }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  ul.brief .hot { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--paper); background: var(--hot); border-radius: 4px; padding: 0 6px; margin-right: 6px; vertical-align: 1px; }
+  .no-results { display: none; color: var(--muted); font-size: 15px; padding: 16px 0; }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+  /* filtrowanie, nawigacja */
+  button.stat { font: inherit; color: inherit; text-align: left; width: 100%; cursor: pointer; }
+  button.stat:hover, button.stat.on { border-color: var(--accent); }
+  button.stat.on b { color: var(--accent); }
+  .chips button { font: 600 12px Inter, sans-serif; padding: 4px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
+  .chips button:hover { color: var(--ink); border-color: var(--ink); }
+  .chips button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .f-off { display: none !important; }
+  .pair.solo { grid-template-columns: 1fr; }
+  .filter-note { display: none; margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+  .filter-note.show { display: block; }
+  .filter-note button { font: 600 13px Inter, sans-serif; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+  nav.toc .sub { font-weight: 500; }
+  .to-top { position: fixed; right: 16px; bottom: 16px; z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: 600 18px Inter, sans-serif; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .to-top.show { opacity: 1; pointer-events: auto; }
+  .to-top:hover { border-color: var(--accent); color: var(--accent); }</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka <span class="red">Cyber</span></span><span class="lang-en"><span class="red">Cyber</span> Daily</span></h1>
+  </header>
+
+  <!-- ==================== POLSKI ==================== -->
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Niedziela, 4 października 2026</span><span>Wydanie nr 3</span><span>113 wpisów · 398 kont · 55 newsów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#artykuly">Artykuły</a>
+    <a href="#newsy">Wszystkie newsy</a>
+    <a class="sub" href="#k-polska">Polska</a>
+    <a class="sub" href="#k-wycieki">Wycieki</a>
+    <a class="sub" href="#k-malware">Malware</a>
+    <a class="sub" href="#k-chmura">Chmura</a>
+    <a class="sub" href="#k-intel">Threat intel</a>
+    <a class="sub" href="#k-narzedzia">Narzędzia</a>
+    <a class="sub" href="#k-lektury">Lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+      <div class="hero">
+        <div class="kicker">Temat dnia</div>
+        <h2>„Rey” z ShinyHunters zatrzymany w Jordanii. Według Reutersa pomaga FBI namierzyć wspólników</h2>
+        <p>Saif al-Din Khader, uznawany za jednego z liderów ShinyHunters, został zatrzymany w Ammanie i ma udostępniać śledczym swoje urządzenia i komunikację. Grupa przypisuje sobie m.in. kradzież 2–3 TB danych z portalu rekrutacyjnego FBI. Według FBI od zeszłego roku włamała się do ponad 140 organizacji i wyłudziła ok. 70 mln dolarów.</p>
+        <a class="more" href="#a-shinyhunters">Czytaj cały artykuł →</a>
+      </div>
+      <div class="hero second">
+        <div class="kicker">Drugi temat</div>
+        <h2>Haker z irańskiego Instytutu Mabna wydany USA. Rzadki przypadek ekstradycji współpracownika IRGC</h2>
+        <p>Czarnogóra przekazała Amerykanom Amira Baratiego, zatrzymanego w czerwcu w Kotorze. Prokuratura zarzuca mu udział w kampanii, która od 2013 roku okradała uczelnie, firmy i agencje rządowe na rzecz Korpusu Strażników Rewolucji. Straty szacuje na ponad 3,4 mld dolarów.</p>
+        <a class="more" href="#a-barati">Czytaj cały artykuł →</a>
+      </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><a href="#a-shinyhunters">Jordania zatrzymała „Reya” z ShinyHunters</a>, a ten według Reutersa współpracuje z FBI.</span></li>
+        <li><span><a href="#a-barati">Amir Barati z irańskiego Instytutu Mabna</a> trafił z Czarnogóry do USA.</span></li>
+        <li><span><a href="#a-clickfix">ClickFix z ładunkiem ukrytym w pamięci podręcznej przeglądarki</a>: Microsoft widzi przejęte strony, które wcześniej „podrzucają” skrypt.</span></li>
+        <li><span><a href="#a-brzoska">Fałszywe nekrologi żony Rafała Brzoski trafiły na YouTube</a>. Sekurak: Google „leci w kulki”.</span></li>
+        <li><span><a href="#a-water">WaterISAC: odsłonięte OT i stare PLC</a> to główne furtki do wodociągów po lecie ataków.</span></li>
+        <li><span><a href="#a-entra">Kradzież tokenów w Entra ID</a>: CAE obsługuje tylko 33 z 740 przetestowanych zasobów.</span></li>
+        <li><span><a href="#a-msx">Microsoft potwierdza przejęcie konta na X</a>; „przeprosiny” też napisali oszuści.</span></li>
+        <li><span><a href="#a-tcs">Na forum wystawiono rzekomy kod źródłowy i klucze TCS</a> (niepotwierdzone).</span></li>
+        <li><span><a href="#a-giggles">Wyciek z aplikacji Giggles</a>: 359 tys. e-maili i 7 mln komentarzy, publikacja po sporze o nagrodę.</span></li>
+        <li><span><a href="#a-linux">CVE dla każdej poprawki w jądrze Linuksa?</a> Spór o pracę kernelowego CNA wraca.</span></li>
+        <li><span><a href="#a-bounty">Badacze ostrzegają przed zamykaniem programów bug bounty</a> w czasach skalowanego hakowania z AI.</span></li>
+        <li><span><a href="#a-apple">Apple Target Flags</a>: „flagi” w systemach Apple mają przyspieszyć wypłaty nagród.</span></li>
+        <li><span><a href="#a-flock">Ban Flock Act</a>: projekt zakazu federalnego użycia czytników tablic rejestracyjnych.</span></li>
+        <li><span><a href="#n-gov75">Rzekomy wyciek 75 mln rekordów z amerykańskiego urzędu</a> na liście DarkFeed (niepotwierdzone).</span></li>
+      </ol>
+    </div>
+  </section>
+  <div class="stats">
+    <button class="stat" type="button" data-filter="zeroday"><b>0</b><span>Aktywnie wykorzystywane</span></button>
+    <button class="stat" type="button" data-filter="ransomware wycieki"><b>5</b><span>Ransomware i wycieki</span></button>
+    <button class="stat" type="button" data-filter="polska"><b>6</b><span>Z Polski</span></button>
+    <button class="stat" type="button" data-filter="all"><b>55</b><span>Newsów łącznie</span></button>
+  </div>
+
+  <!-- ============ ARTYKUŁY ============ -->
+  <h2 class="section" id="artykuly">Artykuły</h2>
+
+  <article class="full" id="a-shinyhunters" data-cat="prawo wycieki">
+    <div class="kicker">Prawo i śledztwa · cyberprzestępczość</div>
+    <h3>„Rey” z ShinyHunters zatrzymany w Jordanii. Ma pomagać FBI w identyfikacji pozostałych członków grupy</h3>
+    <p class="lead">Jordańskie służby zatrzymały Saifa al-Dina Khadera, znanego w sieci jako „Rey”. Według dwóch źródeł Reutersa podejrzany oprowadza śledczych po swoich urządzeniach i komunikacji, żeby pomóc namierzyć wspólników.</p>
+    <div class="body">
+      <p>Do zatrzymania doszło w tym tygodniu (według Reutersa we wtorek). Khader miał w ekosystemie ShinyHunters uprawnienia administracyjne, a w ostatnich miesiącach, po wewnętrznym sporze z Holendrem Pepijnem van der Stapem („Umbreon”), uchodził za osobę, która przejęła kontrolę nad grupą. Van der Stapa holenderska policja zatrzymała we wrześniu. Brian Krebs zidentyfikował „Reya” już w listopadzie 2025 roku jako nastolatka z Ammanu, m.in. na podstawie logów infostealera z jego komputera. „Rey” zapewniał wtedy, że kończy z kradzieżą danych i wymuszeniami.</p>
+      <p>Lista przypisywanych mu włamań jest długa. To m.in. Telefónica (styczeń 2025, 2,3 GB z systemu Jira), Orange Romania (luty 2025, 6,5 GB) i dwa ataki na Jaguar Land Rover (marzec i wrzesień 2025). We wrześniu 2026 roku ShinyHunters ogłosili, że przez lukę w Oracle PeopleSoft dostali się do portalu FBI Jobs i wynieśli 2–3 TB danych, w tym informacje medyczne i psychiatryczne pracowników Biura. Według FBI grupa od zeszłego roku włamała się do ponad 140 organizacji i zebrała ok. 70 mln dolarów z wymuszeń. „Rey” był też łączony z sojuszem Scattered LAPSUS$ Hunters, w którym ShinyHunters współpracują z Scattered Spider i LAPSUS$.</p>
+      <p>Ani FBI, ani jordańskie władze nie wydały oficjalnego komunikatu. Informacje o współpracy pochodzą od anonimowych źródeł Reutersa. Jedno z nich nazwało zeznania Khadera „kluczowymi” dla dalszych zatrzymań. W środowisku zareagowano szybko: konto vx-underground napisało tylko, że „Rey zawsze był dla nas miły”.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> jeśli współpraca się potwierdzi, kolejne zatrzymania w kręgu ShinyHunters, Scattered Spider i LAPSUS$ są kwestią tygodni. Organizacje, które w ostatnich miesiącach dostawały żądania okupu od tej grupy, powinny przygotować się na kontakt śledczych i zabezpieczyć logi z incydentów.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106461758344908835">@BleepinComputer: ShinyHunters hacker reportedly detained in Jordan</a> · <a href="https://x.com/HackRead/status/2106721184314503174">@HackRead</a> · <a href="https://x.com/Cyber_O51NT/status/2106621241528389788">@Cyber_O51NT</a> · <a href="https://x.com/blueteamsec1/status/2106461754134085652">@blueteamsec1</a> · <a href="https://x.com/Dinosn/status/2106564615207280861">@Dinosn</a> · <a href="https://x.com/uwu_underground/status/2106456096206467568">@uwu_underground</a></li>
+        <li>Artykuły: <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/">BleepingComputer</a> · <a href="https://hackread.com/shinyhunters-hacker-rey-detained-jordan-fbi/">Hackread</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="a-barati" data-cat="apt prawo">
+    <div class="kicker">APT i państwa · ekstradycja</div>
+    <h3>Haker z irańskiego Instytutu Mabna wydany Stanom Zjednoczonym</h3>
+    <p class="lead">Amir Barati, obywatel Iranu i Turcji, trafił z Czarnogóry do USA. Odpowie za udział w wieloletniej kampanii szpiegowskiej prowadzonej na zlecenie Korpusu Strażników Rewolucji Islamskiej (IRGC).</p>
+    <div class="body">
+      <p>Baratiego zatrzymano 25 czerwca 2026 roku w Kotorze, w akcji czarnogórskiej policji i FBI. Sąd Najwyższy w Podgoricy zgodził się na ekstradycję w trybie uproszczonym, a na początku października mężczyzna został przekazany Amerykanom. Według uzupełnionego aktu oskarżenia (14 zarzutów) był członkiem Instytutu Mabna, teherańskiej firmy, która według Departamentu Sprawiedliwości włamywała się do systemów na zlecenie irańskich instytucji, w tym IRGC. W 2021 roku przeprowadził się do Turcji.</p>
+      <p>Skala zarzucanej kampanii jest duża. Ofiarami miały paść 144 amerykańskie i 178 zagranicznych uczelni, 42 firmy z USA i 11 zagranicznych, 5 amerykańskich agencji rządowych i co najmniej dwie organizacje pozarządowe. Napastnicy mieli wynieść ponad 31 TB zasobów naukowych, danych akademickich, własności intelektualnej i zawartości skrzynek pocztowych. Straty oszacowano na ponad 3,4 mld dolarów. Źródła różnią się w szczegółach: SecurityWeek podaje wiek 40 lat i 144 uczelnie w USA, Iran International pisze o 39 latach i „co najmniej 150” amerykańskich uczelniach.</p>
+      <p>Sprawa jest wyjątkowa, bo hakerzy pracujący dla irańskiego państwa zwykle nie wyjeżdżają z kraju albo omijają państwa, które mają z USA umowy ekstradycyjne. Mabna znana jest głównie z masowego phishingu na pracowników uczelni: fałszywe strony logowania bibliotek akademickich służyły do kradzieży haseł, a potem do pobierania płatnych publikacji i baz danych.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> uczelnie pozostają łatwym celem szpiegostwa naukowego. MFA na kontach bibliotecznych i pocztowych oraz monitorowanie masowego pobierania z serwisów z publikacjami to podstawowa obrona przed takimi kampaniami.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/SecurityWeek/status/2106719986454564886">@SecurityWeek: In Rare Move, Iranian Hacker Accused of Working for IRGC Extradited to US</a></li>
+        <li>Artykuły: <a href="https://www.securityweek.com/in-rare-move-iranian-hacker-accused-of-working-for-irgc-extradited-to-us/">SecurityWeek</a> · <a href="https://www.iranintl.com/en/202609227447">Iran International</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="a-clickfix" data-cat="malware phishing">
+      <div class="kicker">Malware · kampania</div>
+      <h3>ClickFix bez pobierania: przejęte strony chowają ładunek w pamięci podręcznej przeglądarki</h3>
+      <p class="lead">Microsoft Threat Intelligence opisał grupę przejętych witryn, które zamiast kazać ofierze pobrać skrypt z sieci, wcześniej zapisują go w cache przeglądarki.</p>
+      <div class="body">
+        <p>Klasyczny ClickFix wygląda tak: strona pokazuje fałszywą weryfikację „nie jestem robotem” i prosi o wklejenie polecenia do okna Uruchom. Polecenie pobiera ładunek z serwera atakującego. Nowa odmiana, na którą zwrócił uwagę Samir Bousseaden, przenosi ten krok na etap samej wizyty. Strona od razu pobiera skrypt do pamięci podręcznej, a wklejone polecenie tylko go stamtąd wydobywa.</p>
+        <p>Ten mechanizm, nazywany „cache smuggling”, opisywał wcześniej Expel. Skrypt na stronie pobiera plik z nagłówkiem <code>Content-Type: image/jpeg</code>, ale w środku jest archiwum ZIP zamknięte między znacznikami tekstowymi. Przeglądarka zapisuje „obrazek” w cache. Polecenie PowerShell przeszukuje wyrażeniem regularnym katalog cache Chrome, wycina archiwum, zapisuje je na dysk i uruchamia. W chwili infekcji nie ma więc żadnego pobierania z internetu, co oślepia część narzędzi EDR i proxy.</p>
+        <div class="todo"><b>Jak wykrywać:</b> alarmuj, gdy <code>powershell.exe</code> lub <code>cmd.exe</code> czyta pliki z katalogów cache przeglądarek (np. <code>…\Google\Chrome\User Data\…\Cache</code>), gdy PowerShell startuje z okna Uruchom (wpisy RunMRU) albo gdy w katalogach tymczasowych pojawia się ZIP wypakowany przez skrypt. Tam, gdzie to możliwe, zablokuj okno Uruchom (Win+R) zwykłym użytkownikom.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/SBousseaden/status/2106689219263353130">@SBousseaden (za Microsoft Threat Intelligence)</a> · <a href="https://gbhackers.com/cache-smuggling/">GBHackers o badaniu Expel</a></div>
+    </article>
+    <article class="full" id="a-brzoska" data-cat="polska phishing">
+      <div class="kicker pl">Oszustwa · dotyczy Polski</div>
+      <h3>Fałszywe wiadomości o śmierci Omenaa Mensah wracają, tym razem na YouTube</h3>
+      <p class="lead">Rafał Brzoska alarmuje, że jego żona znów jest „uśmiercana” w oszukańczych materiałach, teraz w serwisie Google. Sekurak komentuje krótko, że Google i YouTube „lecą sobie w kulki”.</p>
+      <div class="body">
+        <p>Schemat jest znany od dawna. Sensacyjna „wiadomość” o śmierci, aresztowaniu albo pobiciu znanej osoby prowadzi do fałszywego artykułu, a ten do platformy „inwestycyjnej”, na której ofiary tracą pieniądze. W reklamach Meta wykorzystywano też deepfake z wizerunkiem samego Brzoski. Mensah naliczyła wcześniej ponad 260 takich reklam na Facebooku i Instagramie.</p>
+        <p>Sprawa ma już długą historię prawną. W 2024 roku prezes UODO wydał wobec Meta trzymiesięczny zakaz przetwarzania danych małżonków w takich reklamach, a spór trafił do sądów. Brzoska apeluje teraz o obowiązkową weryfikację reklamodawców (KYC) na dużych platformach i powołuje się na propozycje zmian w prawie przygotowane przez zespół Sprawdzamy.com.</p>
+        <div class="todo"><b>Co zrobić:</b> sensacyjna reklama z celebrytą, która prowadzi do „okazji inwestycyjnej”, to niemal zawsze oszustwo. Zgłaszaj ją w serwisie i do CERT Polska (incydent.cert.pl). Nie zostawiaj numeru telefonu w formularzu, bo zaraz zadzwoni „doradca”.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Sekurak/status/2106656757028446694">@Sekurak cytuje wpis Rafała Brzoski</a> · <a href="https://www.rp.pl/dane-osobowe/art42000541-czy-to-koniec-wojny-o-falszywe-reklamy-z-rafalem-brzoska-i-omena-mensah">Rzeczpospolita o sporze z Meta</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="a-water" data-cat="ics">
+    <div class="kicker">ICS/OT · infrastruktura krytyczna</div>
+    <h3>WaterISAC po lecie ataków na wodociągi: najsłabsze ogniwa to odsłonięte OT i stare sterowniki PLC</h3>
+    <p class="lead">Szef WaterISAC Tom Dobbins wymienia w CyberScoop cztery największe słabości sektora wodnego w USA. Matt Johansen komentuje: żadna z nich nie wymaga „super obrońcy AI”, wystarczy podstawowa higiena.</p>
+    <div class="body">
+      <p>Latem 2026 roku skoordynowane ataki dotknęły wodociągi w około 30 gminach Minnesoty. Rząd USA według doniesień przypisuje je Iranowi, choć prezydent Trump tę ocenę kwestionował. Dobbins przyznaje, że widział komunikat CISA wskazujący na Iran, i dodaje, że zagrożenie płynie też z Chin i Rosji.</p>
+      <p>Lista problemów jest stała od lat: systemy OT wystawione do internetu, przestarzałe sterowniki PLC, które Dobbins nazywa „głównym punktem wejścia”, niezabezpieczone połączenia przez integratorów i słaba higiena w małych przedsiębiorstwach wodnych. WaterISAC ogłosił partnerstwo z Cyware, żeby szybciej wymieniać informacje o zagrożeniach z innymi ISAC-ami.</p>
+      <div class="todo"><b>Co zrobić:</b> sprawdź (np. w Shodanie lub Censysie), czy panele HMI i sterowniki nie są dostępne z internetu. Zmień domyślne hasła na PLC, zamknij zdalny dostęp integratorów za VPN z MFA i rejestruj każdą sesję serwisową. Te same zalecenia dotyczą polskich wodociągów, które w ostatnich latach też padały ofiarą ingerencji w panele sterowania.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/mattjay/status/2106465148256890909">@mattjay cytuje wypowiedź Toma Dobbinsa</a></li>
+        <li>Artykuł: <a href="https://cyberscoop.com/?p=90911">CyberScoop: WaterISAC reckons with range of threats after summer of cyberattacks</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="a-entra" data-cat="chmura">
+      <div class="kicker">Chmura i tożsamość</div>
+      <h3>Kradzież tokenów w Entra ID: Continuous Access Evaluation chroni mniej, niż się wydaje</h3>
+      <p class="lead">Badacze z ERNW (blog Insinuator) przetestowali 740 zasobów Microsoftu. Tylko 33 z nich obsługują CAE, czyli mechanizm, który ma natychmiast unieważniać skradzione tokeny.</p>
+      <div class="body">
+        <p>CAE pozwala Entra ID i usłudze docelowej wymieniać się w czasie zbliżonym do rzeczywistego informacjami o zdarzeniach, takich jak wyłączenie konta, zmiana hasła czy włączenie MFA. Dzięki temu dostęp może zostać odebrany, zanim token formalnie wygaśnie. Bez CAE skradziony token działa do 90 minut.</p>
+        <p>W praktyce ochrona ma luki. To klient decyduje, czy poprosi o token CAE. Czas unieważnienia waha się od 10 sekund do 5 minut. Tokeny CAE żyją do 28 godzin, więc tam, gdzie zdarzenie nie zostanie obsłużone, ekspozycja jest dłuższa. Atakujący ze skradzionym tokenem odświeżania może po prostu zażądać tokenu bez CAE i całkowicie ominąć mechanizm. To druga część czteroczęściowej serii. Pierwsza opisuje krajobraz zagrożeń i techniki kradzieży.</p>
+        <div class="todo"><b>Co zrobić:</b> nie traktuj CAE jako jedynej obrony. Dołóż Token Protection (wiązanie tokenu z urządzeniem), polityki dostępu warunkowego z oceną ryzyka logowania i szybkie unieważnianie sesji (revoke) w procedurach IR.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/DirectoryRanger/status/2106500384521179438">@DirectoryRanger</a> · <a href="https://insinuator.net/2026/08/token-theft-in-microsoft-entra-id-part-1-of-4-threat-landscape-and-attack-techniques/">Insinuator, cz. 1</a> · <a href="https://insinuator.net/2026/09/token-theft-in-microsoft-entra-id-part-2-of-4-continuous-access-evaluation/">cz. 2: CAE</a></div>
+    </article>
+    <article class="full" id="a-msx" data-cat="phishing">
+      <div class="kicker">Oszustwa · aktualizacja</div>
+      <h3>Microsoft potwierdza przejęcie konta na X. „Przeprosiny” też były dziełem oszustów</h3>
+      <p class="lead">Aktualizacja sprawy z poprzedniego wydania: Microsoft przyznał, że ktoś nieuprawniony dostał się do jego oficjalnego konta na X (ponad 13 mln obserwujących) i promował z niego kryptowalutowy token.</p>
+      <div class="body">
+        <p>Incydent zaczął się 2 października. Napastnicy zmienili zdjęcie profilowe na Spinacza (Clippy), zaczęli obserwować konto @clippymsftcto i udostępniali jego wpisy o tokenie „$Clippy”, rzekomo powiązanym z akcjami MSFT. Konto oszustów zostało już zawieszone.</p>
+        <p>Rzecznik Microsoftu potwierdził w SecurityWeek „nieuprawniony dostęp” i wpisy, które nie pochodziły od firmy. Konto zabezpieczono, wpisy usunięto, a śledztwo trwa. Microsoft zaznaczył, że wpis z przeprosinami, który pojawił się na koncie, też był częścią ataku. Firma nie podała, jak przejęto konto. W grę wchodzą m.in. kradzież ciasteczek sesyjnych przez infostealera, przejęcie skrzynki e-mail albo narzędzia do zarządzania mediami społecznościowymi.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/SecurityWeek/status/2106718979536339455">@SecurityWeek</a> · <a href="https://www.securityweek.com/crypto-scammers-hijack-microsofts-official-x-account/">SecurityWeek: Crypto Scammers Hijack Microsoft’s Official X Account</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-tcs" data-cat="wycieki">
+      <div class="kicker">Wycieki · niepotwierdzone</div>
+      <h3>Na forum wystawiono rzekomy kod źródłowy i klucze Tata Consultancy Services</h3>
+      <p class="lead">Wpis na forum przestępczym twierdzi, że pod koniec września 2026 roku z indyjskiego giganta IT wyniesiono kod i materiały techniczne. TCS się nie wypowiedział, a autentyczności danych nikt nie potwierdził.</p>
+      <div class="body">
+        <p>Według Dark Web Informer paczka ma zawierać kod źródłowy, klucze prywatne, zaszyte w kodzie dane logowania, klucze API i dostępowe, pliki SQL oraz konfiguracyjne. Autor pokazał przykładowe drzewo katalogów i udostępnia zestaw do pobrania.</p>
+        <p>Kontekst: w sierpniu 2026 roku aktor „TheHatman” sprzedawał ponad 800 tys. rekordów pracowników TCS. Firma odpowiedziała wtedy, że nie znalazła śladów włamania, a dane wyglądają na starsze niż cztery lata. Jeśli nowy wyciek okaże się prawdziwy, ryzyko dotyczy przede wszystkim klientów TCS, bo klucze i dane logowania z kodu mogą otwierać dostęp do ich środowisk.</p>
+        <div class="todo"><b>Co zrobić:</b> firmy współpracujące z TCS powinny zapytać dostawcę o incydent, przejrzeć klucze i konta serwisowe współdzielone z integratorem i w razie wątpliwości je zrotować.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/DarkWebInformer/status/2106514093717008857">@DarkWebInformer</a> · <a href="https://www.crnasia.com/india/news/2026/tcs-says-leaked-employee-data-appears-to-be-over-four-years-old">CRN Asia o sierpniowym wycieku</a></div>
+    </article>
+    <article class="full" id="a-giggles" data-cat="wycieki">
+      <div class="kicker">Wycieki · niepotwierdzone</div>
+      <h3>Dane użytkowników Giggles opublikowane po sporze o nagrodę za zgłoszenie luki</h3>
+      <p class="lead">Ktoś opublikował zestaw danych z Giggles, „memowego rynku predykcyjnego”, i jego siostrzanej firmy Siaga. Twierdzi, że zgłosił lukę, ta została załatana, ale nagrody nie dostał, a firma go ignorowała.</p>
+      <div class="body">
+        <p>Według opisu część z Giggles to 359 105 unikalnych adresów e-mail, 68 424 numery telefonów, ok. 570 tys. nazw użytkowników, 453 tys. postów, 7,16 mln komentarzy, 12 mln relacji „obserwuj” i 549 tys. zdjęć profilowych. Mniejszy zestaw Siagi ma zawierać e-maile firmowe i klientów, zgłoszenia na demo, informacje bankowe, odniesienia do płatności Stripe, tokeny zaproszeń i dokumenty wewnętrzne. Naruszenie datowane jest na 13 września 2026 roku.</p>
+        <p>Skala i autentyczność danych nie zostały niezależnie potwierdzone. Sprawa pokazuje jednak problem, o którym w tym samym czasie piszą łowcy błędów (zob. <a href="#a-bounty">artykuł o bug bounty</a>): brak jasnego kanału zgłaszania i wynagradzania badaczy kończy się czasem publikacją danych użytkowników.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/DarkWebInformer/status/2106547218102497532">@DarkWebInformer</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-linux" data-cat="podatnosci">
+      <div class="kicker">Podatności · proces</div>
+      <h3>„CNA Linuksa nie powinno nadawać CVE każdej poprawce”. Spór o lawinę zgłoszeń wraca</h3>
+      <p class="lead">Tib3rius podał dalej opinię, że zespół jądra przesadza z numerami CVE. To kolejny głos w dyskusji, która trwa, odkąd jądro samo nadaje identyfikatory.</p>
+      <div class="body">
+        <p>Projekt Linux został własnym CNA 13 lutego 2024 roku. Od tej pory publikuje o rząd wielkości więcej CVE niż wcześniej, bo przyjmuje, że niemal każdy błąd może mieć znaczenie dla bezpieczeństwa. W lipcu 2026 roku w ciągu dwóch dni pojawiło się 432 CVE, a w poprzednim wydaniu pisaliśmy o pakiecie ponad 1300. Jan Schaumann pisał na liście oss-security, że przy takim tempie ustalanie priorytetów dla pojedynczych zmian w jądrze przestaje być wykonalne. NVD już nie analizuje wszystkich tych zgłoszeń.</p>
+        <p>Napędem jest m.in. wyszukiwanie błędów z pomocą AI. Krytycy mówią, że numer CVE traci wartość jako sygnał. Zwolennicy odpowiadają, że to uczciwe przyznanie, że w jądrze trudno z góry wykluczyć możliwość wykorzystania błędu. Aleksandr Matrosov dodaje w osobnym wątku, że bezpieczeństwo pamięci to „objaw, nie przyczyna”, a źródłem problemów są decyzje projektowe.</p>
+        <div class="todo"><b>Co zrobić:</b> nie łataj jądra „po CVE”. Trzymaj się gałęzi stabilnych lub LTS dystrybucji i aktualizuj całościowo, a priorytet ustalaj na podstawie tego, czy podatny podsystem jest w ogóle używany (moduły, sterowniki).</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/0xTib3rius/status/2106537865543045341">@0xTib3rius</a> · <a href="https://x.com/matrosov/status/2106550072280580398">@matrosov</a> · <a href="https://www.noze.it/en/insights/432-linux-kernel-cves-two-days/">noze: 432 CVE w dwa dni</a></div>
+    </article>
+    <article class="full" id="a-bounty" data-cat="lektury">
+      <div class="kicker">Lektury · bug bounty</div>
+      <h3>„Nie zamykajcie programów bug bounty”. Badacze ostrzegają firmy</h3>
+      <p class="lead">Jason Haddix uważa, że w erze masowego hakowania z AI programy bug bounty i VDP są potrzebne bardziej niż kiedykolwiek. LiveOverflow skarży się, że czasem nie da się nawet zgłosić błędu.</p>
+      <div class="body">
+        <p>Haddix pisze, że firmy zamykają programy, obcinają stawki i nie zostawiają żadnego kanału zgłoszeń. Na przeciążony triaż proponuje presję na platformy albo zewnętrzny „triaż drugiego poziomu”, zintegrowany z zarządzaniem podatnościami aż do naprawy. Dodaje, że stanowiska zwolnione pod koniec „ery zwykłej automatyzacji” trzeba odbudować. W osobnym wpisie wylicza, ile kosztuje praca „hackbotów”: jeden klient z 10–20 zasobami potrafi zużyć cały abonament Claude Max, który przy cenach API byłby wart ok. 8000 dolarów.</p>
+        <p>LiveOverflow opisuje drugą stronę problemu. Platforma ogranicza mu możliwość zgłaszania, pewnie z powodu zalewu spamu. Zgłoszenie z cudzego konta albo innym kanałem grozi kolejnymi blokadami. „Więc po prostu nie zgłaszam?” – pyta. Przypadek Giggles z tego wydania pokazuje, jak takie sytuacje mogą się kończyć.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Jhaddix/status/2106792324802265185">@Jhaddix o programach</a> · <a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix o kosztach</a> · <a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-apple" data-cat="narzedzia">
+      <div class="kicker">Narzędzia i badania</div>
+      <h3>Apple Target Flags: „flagi” w systemie mają przyspieszyć wypłaty za exploity</h3>
+      <p class="lead">Apple wbudowało w swoje systemy mechanizm podobny do zawodów CTF. „Zdobyta” flaga obiektywnie pokazuje, jak daleko sięga exploit, i od razu przekłada się na wysokość nagrody.</p>
+      <div class="body">
+        <p>Są dwa rodzaje flag. Commpage Target Flag udostępnia losowe wartości w stabilnym obszarze pamięci. Exploit, który je wykorzysta, daje przewidywalne logi awarii dowodzące kontroli rejestrów, dowolnego odczytu i zapisu albo wykonania kodu, w przestrzeni użytkownika i w jądrze. TCC Target Flag pozwala wykazać zapis do bazy TCC (zgody na prywatność) użytkownika lub systemu.</p>
+        <p>Flagi działają w najnowszych wersjach iOS, iPadOS, macOS, tvOS, visionOS i watchOS. Zgłoszenia z flagą kwalifikują się do „przyspieszonych nagród”, wypłacanych zaraz po potwierdzeniu, jeszcze przed wydaniem poprawki.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/blueteamsec1/status/2106808176935088384">@blueteamsec1</a> · <a href="https://security.apple.com/bounty/target-flags/">Apple Security Research: Target Flags</a></div>
+    </article>
+    <article class="full" id="a-flock" data-cat="prawo">
+      <div class="kicker">Prawo · prywatność</div>
+      <h3>Ban Flock Act: projekt zakazu federalnego używania czytników tablic rejestracyjnych</h3>
+      <p class="lead">Bernie Sanders, Jeff Merkley i Alexandria Ocasio-Cortez chcą zakazać agencjom federalnym używania automatycznych czytników tablic (ALPR) i finansowania z budżetu federalnego lokalnych umów z ich dostawcami.</p>
+      <div class="body">
+        <p>Projekt ogłoszony 3 października uderza w Flock Safety, firmę, która postawiła w USA dziesiątki tysięcy kamer z AI śledzących pojazdy, często bez zgody lokalnych społeczności. Ustawa dawałaby też obywatelom prawo pozwania rządu federalnego za naruszenia prywatności związane z ALPR. Senator Josh Hawley zgłosił konkurencyjny projekt Stop Flock Abuse Act, więc niepokój jest ponadpartyjny. Przed listopadowymi wyborami przyjęcie którejkolwiek ustawy jest jednak mało prawdopodobne.</p>
+        <p>Eric Parker skomentował ironicznie, że Flock „będzie musiał pójść na kompromis w inwigilowaniu Amerykanów”. Bazy ALPR były już wcześniej przeszukiwane przez służby imigracyjne i przez pojedynczych policjantów w celach prywatnych.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/EricParker/status/2106643081101783497">@EricParker</a> · <a href="https://gizmodo.com/flock-is-eviscerating-the-very-notion-of-privacy-sanders-and-aoc-propose-the-ban-flock-act-2000821077">Gizmodo</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="a-dfir" data-cat="lektury">
+    <div class="kicker">Lektury · DFIR</div>
+    <h3>SANS DFIR Summit Europe: a co, jeśli sam dowód jest wygenerowany przez AI?</h3>
+    <p class="lead">Niedzielny dzień europejskiego szczytu SANS DFIR zdominowała sztuczna inteligencja, ale nie w roli cudownego narzędzia. Prelegenci pytali, kiedy AI pomaga śledczym, a kiedy daje im tylko szybciej złe odpowiedzi.</p>
+    <div class="body">
+      <p>Calum Baird z Systal Technology Solutions mówił o rozpoznawaniu dowodów sfabrykowanych przez AI: gdzie zawodzi wykrywanie i dlaczego trzeba sprawdzać autentyczność materiału, zanim trafi do raportu. Oren Biderman i Amnon Kushnir przekonywali, że „szybsze śledztwa są cenne, szybsze złe odpowiedzi – nie”, i pokazali, gdzie AI w DFIR zawodzi i dlaczego człowiek musi weryfikować wyniki. Matias Bevilacqua opisał, jak systemy agentowe mogą przejąć powtarzalny triaż hostów, żeby analitycy mieli więcej czasu na decyzje wymagające doświadczenia.</p>
+      <p>Poza AI były m.in. odtwarzanie ruchu telefonu z artefaktów Wi-Fi, Bluetooth i sieci komórkowej w pamięci, śledztwo w sieci Meshtastic oraz łączenie DFIR, analizy malware i threat intel do rekonstrukcji ataku na wiele platform (szczegóły w „Lekturach”). Szczyt w Arlington odbędzie się 15–16 października.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b> <a href="https://x.com/sansforensics/status/2106729457629483398">@sansforensics: AI-fabricated evidence</a> · <a href="https://x.com/sansforensics/status/2106711341830435197">AI w DFIR</a> · <a href="https://x.com/sansforensics/status/2106743105936314541">agentowy triaż</a></div>
+  </article>
+
+  <!-- ============ WSZYSTKIE NEWSY ============ -->
+  <h2 class="section" id="newsy">Wszystkie newsy</h2>
+  <div class="news">
+    <div class="news-tools">
+      <input class="news-filter" type="search" placeholder="Szukaj w newsach (np. CVE, Fortinet, ransomware)…" aria-label="Szukaj w newsach">
+      <div class="chips">
+        <button type="button" data-filter="all" class="on">Wszystkie</button>
+        <button type="button" data-filter="polska">Polska</button>
+        <button type="button" data-filter="wycieki">Wycieki danych</button>
+        <button type="button" data-filter="malware">Malware i kampanie</button>
+        <button type="button" data-filter="chmura">Chmura i tożsamość</button>
+        <button type="button" data-filter="intel">Threat intel i IOC</button>
+        <button type="button" data-filter="narzedzia">Narzędzia i badania</button>
+        <button type="button" data-filter="lektury">Lektury i poradniki</button>
+      </div>
+    </div>
+    <p class="filter-note">Filtr: <span></span> · <button type="button">pokaż wszystko</button></p>
+    <p class="no-results">Brak newsów pasujących do wyszukiwania.</p>
+
+    <section class="cat pl" id="k-polska" data-cat="polska">
+      <h3>Polska <span class="count">5</span></h3>
+      <ul class="brief">
+        <li><b>Bot hazardowy przyłapany na ciemnym wzorcu.</b> Zaufana Trzecia Strona pokazuje czatbota serwisu hazardowego, który twierdził, że konta nie da się zamknąć przed 90 dniami bez gry. Wystarczyło napisać „mam 12 lat”, żeby konto zamknięto od ręki, bo nieletni nie mogą mieć konta. <span class="src"><a href="https://x.com/Zaufana3Strona/status/2106743141579509866">@Zaufana3Strona</a></span></li>
+        <li><b>Czy „wojna hybrydowa” to dobre określenie?</b> Piotr Maciążek w opinii dla CyberDefence24 proponuje zmienić sposób, w jaki Polska mówi o rosyjskiej presji informacyjnej, sabotażu i działaniach w infosferze. Jego zdaniem ten język trzeba „zmilitaryzować”. <span class="src"><a href="https://x.com/CyberDefence24/status/2106632912200220961">@CyberDefence24</a></span></li>
+        <li><b>Prezes UODO na Cyber24 Days.</b> W rozmowie o ochronie danych, prywatności i nowych technologiach z perspektywy Polski i UE wystąpi Mirosław Wróblewski. Rejestracja jest na stronie wydarzenia. <span class="src"><a href="https://x.com/CyberDefence24/status/2106776366993563966">@CyberDefence24</a></span></li>
+        <li><b>Sekurak rozdaje książkę o OSINT.</b> W akcji „cyberpaździernik” można dostać bezpłatny PDF książki „OSINT – nowy wymiar poszukiwań w sieci” (250 stron). <span class="src"><a href="https://x.com/Sekurak/status/2106650160696860924">@Sekurak</a></span></li>
+        <li><b>40 tys. zł za domenę dla Kancelarii Prezydenta?</b> Niebezpiecznik żartobliwie komentuje umowę z rejestru umów: „może to zakup zwykłej domeny .pl od razu na 310 lat”. Autorzy wątku zauważają, że podstrona w prezydent.pl kosztowałaby zero złotych. <span class="src"><a href="https://x.com/niebezpiecznik/status/2106620953681600868">@niebezpiecznik</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-wycieki" data-cat="wycieki">
+      <h3>Wycieki danych <span class="count">2</span></h3>
+      <ul class="brief">
+        <li id="n-gov75"><b>Rzekomo 75 mln rekordów z amerykańskiego urzędu.</b> DarkFeed odnotował w darknecie ofertę danych z „departamentu rządu USA” z danymi osobowymi i firmowymi. Nazwy urzędu ani dowodów nie podano, więc informacja jest niepotwierdzona. <span class="src"><a href="https://x.com/ido_cohen2/status/2106681115880649028">@ido_cohen2</a></span></li>
+        <li><b>Firma naprawiająca historię kredytową i dostawca motoryzacyjny.</b> Na tej samej liście DarkFeed: pełna baza 895 klientów firmy „credit repair” (dane osobowe, dane finansowe, rozmowy) oraz dostęp do sieci północnoamerykańskiego dostawcy części samochodowych. Obie oferty są niepotwierdzone. <span class="src"><a href="https://x.com/ido_cohen2/status/2106681115880649028">@ido_cohen2</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-malware" data-cat="malware">
+      <h3>Malware i kampanie <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Fałszywe „biblioteki .NET” na GitHubie.</b> MalwareHunterTeam wskazuje repozytorium <code>github[.]com/dotnet-runtime-libs/vcredist-packages</code>. Nazwy konta i projektu podszywają się pod produkty Microsoftu, a w wydaniach leżą złośliwe pliki. <span class="src"><a href="https://x.com/malwrhunterteam/status/2106456234207375699">@malwrhunterteam</a></span></li>
+        <li><b>Otwarty katalog z malware.</b> Pod adresem <code>nationaladvertagency[.]space:8080/share/</code> wystawiono katalog z plikami, które według MalwareHunterTeam służą do ataków. <span class="src"><a href="https://x.com/malwrhunterteam/status/2106465765792649719">@malwrhunterteam</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-chmura" data-cat="chmura">
+      <h3>Chmura i tożsamość <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>EntraTrace: zapytania KQL po User-Agentach napastników.</b> Bert-Jan Pals dodał do repozytorium zapytania, które przeszukują logi logowań Entra, Microsoft Graph i Azure AD Graph pod kątem User-Agentów znanych z ataków. <span class="src"><a href="https://x.com/BertJanCyber/status/2106799549717049788">@BertJanCyber</a> · <a href="https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/tree/main/Threat%20Hunting">GitHub</a></span></li>
+        <li><b>„Guardian Agents” jako nowa warstwa zarządzania tożsamością.</b> Tekst o nadzorze nad agentami AI, które w firmach dostają własne konta i uprawnienia. <span class="src"><a href="https://x.com/blueteamsec1/status/2106530139035316417">@blueteamsec1</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-intel" data-cat="intel">
+      <h3>Threat intel i IOC <span class="count">4</span></h3>
+      <ul class="brief">
+        <li><b>Panel „Proxy Network — Login”.</b> MalwareHunterTeam wskazuje panel logowania sieci proxy pod <code>194.113.194[.]39:10311</code>. Takie panele często obsługują sieci zainfekowanych urządzeń sprzedawane jako „residential proxy”. <span class="src"><a href="https://x.com/malwrhunterteam/status/2106472668824219693">@malwrhunterteam</a></span></li>
+        <li><b>Nowy sojusz haktywistów: K3LLLEAKERS i Tunisian Maskers Cyber Force.</b> Grupy ogłosiły współpracę. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106732374151331964">@FalconFeedsio</a></span></li>
+        <li><b>Kolejny sojusz: KARAWANG ERROR SYSTEM i HADES CYBER CRIME.</b> Haktywiści zapowiadają wspólne działania, zwykle DDoS i defacementy. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106635863623151972">@FalconFeedsio</a></span></li>
+        <li><b>Awaria wielu usług 3 października.</b> Dark Web Informer odnotował jednoczesne problemy YouTube, Google, Starlinka, Battle.net, Xfinity, Paramount+ i Crunchyroll. Nie ma informacji o przyczynie ani śladów ataku. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106501250007109668">@DarkWebInformer</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-narzedzia" data-cat="narzedzia">
+      <h3>Narzędzia i badania <span class="count">14</span></h3>
+      <ul class="brief">
+        <li><b>passkeys.tools: laboratorium do testowania passkeys.</b> Zestaw od RUB-NDS emuluje przeglądarkę i uwierzytelniacz. Pozwala dekodować, przechwytywać i modyfikować operacje WebAuthn, także przez rozszerzenie przeglądarki, i symulować ataki między przeglądarkami. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106500267235783132">@DirectoryRanger</a> · <a href="https://github.com/RUB-NDS/passkeys.tools">GitHub</a></span></li>
+        <li><b>Chip MechaCon z PlayStation 2 rozpracowany po 26 latach.</b> Po czterech latach pracy (dekapsulacja i analiza krzemu) badacz znalazł błąd programowy, który pozwolił obejść ochronę odczytu i zrzucić firmware układu odpowiedzialnego za napęd, MagicGate i szyfrowane pliki KELF. <span class="src"><a href="https://x.com/Dinosn/status/2106745586439368879">@Dinosn</a></span></li>
+        <li><b>Black Hat Europe: od MQTT do masowego przejęcia pojazdów.</b> Wykład „Keys Under the Doormat” pokazuje, jak słabości infrastruktury samochodów podłączonych do sieci mogą dać dostęp do wielu aut naraz. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106761331818778981">@BlackHatEvents</a></span></li>
+        <li><b>Black Hat Europe: „No More Trampolines”.</b> Ziyi Shen przedstawi prymityw „insert” do edycji natywnych binariów bez trampolin. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106743666148601975">@BlackHatEvents</a></span></li>
+        <li><b>Sliver 1.7.8.</b> Nowa wersja frameworka do emulacji przeciwnika (C2). <span class="src"><a href="https://x.com/KitPloit/status/2106817220022063185">@KitPloit</a></span></li>
+        <li><b>SrHollow.</b> Narzędzie wyciąga sekrety LSA i klucze DPAPI z gałęzi rejestru przez kopie VSS. Ma własny parser regf i deszyfrowanie AES-256. Warto dopisać do reguł wykrywania. <span class="src"><a href="https://x.com/KitPloit/status/2106655758569890175">@KitPloit</a></span></li>
+        <li><b>evil-winrm-py.</b> Szybsza implementacja interaktywnej powłoki WinRM w Pythonie. <span class="src"><a href="https://x.com/KitPloit/status/2106575103454577053">@KitPloit</a></span></li>
+        <li><b>Exploit-Index.</b> Agregator PoC i exploitów dla CVE, działający bez API. <span class="src"><a href="https://x.com/KitPloit/status/2106776833354027387">@KitPloit</a></span></li>
+        <li><b>UnifiedThreatHunting.</b> Spisana metodyka polowania na zagrożenia: wyzwalacze, hipotezy SMART, bramki wykonalności, zakres, plan i raport. <span class="src"><a href="https://x.com/KitPloit/status/2106736450112749927">@KitPloit</a></span></li>
+        <li><b>APIHarvester.</b> Wyszukuje adresy API od strony głównej i symuluje automatyczne ataki na nie. <span class="src"><a href="https://x.com/KitPloit/status/2106696110123237691">@KitPloit</a></span></li>
+        <li><b>ASC.</b> Szybki dekompilator APK, który odpytuje skompilowane artefakty DEX bez wstępnego przetwarzania. <span class="src"><a href="https://x.com/KitPloit/status/2106534833358778485">@KitPloit</a></span></li>
+        <li><b>ultrafuzz.</b> Agentowy fuzzing i polowanie na zagrożenia w smart kontraktach. <span class="src"><a href="https://x.com/KitPloit/status/2106454854327546360">@KitPloit</a></span></li>
+        <li><b>Caddy 2.11.7.</b> Nowa wersja serwera WWW z automatycznym HTTPS. <span class="src"><a href="https://x.com/KitPloit/status/2106615490520940969">@KitPloit</a></span></li>
+        <li><b>Ile kosztuje hackbot?</b> Według testu przytoczonego przez Jasona Haddixa abonament Claude za 200 dolarów pozwala zużyć tokeny warte do 8000 dolarów miesięcznie, a podobny plan OpenAI do 14 000 dolarów. <span class="src"><a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-lektury" data-cat="lektury">
+      <h3>Lektury i poradniki <span class="count">12</span></h3>
+      <ul class="brief">
+        <li><b>Odtwarzanie zrzutu LSASS zrobionego przez napastnika.</b> Notatki terenowe Stephana Bergera (malmoeb) z analizy incydentu. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106725376349323542">@DirectoryRanger</a></span></li>
+        <li><b>Telefon jako dziennik podróży.</b> Alex Coley (MSAB) pokazał na DFIR Summit Europe, jak artefakty Wi-Fi, Bluetooth i sieci komórkowej w pamięci pozwalają odtworzyć trasę, gdy brakuje danych lokalizacyjnych. <span class="src"><a href="https://x.com/sansforensics/status/2106683186709213211">@sansforensics</a></span></li>
+        <li><b>Śledztwo w sieci Meshtastic.</b> Lorenzo Dina na przykładzie prawdziwej sprawy pokazał, gdzie szukać dowodów, gdy komunikacja omija klasyczne sieci. <span class="src"><a href="https://x.com/sansforensics/status/2106673032232075619">@sansforensics</a></span></li>
+        <li><b>Gdy standardowe narzędzia nic nie znajdują.</b> Specjalista Cellebrite opowiedział, jak zaawansowane techniki kryminalistyczne odnalazły kluczowy dowód w śledztwie w sprawie zabójstwa. <span class="src"><a href="https://x.com/sansforensics/status/2106666858036580711">@sansforensics</a></span></li>
+        <li><b>Rekonstrukcja ataku na wiele platform.</b> Roey Gideon Shua o łączeniu DFIR, analizy malware i threat intel. <span class="src"><a href="https://x.com/sansforensics/status/2106717160110424443">@sansforensics</a></span></li>
+        <li><b>20 lat lekcji z DFIR.</b> Heather Mahalik zamknęła szczyt podsumowaniem tego, co działało, co zawiodło i co robić inaczej. <span class="src"><a href="https://x.com/sansforensics/status/2106749157793059215">@sansforensics</a></span></li>
+        <li><b>SANS DFIR Summit w Arlington, 15–16 października.</b> DFIR, threat hunting i ransomware na jednym wydarzeniu. Wybrane wystąpienia będą dostępne online. <span class="src"><a href="https://x.com/sansforensics/status/2106714483435749806">@sansforensics</a></span></li>
+        <li><b>Prawa Murphy’ego w cyberbezpieczeństwie.</b> Ulubione prawo Josego Hernandeza: jeśli atak idzie świetnie, to jest honeypot. <span class="src"><a href="https://x.com/_josehelps/status/2106444943900500172">@_josehelps</a></span></li>
+        <li><b>Domowy zestaw ochronny SwiftOnSecurity.</b> uBlock Origin i AdGuard Pro na urządzeniach, Ubiquiti CyberSecure na UDM Pro i NextDNS z DNSCrypt. Z zastrzeżeniem, że konkretne ustawienia są dopasowane do jednej osoby i nie warto ich kopiować w ciemno. <span class="src"><a href="https://x.com/SwiftOnSecurity/status/2106580462286115091">@SwiftOnSecurity</a></span></li>
+        <li><b>Najbardziej nielubiana rola w bezpieczeństwie?</b> Kostas Tsale stawia na zarządzanie podatnościami i compliance. W odpowiedziach toczy się żywa dyskusja. <span class="src"><a href="https://x.com/Kostastsale/status/2106531691141779839">@Kostastsale</a></span></li>
+        <li><b>MinuteCon: nabór wystąpień.</b> Silas Cutler zaprasza do zgłaszania prelekcji na pierwszą edycję konferencji. <span class="src"><a href="https://x.com/silascutler/status/2106738651757441117">@silascutler</a></span></li>
+        <li><b>Black Hat Europe: ofensywne Wi-Fi od zera.</b> Szkolenie dla osób, które nigdy nie zajmowały się bezpieczeństwem sieci bezprzewodowych: łamanie sieci, techniki ataku i obrona. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106499305854890494">@BlackHatEvents</a></span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od wybranych kont o cyberbezpieczeństwie na X oraz raporty, do których te wpisy się odnoszą.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Sunday, 4 October 2026</span><span>Issue no. 3</span><span>113 posts · 398 accounts · 55 news items</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-artykuly">Stories</a>
+    <a href="#en-newsy">All news</a>
+    <a class="sub" href="#en-k-polska">Poland</a>
+    <a class="sub" href="#en-k-wycieki">Breaches</a>
+    <a class="sub" href="#en-k-malware">Malware</a>
+    <a class="sub" href="#en-k-chmura">Cloud</a>
+    <a class="sub" href="#en-k-intel">Threat intel</a>
+    <a class="sub" href="#en-k-narzedzia">Tools</a>
+    <a class="sub" href="#en-k-lektury">Reading</a>
+  </nav>
+
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+      <div class="hero">
+        <div class="kicker">Top story</div>
+        <h2>ShinyHunters’ “Rey” detained in Jordan, reportedly helping the FBI track down accomplices</h2>
+        <p>Saif al-Din Khader, seen as one of the leaders of ShinyHunters, was detained in Amman and is said to be giving investigators access to his devices and communications. The group claims, among other things, the theft of 2–3 TB of data from the FBI’s recruitment portal. According to the FBI, it has breached more than 140 organisations since last year and extorted about $70 million.</p>
+        <a class="more" href="#en-a-shinyhunters">Read the full story →</a>
+      </div>
+      <div class="hero second">
+        <div class="kicker">Second story</div>
+        <h2>Hacker from Iran’s Mabna Institute handed to the US in a rare extradition of an IRGC contractor</h2>
+        <p>Montenegro has handed over Amir Barati, arrested in Kotor in June. Prosecutors accuse him of taking part in a campaign that since 2013 stole from universities, companies and government agencies on behalf of the Islamic Revolutionary Guard Corps. They put the losses at more than $3.4 billion.</p>
+        <a class="more" href="#en-a-barati">Read the full story →</a>
+      </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><a href="#en-a-shinyhunters">Jordan has detained ShinyHunters’ “Rey”</a>, who according to Reuters is cooperating with the FBI.</span></li>
+        <li><span><a href="#en-a-barati">Amir Barati of Iran’s Mabna Institute</a> has been extradited from Montenegro to the US.</span></li>
+        <li><span><a href="#en-a-clickfix">ClickFix with a payload hidden in the browser cache</a>: Microsoft sees compromised sites that plant the script in advance.</span></li>
+        <li><span><a href="#en-a-brzoska">Fake death notices about Rafał Brzoska’s wife reach YouTube</a>. Sekurak: Google is “messing around”.</span></li>
+        <li><span><a href="#en-a-water">WaterISAC: exposed OT and old PLCs</a> are the main way into water utilities after a summer of attacks.</span></li>
+        <li><span><a href="#en-a-entra">Token theft in Entra ID</a>: CAE is supported by only 33 of 740 tested resources.</span></li>
+        <li><span><a href="#en-a-msx">Microsoft confirms its X account was hijacked</a>; the “apology” was also written by the scammers.</span></li>
+        <li><span><a href="#en-a-tcs">Alleged TCS source code and keys offered on a forum</a> (unconfirmed).</span></li>
+        <li><span><a href="#en-a-giggles">Giggles app leak</a>: 359k emails and 7 million comments published after a bounty dispute.</span></li>
+        <li><span><a href="#en-a-linux">A CVE for every Linux kernel fix?</a> The row over the kernel CNA’s approach is back.</span></li>
+        <li><span><a href="#en-a-bounty">Researchers warn against shutting down bug bounty programmes</a> in the age of AI-scaled hacking.</span></li>
+        <li><span><a href="#en-a-apple">Apple Target Flags</a>: “flags” built into Apple’s systems should speed up bounty payouts.</span></li>
+        <li><span><a href="#en-a-flock">Ban Flock Act</a>: a bill to ban federal use of licence plate readers.</span></li>
+        <li><span><a href="#en-n-gov75">Alleged leak of 75 million records from a US government department</a> on DarkFeed’s list (unconfirmed).</span></li>
+      </ol>
+    </div>
+  </section>
+  <div class="stats">
+    <button class="stat" type="button" data-filter="zeroday"><b>0</b><span>Actively exploited</span></button>
+    <button class="stat" type="button" data-filter="ransomware wycieki"><b>5</b><span>Ransomware &amp; breaches</span></button>
+    <button class="stat" type="button" data-filter="polska"><b>6</b><span>From Poland</span></button>
+    <button class="stat" type="button" data-filter="all"><b>55</b><span>News items</span></button>
+  </div>
+
+  <h2 class="section" id="en-artykuly">Stories</h2>
+
+  <article class="full" id="en-a-shinyhunters" data-cat="prawo wycieki">
+    <div class="kicker">Law &amp; investigations · cybercrime</div>
+    <h3>ShinyHunters’ “Rey” detained in Jordan, said to be helping the FBI identify other members</h3>
+    <p class="lead">Jordanian authorities have detained Saif al-Din Khader, known online as “Rey”. According to two Reuters sources, the suspect is walking investigators through his devices and communications to help locate his accomplices.</p>
+    <div class="body">
+      <p>The detention took place this week (on Tuesday, according to Reuters). Khader held administrative privileges in the ShinyHunters ecosystem, and in recent months, after an internal dispute with Dutchman Pepijn van der Stap (“Umbreon”), he was regarded as the person who had taken control of the group. Dutch police arrested van der Stap in September. Brian Krebs identified “Rey” back in November 2025 as a teenager from Amman, partly based on infostealer logs from his computer. At the time, “Rey” said he was leaving data theft and extortion behind.</p>
+      <p>The list of breaches attributed to him is long. It includes Telefónica (January 2025, 2.3 GB from its Jira system), Orange Romania (February 2025, 6.5 GB) and two attacks on Jaguar Land Rover (March and September 2025). In September 2026, ShinyHunters claimed they had got into the FBI Jobs portal through an Oracle PeopleSoft flaw and taken 2–3 TB of data, including medical and psychiatric information about Bureau staff. According to the FBI, the group has breached more than 140 organisations since last year and collected about $70 million in extortion payments. “Rey” was also linked to the Scattered LAPSUS$ Hunters alliance, in which ShinyHunters work with Scattered Spider and LAPSUS$.</p>
+      <p>Neither the FBI nor the Jordanian authorities have issued an official statement. The information about his cooperation comes from anonymous Reuters sources, one of whom called Khader’s cooperation “critical” to further arrests. The scene reacted quickly: vx-underground simply posted that “Rey was always nice to us”.</p>
+      <div class="todo"><b>Why it matters:</b> if the cooperation is confirmed, further arrests in the ShinyHunters, Scattered Spider and LAPSUS$ orbit could follow within weeks. Organisations that received ransom demands from this group in recent months should expect contact from investigators and preserve their incident logs.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106461758344908835">@BleepinComputer: ShinyHunters hacker reportedly detained in Jordan</a> · <a href="https://x.com/HackRead/status/2106721184314503174">@HackRead</a> · <a href="https://x.com/Cyber_O51NT/status/2106621241528389788">@Cyber_O51NT</a> · <a href="https://x.com/blueteamsec1/status/2106461754134085652">@blueteamsec1</a> · <a href="https://x.com/Dinosn/status/2106564615207280861">@Dinosn</a> · <a href="https://x.com/uwu_underground/status/2106456096206467568">@uwu_underground</a></li>
+        <li>Articles: <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/">BleepingComputer</a> · <a href="https://hackread.com/shinyhunters-hacker-rey-detained-jordan-fbi/">Hackread</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-a-barati" data-cat="apt prawo">
+    <div class="kicker">APTs &amp; nation states · extradition</div>
+    <h3>Hacker from Iran’s Mabna Institute extradited to the United States</h3>
+    <p class="lead">Amir Barati, a dual Iranian and Turkish citizen, has been handed from Montenegro to the US. He faces charges over a years-long espionage campaign run on behalf of the Islamic Revolutionary Guard Corps (IRGC).</p>
+    <div class="body">
+      <p>Barati was arrested on 25 June 2026 in Kotor in an operation by Montenegrin police and the FBI. The High Court in Podgorica approved extradition under a simplified procedure, and in early October he was handed over to the Americans. According to the superseding indictment (14 counts), he was a member of the Mabna Institute, a Tehran-based firm that the Justice Department says hacked systems on behalf of Iranian government bodies, including the IRGC. He moved to Turkey in 2021.</p>
+      <p>The alleged campaign was large. Its victims reportedly included 144 US and 178 foreign universities, 42 US and 11 foreign companies, 5 US government agencies and at least two NGOs. The attackers allegedly took more than 31 TB of scientific resources, academic data, intellectual property and mailbox contents, with losses estimated at over $3.4 billion. Sources differ on the details: SecurityWeek gives his age as 40 and the number of US universities as 144, while Iran International says he is 39 and mentions “at least 150” US universities.</p>
+      <p>The case is unusual because hackers working for the Iranian state usually stay in the country or avoid countries that have extradition treaties with the US. Mabna is best known for mass phishing of university staff: fake academic library login pages were used to steal passwords and then download paid publications and databases.</p>
+      <div class="todo"><b>Why it matters:</b> universities remain an easy target for scientific espionage. MFA on library and email accounts, plus monitoring for bulk downloads from publication services, is the basic defence against campaigns like this.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/SecurityWeek/status/2106719986454564886">@SecurityWeek: In Rare Move, Iranian Hacker Accused of Working for IRGC Extradited to US</a></li>
+        <li>Articles: <a href="https://www.securityweek.com/in-rare-move-iranian-hacker-accused-of-working-for-irgc-extradited-to-us/">SecurityWeek</a> · <a href="https://www.iranintl.com/en/202609227447">Iran International</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-a-clickfix" data-cat="malware phishing">
+      <div class="kicker">Malware · campaign</div>
+      <h3>ClickFix without a download: compromised sites hide the payload in the browser cache</h3>
+      <p class="lead">Microsoft Threat Intelligence has described a cluster of compromised websites that, instead of making the victim download a script from the internet, save it into the browser cache in advance.</p>
+      <div class="body">
+        <p>Classic ClickFix works like this: a page shows a fake “I’m not a robot” check and asks the user to paste a command into the Run dialog. The command downloads the payload from the attacker’s server. The new variant, highlighted by Samir Bousseaden, moves that step to the visit itself. The page immediately pulls the script into the cache, and the pasted command merely extracts it from there.</p>
+        <p>This technique, known as “cache smuggling”, was described earlier by Expel. A script on the page fetches a file served with <code>Content-Type: image/jpeg</code>, but inside is a ZIP archive wrapped between text markers. The browser caches the “image”. A PowerShell command searches Chrome’s cache directory with a regular expression, cuts out the archive, writes it to disk and runs it. At the moment of infection there is no download from the internet, which blinds some EDR and proxy tools.</p>
+        <div class="todo"><b>How to detect:</b> alert when <code>powershell.exe</code> or <code>cmd.exe</code> reads files from browser cache directories (e.g. <code>…\Google\Chrome\User Data\…\Cache</code>), when PowerShell is launched from the Run dialog (RunMRU entries), or when a script-extracted ZIP appears in temporary folders. Where possible, disable the Run dialog (Win+R) for regular users.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/SBousseaden/status/2106689219263353130">@SBousseaden (citing Microsoft Threat Intelligence)</a> · <a href="https://gbhackers.com/cache-smuggling/">GBHackers on Expel’s research</a></div>
+    </article>
+    <article class="full" id="en-a-brzoska" data-cat="polska phishing">
+      <div class="kicker pl">Fraud · affects Poland</div>
+      <h3>Fake death reports about Omenaa Mensah are back, this time on YouTube</h3>
+      <p class="lead">Rafał Brzoska is raising the alarm that his wife is once again being “killed off” in fraudulent content, now on Google’s platform. Sekurak’s short verdict: Google and YouTube are “messing around”.</p>
+      <div class="body">
+        <p>The scheme has been around for a long time. A sensational “report” of a celebrity’s death, arrest or beating leads to a fake article, which in turn leads to an “investment” platform where victims lose money. Meta ads also used a deepfake of Brzoska himself. Mensah had previously counted more than 260 such ads on Facebook and Instagram.</p>
+        <p>The case already has a long legal history. In 2024 Poland’s data protection authority (UODO) issued a three-month ban on Meta processing the couple’s data in such ads, and the dispute went to court. Brzoska is now calling for mandatory advertiser verification (KYC) on large platforms and points to legal changes proposed by the Sprawdzamy.com team.</p>
+        <div class="todo"><b>What to do:</b> a sensational ad featuring a celebrity that leads to an “investment opportunity” is almost always a scam. Report it on the platform and to CERT Polska (incydent.cert.pl). Do not leave your phone number in the form, or an “adviser” will call you right away.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Sekurak/status/2106656757028446694">@Sekurak quoting Rafał Brzoska’s post</a> · <a href="https://www.rp.pl/dane-osobowe/art42000541-czy-to-koniec-wojny-o-falszywe-reklamy-z-rafalem-brzoska-i-omena-mensah">Rzeczpospolita on the dispute with Meta</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-a-water" data-cat="ics">
+    <div class="kicker">ICS/OT · critical infrastructure</div>
+    <h3>WaterISAC after a summer of attacks on water utilities: exposed OT and old PLCs are the weakest links</h3>
+    <p class="lead">WaterISAC head Tom Dobbins lists the four biggest weaknesses of the US water sector in CyberScoop. Matt Johansen comments that none of them needs an “AI super defender”; basic hygiene would do.</p>
+    <div class="body">
+      <p>In summer 2026, coordinated attacks hit water utilities in about 30 Minnesota communities. The US government reportedly attributes them to Iran, although President Trump disputed that assessment. Dobbins says he saw a CISA release pointing to Iran and adds that threats also come from China and Russia.</p>
+      <p>The list of problems has not changed for years: OT systems exposed to the internet, outdated PLCs that Dobbins calls the “main point of entry”, insecure connections through integrators and poor hygiene at small utilities. WaterISAC announced a partnership with Cyware to share threat information faster with other ISACs.</p>
+      <div class="todo"><b>What to do:</b> check (e.g. in Shodan or Censys) whether your HMI panels and controllers are reachable from the internet. Change default passwords on PLCs, put integrators’ remote access behind a VPN with MFA and log every maintenance session. The same advice applies to Polish water utilities, which have also seen tampering with control panels in recent years.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/mattjay/status/2106465148256890909">@mattjay quoting Tom Dobbins</a></li>
+        <li>Article: <a href="https://cyberscoop.com/?p=90911">CyberScoop: WaterISAC reckons with range of threats after summer of cyberattacks</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-a-entra" data-cat="chmura">
+      <div class="kicker">Cloud &amp; identity</div>
+      <h3>Token theft in Entra ID: Continuous Access Evaluation protects less than you think</h3>
+      <p class="lead">Researchers at ERNW (the Insinuator blog) tested 740 Microsoft resources. Only 33 of them support CAE, the mechanism meant to invalidate stolen tokens immediately.</p>
+      <div class="body">
+        <p>CAE lets Entra ID and the target service exchange information about events such as account disablement, password changes or MFA enrolment in near real time. That way access can be revoked before a token formally expires. Without CAE, a stolen token stays valid for up to 90 minutes.</p>
+        <p>In practice the protection has gaps. It is the client that decides whether to request a CAE token. Revocation time ranges from 10 seconds to 5 minutes. CAE tokens live for up to 28 hours, so wherever an event is not handled, the exposure is longer. An attacker holding a stolen refresh token can simply request a non-CAE token and bypass the mechanism entirely. This is the second part of a four-part series; the first covers the threat landscape and theft techniques.</p>
+        <div class="todo"><b>What to do:</b> don’t treat CAE as your only defence. Add Token Protection (binding tokens to the device), Conditional Access policies with sign-in risk, and fast session revocation in your IR procedures.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/DirectoryRanger/status/2106500384521179438">@DirectoryRanger</a> · <a href="https://insinuator.net/2026/08/token-theft-in-microsoft-entra-id-part-1-of-4-threat-landscape-and-attack-techniques/">Insinuator, part 1</a> · <a href="https://insinuator.net/2026/09/token-theft-in-microsoft-entra-id-part-2-of-4-continuous-access-evaluation/">part 2: CAE</a></div>
+    </article>
+    <article class="full" id="en-a-msx" data-cat="phishing">
+      <div class="kicker">Fraud · update</div>
+      <h3>Microsoft confirms its X account was hijacked; the “apology” was the scammers’ work too</h3>
+      <p class="lead">An update to a story from our previous issue: Microsoft has admitted that an unauthorised party got into its official X account (over 13 million followers) and used it to promote a crypto token.</p>
+      <div class="body">
+        <p>The incident began on 2 October. The attackers changed the profile picture to Clippy, followed the @clippymsftcto account and shared its posts about a “$Clippy” token supposedly linked to MSFT shares. The scam account has since been suspended.</p>
+        <p>A Microsoft spokesperson confirmed to SecurityWeek “unauthorized access” and posts that did not come from the company. The account has been secured, the posts removed and the investigation continues. Microsoft noted that an apology post that appeared on the account was also part of the attack. The company did not say how the account was taken over. Possible routes include session cookie theft by an infostealer, a compromised mailbox or a social media management tool.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/SecurityWeek/status/2106718979536339455">@SecurityWeek</a> · <a href="https://www.securityweek.com/crypto-scammers-hijack-microsofts-official-x-account/">SecurityWeek: Crypto Scammers Hijack Microsoft’s Official X Account</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-tcs" data-cat="wycieki">
+      <div class="kicker">Breaches · unconfirmed</div>
+      <h3>Alleged Tata Consultancy Services source code and keys offered on a forum</h3>
+      <p class="lead">A post on a criminal forum claims that code and technical material were taken from the Indian IT giant in late September 2026. TCS has not commented and nobody has confirmed the data is genuine.</p>
+      <div class="body">
+        <p>According to Dark Web Informer, the package includes source code, private keys, hardcoded credentials, API and access keys, SQL files and configuration files. The poster shared a sample directory tree and offers the dataset for download.</p>
+        <p>Context: in August 2026 an actor called “TheHatman” was selling more than 800,000 TCS employee records. The company said at the time it had found no evidence of a breach and that the data appeared to be more than four years old. If the new leak proves real, the main risk is to TCS customers, because keys and credentials in the code could open access to their environments.</p>
+        <div class="todo"><b>What to do:</b> companies working with TCS should ask the vendor about the incident, review keys and service accounts shared with the integrator, and rotate them if in doubt.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/DarkWebInformer/status/2106514093717008857">@DarkWebInformer</a> · <a href="https://www.crnasia.com/india/news/2026/tcs-says-leaked-employee-data-appears-to-be-over-four-years-old">CRN Asia on the August leak</a></div>
+    </article>
+    <article class="full" id="en-a-giggles" data-cat="wycieki">
+      <div class="kicker">Breaches · unconfirmed</div>
+      <h3>Giggles user data published after a dispute over a vulnerability bounty</h3>
+      <p class="lead">Someone has published a dataset from Giggles, a “meme prediction market”, and its sister company Siaga. The poster says they reported a flaw, which was then patched, but they were never paid and the company ignored them.</p>
+      <div class="body">
+        <p>According to the description, the Giggles portion includes 359,105 unique email addresses, 68,424 phone numbers, about 570,000 usernames, 453,000 posts, 7.16 million comments, 12 million follow relationships and 549,000 profile photos. The smaller Siaga set allegedly contains corporate and client emails, demo requests, banking information, Stripe payment references, invite tokens and internal documents. The breach is dated to 13 September 2026.</p>
+        <p>The scale and authenticity of the data have not been independently confirmed. The case does illustrate a problem bug hunters were writing about at the same time (see the <a href="#en-a-bounty">bug bounty story</a>): without a clear channel for reporting and rewarding researchers, things sometimes end with users’ data being published.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/DarkWebInformer/status/2106547218102497532">@DarkWebInformer</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-linux" data-cat="podatnosci">
+      <div class="kicker">Vulnerabilities · process</div>
+      <h3>“The Linux CNA shouldn’t assign a CVE to every fix”: the row over the flood of CVEs is back</h3>
+      <p class="lead">Tib3rius amplified the view that the kernel team overdoes CVE numbers. It is the latest voice in a debate that has been running since the kernel started assigning its own identifiers.</p>
+      <div class="body">
+        <p>The Linux project became its own CNA on 13 February 2024. Since then it has published an order of magnitude more CVEs than before, on the assumption that almost any bug could matter for security. In July 2026, 432 CVEs appeared in two days, and in our previous issue we covered a batch of more than 1,300. Jan Schaumann wrote on the oss-security list that at this pace prioritising individual kernel changes is no longer feasible. NVD no longer analyses all of these entries.</p>
+        <p>One driver is AI-assisted bug hunting. Critics say a CVE number is losing its value as a signal. Supporters reply that it is an honest admission that exploitability is hard to rule out in advance in the kernel. In a separate thread, Alex Matrosov adds that memory safety is “a symptom, not the cause”, and that the root of the problem lies in design decisions.</p>
+        <div class="todo"><b>What to do:</b> don’t patch the kernel “by CVE”. Stick to your distribution’s stable or LTS branches and update as a whole, and set priorities based on whether the vulnerable subsystem is used at all (modules, drivers).</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/0xTib3rius/status/2106537865543045341">@0xTib3rius</a> · <a href="https://x.com/matrosov/status/2106550072280580398">@matrosov</a> · <a href="https://www.noze.it/en/insights/432-linux-kernel-cves-two-days/">noze: 432 CVEs in two days</a></div>
+    </article>
+    <article class="full" id="en-a-bounty" data-cat="lektury">
+      <div class="kicker">Reading · bug bounty</div>
+      <h3>“Don’t shut down your bug bounty programmes”: researchers warn companies</h3>
+      <p class="lead">Jason Haddix argues that in the era of mass AI-driven hacking, bug bounty programmes and VDPs matter more than ever. LiveOverflow complains that sometimes you can’t even report a bug.</p>
+      <div class="body">
+        <p>Haddix writes that companies are closing programmes, cutting payout tables and leaving no reporting channel at all. For overloaded triage he suggests putting pressure on the platforms or hiring external “second-level triage”, integrated with vulnerability management all the way to remediation. He adds that positions cut at the end of the “standard automation era” need to be rebuilt. In a separate post he spells out what “hackbots” cost: one client with 10–20 assets can burn through an entire Claude Max subscription, which at API prices would be worth about $8,000.</p>
+        <p>LiveOverflow describes the other side of the problem. A platform is restricting his ability to submit reports, probably because of a flood of spam. Reporting from someone else’s account or through another channel risks further restrictions. “So I just don’t report?” he asks. The Giggles case in this issue shows how such situations can end.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Jhaddix/status/2106792324802265185">@Jhaddix on programmes</a> · <a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix on costs</a> · <a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-apple" data-cat="narzedzia">
+      <div class="kicker">Tools &amp; research</div>
+      <h3>Apple Target Flags: built-in “flags” to speed up payouts for exploits</h3>
+      <p class="lead">Apple has built a CTF-style mechanism into its operating systems. A “captured” flag objectively shows how far an exploit goes and translates directly into the bounty amount.</p>
+      <div class="body">
+        <p>There are two kinds of flags. The Commpage Target Flag exposes random values in a stable memory region. An exploit that uses them produces predictable crash logs proving register control, arbitrary read/write or code execution, in userspace and in the kernel. The TCC Target Flag lets researchers demonstrate write access to the user or system TCC (privacy consent) database.</p>
+        <p>The flags work in the latest versions of iOS, iPadOS, macOS, tvOS, visionOS and watchOS. Reports that use a flag qualify for “accelerated awards”, paid as soon as the finding is confirmed, even before a fix ships.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/blueteamsec1/status/2106808176935088384">@blueteamsec1</a> · <a href="https://security.apple.com/bounty/target-flags/">Apple Security Research: Target Flags</a></div>
+    </article>
+    <article class="full" id="en-a-flock" data-cat="prawo">
+      <div class="kicker">Law · privacy</div>
+      <h3>Ban Flock Act: a bill to ban federal use of licence plate readers</h3>
+      <p class="lead">Bernie Sanders, Jeff Merkley and Alexandria Ocasio-Cortez want to bar federal agencies from using automatic licence plate readers (ALPRs) and stop federal money funding local contracts with their vendors.</p>
+      <div class="body">
+        <p>The bill, announced on 3 October, targets Flock Safety, a company that has installed tens of thousands of AI cameras tracking vehicles across the US, often without local communities’ consent. It would also give citizens the right to sue the federal government over ALPR-related privacy violations. Senator Josh Hawley has introduced a competing Stop Flock Abuse Act, so the concern is bipartisan. Still, neither bill is likely to pass before the November elections.</p>
+        <p>Eric Parker remarked wryly that Flock “will have to compromise on their invasion of Americans’ privacy”. ALPR databases have previously been searched by immigration authorities and by individual police officers for personal reasons.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/EricParker/status/2106643081101783497">@EricParker</a> · <a href="https://gizmodo.com/flock-is-eviscerating-the-very-notion-of-privacy-sanders-and-aoc-propose-the-ban-flock-act-2000821077">Gizmodo</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-a-dfir" data-cat="lektury">
+    <div class="kicker">Reading · DFIR</div>
+    <h3>SANS DFIR Summit Europe: what if the evidence itself was generated by AI?</h3>
+    <p class="lead">Sunday at SANS’s European DFIR summit was dominated by artificial intelligence, but not as a miracle tool. Speakers asked when AI helps investigators and when it just gives them wrong answers faster.</p>
+    <div class="body">
+      <p>Calum Baird of Systal Technology Solutions spoke about spotting AI-fabricated evidence: where detection falls short and why authenticity must be checked before material goes into a report. Oren Biderman and Amnon Kushnir argued that “faster investigations are valuable, faster wrong answers are not” and showed where AI fails in DFIR and why humans must validate the results. Matias Bevilacqua described how agentic systems can take over repetitive host triage so analysts have more time for decisions that need expertise.</p>
+      <p>Beyond AI, talks covered reconstructing a phone’s movements from Wi-Fi, Bluetooth and cellular artefacts in memory, an investigation in a Meshtastic network, and combining DFIR, malware analysis and threat intel to reconstruct a cross-platform attack (details under “Reading”). The Arlington summit takes place on 15–16 October.</p>
+    </div>
+    <div class="sources"><b>Sources:</b> <a href="https://x.com/sansforensics/status/2106729457629483398">@sansforensics: AI-fabricated evidence</a> · <a href="https://x.com/sansforensics/status/2106711341830435197">AI in DFIR</a> · <a href="https://x.com/sansforensics/status/2106743105936314541">agentic triage</a></div>
+  </article>
+
+  <h2 class="section" id="en-newsy">All news</h2>
+  <div class="news">
+    <div class="news-tools">
+      <input class="news-filter" type="search" placeholder="Search the news (e.g. CVE, Fortinet, ransomware)…" aria-label="Search the news">
+      <div class="chips">
+        <button type="button" data-filter="all" class="on">All</button>
+        <button type="button" data-filter="polska">Poland</button>
+        <button type="button" data-filter="wycieki">Data breaches</button>
+        <button type="button" data-filter="malware">Malware &amp; campaigns</button>
+        <button type="button" data-filter="chmura">Cloud &amp; identity</button>
+        <button type="button" data-filter="intel">Threat intel &amp; IOCs</button>
+        <button type="button" data-filter="narzedzia">Tools &amp; research</button>
+        <button type="button" data-filter="lektury">Reading &amp; guides</button>
+      </div>
+    </div>
+    <p class="filter-note">Filter: <span></span> · <button type="button">show all</button></p>
+    <p class="no-results">No news matches your search.</p>
+
+    <section class="cat pl" id="en-k-polska" data-cat="polska">
+      <h3>Poland <span class="count">5</span></h3>
+      <ul class="brief">
+        <li><b>Gambling bot caught using a dark pattern.</b> Zaufana Trzecia Strona shows a gambling site’s chatbot that claimed an account could only be closed after 90 days without playing. Typing “I’m 12 years old” got the account closed instantly, because minors cannot hold gambling accounts. <span class="src"><a href="https://x.com/Zaufana3Strona/status/2106743141579509866">@Zaufana3Strona</a></span></li>
+        <li><b>Is “hybrid war” the right term?</b> In an opinion piece for CyberDefence24, Piotr Maciążek proposes changing how Poland talks about Russian information pressure, sabotage and activity in the infosphere. In his view, that language needs to be “militarised”. <span class="src"><a href="https://x.com/CyberDefence24/status/2106632912200220961">@CyberDefence24</a></span></li>
+        <li><b>Poland’s data protection chief at Cyber24 Days.</b> Mirosław Wróblewski, president of UODO, will take part in a fireside chat on data protection, privacy and new technologies from a Polish and EU perspective. Registration is on the event website. <span class="src"><a href="https://x.com/CyberDefence24/status/2106776366993563966">@CyberDefence24</a></span></li>
+        <li><b>Sekurak gives away an OSINT book.</b> As part of its “cyber-October” campaign, readers can get a free PDF of the 250-page book “OSINT – a new dimension of online searching”. <span class="src"><a href="https://x.com/Sekurak/status/2106650160696860924">@Sekurak</a></span></li>
+        <li><b>40,000 zł for a domain for the President’s Office?</b> Niebezpiecznik jokes about a contract in the public contracts register: “maybe it’s a regular .pl domain bought for 310 years up front”. The thread’s authors note that a subpage on prezydent.pl would have cost nothing. <span class="src"><a href="https://x.com/niebezpiecznik/status/2106620953681600868">@niebezpiecznik</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-wycieki" data-cat="wycieki">
+      <h3>Data breaches <span class="count">2</span></h3>
+      <ul class="brief">
+        <li id="en-n-gov75"><b>Allegedly 75 million records from a US government department.</b> DarkFeed spotted a darknet offer of data from a “US government department” containing personal and business information. Neither the agency’s name nor any proof was given, so the claim is unconfirmed. <span class="src"><a href="https://x.com/ido_cohen2/status/2106681115880649028">@ido_cohen2</a></span></li>
+        <li><b>A credit repair firm and an automotive supplier.</b> Also on DarkFeed’s list: the full database of 895 clients of a credit repair company (personal data, financial details, conversations) and access to the network of a North American auto parts supplier. Both offers are unconfirmed. <span class="src"><a href="https://x.com/ido_cohen2/status/2106681115880649028">@ido_cohen2</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-malware" data-cat="malware">
+      <h3>Malware &amp; campaigns <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Fake “.NET libraries” on GitHub.</b> MalwareHunterTeam points to the repository <code>github[.]com/dotnet-runtime-libs/vcredist-packages</code>. The account and project names impersonate Microsoft products, and the releases contain malicious files. <span class="src"><a href="https://x.com/malwrhunterteam/status/2106456234207375699">@malwrhunterteam</a></span></li>
+        <li><b>Open directory full of malware.</b> A directory at <code>nationaladvertagency[.]space:8080/share/</code> exposes files that, according to MalwareHunterTeam, are used in attacks. <span class="src"><a href="https://x.com/malwrhunterteam/status/2106465765792649719">@malwrhunterteam</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-chmura" data-cat="chmura">
+      <h3>Cloud &amp; identity <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>EntraTrace: KQL queries for attackers’ User-Agents.</b> Bert-Jan Pals has added queries to his repository that sweep Entra sign-in, Microsoft Graph and Azure AD Graph logs for User-Agents known from attacks. <span class="src"><a href="https://x.com/BertJanCyber/status/2106799549717049788">@BertJanCyber</a> · <a href="https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/tree/main/Threat%20Hunting">GitHub</a></span></li>
+        <li><b>“Guardian Agents” as a new layer of identity governance.</b> A piece on overseeing AI agents that get their own accounts and permissions inside companies. <span class="src"><a href="https://x.com/blueteamsec1/status/2106530139035316417">@blueteamsec1</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-intel" data-cat="intel">
+      <h3>Threat intel &amp; IOCs <span class="count">4</span></h3>
+      <ul class="brief">
+        <li><b>A “Proxy Network — Login” panel.</b> MalwareHunterTeam flags a proxy network login panel at <code>194.113.194[.]39:10311</code>. Panels like this often run networks of infected devices sold as “residential proxies”. <span class="src"><a href="https://x.com/malwrhunterteam/status/2106472668824219693">@malwrhunterteam</a></span></li>
+        <li><b>New hacktivist alliance: K3LLLEAKERS and Tunisian Maskers Cyber Force.</b> The groups have announced they will work together. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106732374151331964">@FalconFeedsio</a></span></li>
+        <li><b>Another alliance: KARAWANG ERROR SYSTEM and HADES CYBER CRIME.</b> The hacktivists promise joint operations, usually DDoS and defacements. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106635863623151972">@FalconFeedsio</a></span></li>
+        <li><b>Multiple services down on 3 October.</b> Dark Web Informer noted simultaneous problems at YouTube, Google, Starlink, Battle.net, Xfinity, Paramount+ and Crunchyroll. There is no information on the cause and no sign of an attack. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106501250007109668">@DarkWebInformer</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-narzedzia" data-cat="narzedzia">
+      <h3>Tools &amp; research <span class="count">14</span></h3>
+      <ul class="brief">
+        <li><b>passkeys.tools: a lab for testing passkeys.</b> This RUB-NDS toolkit emulates both the browser and the authenticator. It lets you decode, intercept and modify WebAuthn operations, including through a browser extension, and simulate cross-browser attacks. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106500267235783132">@DirectoryRanger</a> · <a href="https://github.com/RUB-NDS/passkeys.tools">GitHub</a></span></li>
+        <li><b>PlayStation 2 MechaCon chip cracked after 26 years.</b> After four years of work (decapping and silicon analysis), a researcher found a software flaw that bypassed the read protection and dumped the firmware of the chip that handles the drive, MagicGate and encrypted KELF files. <span class="src"><a href="https://x.com/Dinosn/status/2106745586439368879">@Dinosn</a></span></li>
+        <li><b>Black Hat Europe: from MQTT to mass vehicle compromise.</b> The talk “Keys Under the Doormat” shows how weaknesses in connected car infrastructure could give access to many vehicles at once. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106761331818778981">@BlackHatEvents</a></span></li>
+        <li><b>Black Hat Europe: “No More Trampolines”.</b> Ziyi Shen will present an “insert” primitive for editing native binaries without trampolines. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106743666148601975">@BlackHatEvents</a></span></li>
+        <li><b>Sliver 1.7.8.</b> A new version of the adversary emulation (C2) framework. <span class="src"><a href="https://x.com/KitPloit/status/2106817220022063185">@KitPloit</a></span></li>
+        <li><b>SrHollow.</b> Extracts LSA secrets and DPAPI keys from registry hives via VSS shadow copies, with its own regf parser and AES-256 decryption. Worth adding to your detection rules. <span class="src"><a href="https://x.com/KitPloit/status/2106655758569890175">@KitPloit</a></span></li>
+        <li><b>evil-winrm-py.</b> A faster Python implementation of an interactive WinRM shell. <span class="src"><a href="https://x.com/KitPloit/status/2106575103454577053">@KitPloit</a></span></li>
+        <li><b>Exploit-Index.</b> An API-free aggregator of PoCs and exploits for CVEs. <span class="src"><a href="https://x.com/KitPloit/status/2106776833354027387">@KitPloit</a></span></li>
+        <li><b>UnifiedThreatHunting.</b> A documented threat hunting methodology: triggers, SMART hypotheses, feasibility gates, scoping, hunt plans and reporting. <span class="src"><a href="https://x.com/KitPloit/status/2106736450112749927">@KitPloit</a></span></li>
+        <li><b>APIHarvester.</b> Finds API URLs starting from a site’s root and simulates automated attacks against them. <span class="src"><a href="https://x.com/KitPloit/status/2106696110123237691">@KitPloit</a></span></li>
+        <li><b>ASC.</b> A fast APK decompiler that queries compiled DEX artefacts directly, without preprocessing. <span class="src"><a href="https://x.com/KitPloit/status/2106534833358778485">@KitPloit</a></span></li>
+        <li><b>ultrafuzz.</b> Agentic fuzzing and threat hunting for smart contracts. <span class="src"><a href="https://x.com/KitPloit/status/2106454854327546360">@KitPloit</a></span></li>
+        <li><b>Caddy 2.11.7.</b> A new version of the web server with automatic HTTPS. <span class="src"><a href="https://x.com/KitPloit/status/2106615490520940969">@KitPloit</a></span></li>
+        <li><b>What does a hackbot cost?</b> According to a test cited by Jason Haddix, a $200 Claude plan can use up to $8,000 worth of tokens a month, and a similar OpenAI plan up to $14,000. <span class="src"><a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-lektury" data-cat="lektury">
+      <h3>Reading &amp; guides <span class="count">12</span></h3>
+      <ul class="brief">
+        <li><b>Reconstructing the attacker’s LSASS dump.</b> Field notes by Stephan Berger (malmoeb) from an incident analysis. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106725376349323542">@DirectoryRanger</a></span></li>
+        <li><b>Your phone as a travel diary.</b> At DFIR Summit Europe, Alex Coley (MSAB) showed how Wi-Fi, Bluetooth and cellular artefacts in memory can reconstruct movements when location data is missing. <span class="src"><a href="https://x.com/sansforensics/status/2106683186709213211">@sansforensics</a></span></li>
+        <li><b>Investigating a Meshtastic network.</b> Using a real case, Lorenzo Dina showed where to look for evidence when communication bypasses traditional networks. <span class="src"><a href="https://x.com/sansforensics/status/2106673032232075619">@sansforensics</a></span></li>
+        <li><b>When standard tools find nothing.</b> A Cellebrite specialist explained how advanced forensic techniques uncovered critical evidence in a homicide investigation. <span class="src"><a href="https://x.com/sansforensics/status/2106666858036580711">@sansforensics</a></span></li>
+        <li><b>Reconstructing a cross-platform attack.</b> Roey Gideon Shua on connecting DFIR, malware analysis and threat intel. <span class="src"><a href="https://x.com/sansforensics/status/2106717160110424443">@sansforensics</a></span></li>
+        <li><b>20 years of DFIR lessons.</b> Heather Mahalik closed the summit with what worked, what failed and what to do differently. <span class="src"><a href="https://x.com/sansforensics/status/2106749157793059215">@sansforensics</a></span></li>
+        <li><b>SANS DFIR Summit in Arlington, 15–16 October.</b> DFIR, threat hunting and ransomware in one event, with selected talks available online. <span class="src"><a href="https://x.com/sansforensics/status/2106714483435749806">@sansforensics</a></span></li>
+        <li><b>Murphy’s Laws of Cyber.</b> Jose Hernandez’s favourite: if the attack is going really well, it’s a honeypot. <span class="src"><a href="https://x.com/_josehelps/status/2106444943900500172">@_josehelps</a></span></li>
+        <li><b>SwiftOnSecurity’s home security stack.</b> uBlock Origin and AdGuard Pro on devices, Ubiquiti CyberSecure on a UDM Pro and NextDNS with DNSCrypt. With the caveat that the specific settings are tuned for one person and shouldn’t be copied blindly. <span class="src"><a href="https://x.com/SwiftOnSecurity/status/2106580462286115091">@SwiftOnSecurity</a></span></li>
+        <li><b>The most hated role in security?</b> Kostas Tsale’s picks are vulnerability management and compliance. The replies are a lively debate. <span class="src"><a href="https://x.com/Kostastsale/status/2106531691141779839">@Kostastsale</a></span></li>
+        <li><b>MinuteCon: call for talks.</b> Silas Cutler invites submissions for the conference’s first edition. <span class="src"><a href="https://x.com/silascutler/status/2106738651757441117">@silascutler</a></span></li>
+        <li><b>Black Hat Europe: offensive Wi-Fi from scratch.</b> A training course for people who have never worked on wireless security: cracking networks, attack techniques and defence. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106499305854890494">@BlackHatEvents</a></span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Sources: posts from the last ~24 h by selected cybersecurity accounts on X, plus the reports those posts refer to.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<button class="to-top" id="toTop" type="button" aria-label="Na górę / Back to top">↑</button>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber — 04.10.2026', en: 'Cyber Daily — 4 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-cyber-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-cyber-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      set(root.getAttribute('data-lang') === 'en' ? 'pl' : 'en');
+      window.scrollTo(0, 0);
+    });
+
+    // wyszukiwarka newsów: filtruje pozycje w obrębie jednej wersji językowej
+    document.querySelectorAll('.news').forEach(function (news) {
+      var input = news.querySelector('.news-filter'), empty = news.querySelector('.no-results');
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase(), any = false;
+        news.querySelectorAll('.cat').forEach(function (cat) {
+          var shown = 0;
+          cat.querySelectorAll('li').forEach(function (li) {
+            var ok = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+            li.hidden = !ok; if (ok) shown++;
+          });
+          cat.hidden = shown === 0; if (shown) any = true;
+        });
+        empty.style.display = any ? 'none' : 'block';
+      });
+    });
+
+    // filtrowanie po kategorii: liczniki na stronie 1 i chipy w „Wszystkie newsy”
+    document.querySelectorAll('div.lang-pl, div.lang-en').forEach(function (block) {
+      var note = block.querySelector('.filter-note');
+      var current = 'all';
+      function apply(f) {
+        current = f;
+        var wanted = f === 'all' ? null : f.split(' ');
+        function match(el) {
+          if (!wanted) return true;
+          var cats = (el.getAttribute('data-cat') || '').split(' ');
+          return wanted.some(function (w) { return cats.indexOf(w) !== -1; });
+        }
+        block.querySelectorAll('article.full').forEach(function (a) { a.classList.toggle('f-off', !match(a)); });
+        block.querySelectorAll('.pair').forEach(function (p) {
+          var shown = p.querySelectorAll('article.full:not(.f-off)').length;
+          p.classList.toggle('f-off', shown === 0);
+          p.classList.toggle('solo', shown === 1);
+        });
+        block.querySelectorAll('section.cat').forEach(function (s) { s.classList.toggle('f-off', !match(s)); });
+        block.querySelectorAll('[data-filter]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-filter') === f && f !== 'all'); });
+        var allChip = block.querySelector('.chips [data-filter="all"]'); if (allChip) allChip.classList.toggle('on', f === 'all');
+        if (note) {
+          var label = block.querySelector('.chips [data-filter="' + f.split(' ')[0] + '"]');
+          note.querySelector('span').textContent = label ? label.textContent : f;
+          note.classList.toggle('show', f !== 'all');
+        }
+      }
+      block.querySelectorAll('[data-filter]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var f = b.getAttribute('data-filter');
+          apply(f === current ? 'all' : f);
+          if (b.classList.contains('stat')) {
+            var target = block.querySelector('h2.section');
+            if (target) target.scrollIntoView();
+          }
+        });
+      });
+      if (note) note.querySelector('button').addEventListener('click', function () { apply('all'); });
+    });
+
+    // przycisk „na górę”
+    var up = document.getElementById('toTop');
+    window.addEventListener('scroll', function () { up.classList.toggle('show', window.scrollY > 800); });
+    up.addEventListener('click', function () { window.scrollTo(0, 0); });  })();
+</script>
+</body>
+</html>
