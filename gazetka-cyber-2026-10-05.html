@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber — 05.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ef; --paper: #fffdf9; --ink: #1b1a18; --muted: #6a655c; --rule: #dad4c7;
+    --accent: #b3261e; --accent-soft: #fbe9e7; --hot: #8a1c14;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea; --pl: #7a2e8c; --pl-soft: #f4e8f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312; --paper: #1c1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #36322d;
+      --accent: #ff8a80; --accent-soft: #3a1f1d; --hot: #ffb4ab;
+      --ok: #7fd49b; --ok-soft: #18301f; --pl: #e2a8f0; --pl-soft: #33203a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { position: relative; text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(38px, 8vw, 72px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead h1 .red { color: var(--accent); }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 820px) { .front { grid-template-columns: 1fr; } }
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(24px, 3.8vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero.second h2 { font-size: clamp(21px, 3vw, 26px); }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--accent); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+  .kicker.pl { color: var(--pl); }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+
+  /* liczniki na stronie 1 */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0 0; }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+  .stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1.1; }
+  .stat span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(21px, 3vw, 27px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 820px) { .pair { grid-template-columns: 1fr; } }
+
+  /* wszystkie newsy */
+  .news-tools { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 12px 0; display: flex; flex-direction: column; gap: 10px; }
+  .news-filter { width: 100%; font: 15px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 14px; }
+  .news-filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips a { font-size: 12px; font-weight: 600; text-decoration: none; padding: 4px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); }
+  .chips a:hover { color: var(--ink); border-color: var(--ink); }
+  .cat { scroll-margin-top: 110px; }
+  .cat h3 { font-family: Fraunces, Georgia, serif; font-size: 22px; margin: 28px 0 0; display: flex; align-items: baseline; gap: 10px; }
+  .cat h3 .count { font: 600 12px Inter, sans-serif; color: var(--muted); }
+  .cat.pl h3 { color: var(--pl); }
+  ul.brief { list-style: none; padding: 0; margin: 10px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 12px 18px; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.5; }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  ul.brief .hot { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--paper); background: var(--hot); border-radius: 4px; padding: 0 6px; margin-right: 6px; vertical-align: 1px; }
+  .no-results { display: none; color: var(--muted); font-size: 15px; padding: 16px 0; }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+  /* filtrowanie, nawigacja */
+  button.stat { font: inherit; color: inherit; text-align: left; width: 100%; cursor: pointer; }
+  button.stat:hover, button.stat.on { border-color: var(--accent); }
+  button.stat.on b { color: var(--accent); }
+  .chips button { font: 600 12px Inter, sans-serif; padding: 4px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
+  .chips button:hover { color: var(--ink); border-color: var(--ink); }
+  .chips button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .f-off { display: none !important; }
+  .pair.solo { grid-template-columns: 1fr; }
+  .filter-note { display: none; margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+  .filter-note.show { display: block; }
+  .filter-note button { font: 600 13px Inter, sans-serif; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+  nav.toc .sub { font-weight: 500; }
+  .to-top { position: fixed; right: 16px; bottom: 16px; z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: 600 18px Inter, sans-serif; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .to-top.show { opacity: 1; pointer-events: auto; }
+  .to-top:hover { border-color: var(--accent); color: var(--accent); }</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka <span class="red">Cyber</span></span><span class="lang-en"><span class="red">Cyber</span> Daily</span></h1>
+  </header>
+
+  <!-- ==================== POLSKI ==================== -->
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 5 października 2026</span><span>Wydanie nr 4</span><span>168 wpisów · 398 kont · 52 newsy</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#artykuly">Artykuły</a>
+    <a href="#newsy">Wszystkie newsy</a>
+    <a class="sub" href="#k-polska">Polska</a>
+    <a class="sub" href="#k-podatnosci">Podatności</a>
+    <a class="sub" href="#k-ransomware">Ransomware</a>
+    <a class="sub" href="#k-wycieki">Wycieki</a>
+    <a class="sub" href="#k-malware">Malware</a>
+    <a class="sub" href="#k-phishing">Phishing</a>
+    <a class="sub" href="#k-chmura">Chmura</a>
+    <a class="sub" href="#k-intel">Threat intel</a>
+    <a class="sub" href="#k-prawo">Prawo</a>
+    <a class="sub" href="#k-narzedzia">Narzędzia</a>
+    <a class="sub" href="#k-lektury">Lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+      <div class="hero">
+        <div class="kicker">Temat dnia</div>
+        <h2>Kolejny zero-day w Citrix NetScaler. Atakowane są nawet urządzenia załatane kilka dni temu</h2>
+        <p>CVE-2026-88779 (CVSS 8,7) dotyczy NetScaler ADC i Gateway skonfigurowanych jako dostawca usług lub tożsamości SAML. Citrix opisuje ją jako błąd prowadzący do odmowy usługi, ale badacze widzą w atakach polecenia powłoki wstrzykiwane w pole nazwy użytkownika i podrzucane web shelle. CISA dała agencjom federalnym czas do 7 października.</p>
+        <a class="more" href="#a-netscaler">Czytaj cały artykuł →</a>
+      </div>
+      <div class="hero second">
+        <div class="kicker">Drugi temat</div>
+        <h2>Włamanie do FBI większe, niż sądzono: dane niemal wszystkich pracowników i 8 tys. policjantów</h2>
+        <p>Według MS NOW ShinyHunters zdobyli przez portal FBIJobs.gov m.in. adresy domowe, numery telefonów i numery ubezpieczenia społecznego prawie całej kadry Biura. Wśród poszkodowanych jest ponad 8 tys. funkcjonariuszy stanowych i lokalnych z grup zadaniowych FBI.</p>
+        <a class="more" href="#a-fbi">Czytaj cały artykuł →</a>
+      </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><a href="#a-netscaler">Citrix łata zero-day CVE-2026-88779 w NetScalerze</a>: szósta w tym roku luka NetScalera w katalogu KEV.</span></li>
+        <li><span><a href="#a-fbi">Wyciek z FBI objął prawie wszystkich pracowników</a>, a źródłem była dziura w Oracle PeopleSoft.</span></li>
+        <li><span><a href="#a-hfs">Rejetto HFS 3.x: przewidywalny klucz sesji daje RCE</a>; VulnCheck widzi próby ataków po publikacji PoC.</span></li>
+        <li><span><a href="#a-warlock">Warlock wciąż włamuje się przez stare luki ToolShell w SharePoincie</a>, m.in. do wodociągów i telekomu.</span></li>
+        <li><span><a href="#a-osaka">Ransomware wyłączył ok. 500 serwerów Osaka Metropolitan University</a>; zajęcia odwołane do 8 października.</span></li>
+        <li><span><a href="#a-kirey">Ktoś sprzedaje „Golden Ticket” do włoskiego MSP Kirey Group</a>, z rzekomym dostępem do UniCredit i Generali.</span></li>
+        <li><span><a href="#a-daiwa">Daiwa Securities: wyciek u podwykonawcy</a> obejmuje dane ok. 110 tys. klientów.</span></li>
+        <li><span><a href="#a-ta419">Chińska grupa TA419 podszywa się pod ekspertów od polityki AI</a> i kradnie sesje Microsoft 365.</span></li>
+        <li><span><a href="#a-capcut">Reklamy na Facebooku z „darmowym CapCut AI Pro”</a> instalują ScreenConnect.</span></li>
+        <li><span><a href="#a-google-vrp">Google wstrzymuje zgłoszenia w programie OSS VRP</a>, bo zalały go raporty generowane przez AI.</span></li>
+        <li><span><a href="#a-rmm">Huntress: narzędzia RMM w 45% incydentów</a> na stacjach końcowych w I kwartale.</span></li>
+        <li><span><a href="#n-vercel">Vercel potwierdza zero-day w KVM</a> zgłoszony w programie nagród za ucieczkę z piaskownicy.</span></li>
+        <li><span><a href="#n-noname">NoName057(16) atakuje DDoS strony francuskiej administracji</a>.</span></li>
+      </ol>
+    </div>
+  </section>
+  <div class="stats">
+    <button class="stat" type="button" data-filter="zeroday"><b>2</b><span>Aktywnie wykorzystywane</span></button>
+    <button class="stat" type="button" data-filter="ransomware wycieki"><b>19</b><span>Ransomware i wycieki</span></button>
+    <button class="stat" type="button" data-filter="polska"><b>2</b><span>Z Polski</span></button>
+    <button class="stat" type="button" data-filter="all"><b>52</b><span>Newsów łącznie</span></button>
+  </div>
+
+  <!-- ============ ARTYKUŁY ============ -->
+  <h2 class="section" id="artykuly">Artykuły</h2>
+
+  <article class="full" id="a-netscaler" data-cat="zeroday podatnosci">
+    <div class="kicker">Zero-day · aktywnie wykorzystywana</div>
+    <h3>Citrix łata kolejny zero-day w NetScalerze. Ataki trafiają w urządzenia załatane kilka dni wcześniej</h3>
+    <p class="lead">CVE-2026-88779 to błąd przepełnienia pamięci w NetScaler ADC i NetScaler Gateway, które działają jako dostawca usług (SP) lub dostawca tożsamości (IdP) SAML. Luka była wykorzystywana, zanim pojawiła się poprawka, a CISA wpisała ją do katalogu KEV 4 października.</p>
+    <div class="body">
+      <p>Citrix ocenia lukę na 8,7 w skali CVSS i oficjalnie pisze o odmowie usługi: wielokrotne wywołanie błędu wyłącza usługę. Według BleepingComputer spreparowane żądania logowania raz za razem wywracają proces <code>nsaaad</code>. Gdy mechanizm Pitboss przekroczy limit restartów, całe urządzenie się przeładowuje. Obraz z ataków jest jednak poważniejszy. Administratorzy znajdowali w logach żądania uwierzytelnienia, w których pole nazwy użytkownika zawierało polecenia powłoki. Polecenia pobierały plik z adresu <code>213.209.159[.]55</code>, zapisywały go jako <code>/v</code> i uruchamiały. Kevin Beaumont potwierdził ataki na swoje honeypoty, i to te z wgranymi wcześniejszymi poprawkami. Na jednym z nich znalazł pobrany plik binarny złośliwego oprogramowania. SecurityWeek opisuje skrypty, które instalują web shelle, przetrwają restart i wynoszą konfigurację. Podatność zgłosiły firmy Bishop Fox i watchTowr.</p>
+      <p>To trzeci w krótkim czasie poważny problem z NetScalerem. Kilka dni wcześniej administratorzy łatali aktywnie wykorzystywane CVE-2026-88771 i CVE-2026-88772 (nazwane „PitScaler”). Część firm musiała wtedy całkowicie odłączyć urządzenia. To szósta luka NetScalera dodana w tym roku do katalogu KEV. Agencje federalne USA mają ją usunąć do 7 października.</p>
+      <h4>Kogo dotyczy</h4>
+      <p>Tylko urządzenia z SAML. Sprawdź konfigurację pod kątem poleceń <code>add authentication samlAction</code> (SP) lub <code>add authentication samlIdPProfile</code> (IdP). Poprawione wersje to 14.1-73.41, 13.1-64.28, 14.1-73.41 FIPS oraz 13.1-37.282 dla gałęzi FIPS i NDcPP.</p>
+      <div class="todo"><b>Co zrobić:</b> natychmiast zaktualizuj urządzenia z SAML. Przejrzyj logi uwierzytelniania pod kątem nazw użytkowników zawierających polecenia powłoki, sprawdź nieoczekiwane restarty i awarie <code>nsaaad</code>, poszukaj nowych plików (np. <code>/v</code>) i web shelli. Jeśli urządzenie było wystawione bez poprawki, potraktuj je jak przejęte: zmień hasła i sekrety z konfiguracji, w tym klucze i certyfikaty SAML.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106866524543741986">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2106998501901275383">@TheHackersNews</a> · <a href="https://x.com/CISAgov/status/2106846535371956241">@CISAgov: dodanie do KEV</a> · <a href="https://x.com/SecurityWeek/status/2106976570716099046">@SecurityWeek</a> · <a href="https://x.com/CSOonline/status/2106959353651548175">@CSOonline</a> · <a href="https://x.com/DarkWebInformer/status/2106868403403407643">@DarkWebInformer</a> · <a href="https://x.com/blueteamsec1/status/2106867688807239712">@blueteamsec1</a></li>
+        <li>Artykuły: <a href="https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html">The Hacker News</a> · <a href="https://www.securityweek.com/exploitation-of-citrix-netscaler-zero-day-hits-appliances-patched-days-earlier/">SecurityWeek</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="a-fbi" data-cat="wycieki prawo">
+    <div class="kicker">Wyciek · aktualizacja</div>
+    <h3>Włamanie do FBI objęło prawie wszystkich pracowników i ponad 8 tys. policjantów</h3>
+    <p class="lead">Nowe ustalenia MS NOW pokazują, że wrześniowe włamanie ShinyHunters do FBI jest dużo poważniejsze, niż wynikało z pierwszych doniesień. Według źródeł stacji wyciekły dane osobowe niemal całej kadry Biura oraz funkcjonariuszy stanowych i lokalnych pracujących w grupach zadaniowych FBI.</p>
+    <div class="body">
+      <p>Grupa weszła przez portal rekrutacyjny FBIJobs.gov i nieznaną wcześniej lukę w module kadrowym Oracle PeopleSoft. Google ostrzegał przed tą podatnością już w czerwcu. FBI próbowało ją łatać, ale napastnicy znaleźli obejście. Wśród wykradzionych danych są imiona i nazwiska, adresy domowe, numery komórek, służbowe i prywatne adresy e-mail, numery identyfikacyjne pracowników, kontakty alarmowe i numery Social Security. Poszkodowanych jest też ponad 8 tys. policjantów stanowych i lokalnych z grup zadaniowych FBI.</p>
+      <p>Jeden z agentów zajmujących się cyberbezpieczeństwem powiedział stacji wprost o „niekompetencji”: te dane w ogóle nie powinny być podłączone do internetu, a ktoś przeniósł je do systemu dostępnego z zewnątrz. FBI potwierdza tylko, że incydent wynika z „awarii platformy zarządzanej przez zewnętrznego dostawcę”. Eksperci porównują sprawę do wycieku z amerykańskiego Office of Personnel Management w 2015 r. i nazywają ją jedną z najpoważniejszych porażek kontrwywiadowczych ostatnich lat.</p>
+      <h4>Sprawa „Reya”</h4>
+      <p>W tle trwa obława na członków grupy. Reuters, powołując się na trzy źródła, podał, że 29 września w Jordanii zatrzymano Saifa al-Dina Khadera, znanego jako „Rey” lub „ReyXBF”. Był jednym z administratorów Scattered LAPSUS$ Hunters, prowadził strony wycieków grupy Hellcat i administrował BreachForums. Ma teraz pomagać FBI w identyfikacji pozostałych członków. Brian Krebs pisze, że współpracował z organami ścigania co najmniej od czerwca 2025 r. FalconFeeds twierdzi, że już w styczniu powiązał go z ekosystemem ShinyHunters na podstawie danych z Telegrama. Ani FBI, ani władze Jordanii nie wydały w tej sprawie komunikatu.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> dane identyfikujące agentów i ich rodziny to materiał dla obcych wywiadów, szantażystów i stalkerów. Lekcja dla firm jest prosta: systemy HR z danymi wrażliwymi nie powinny być wystawione do internetu, a znane luki w aplikacjach takich jak PeopleSoft trzeba łatać i sprawdzać, czy poprawki naprawdę działają.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/SwiftOnSecurity/status/2106885398894932263">@SwiftOnSecurity, cytując MS NOW</a> · <a href="https://x.com/TheHackersNews/status/2106646901915553906">@TheHackersNews</a> · <a href="https://x.com/HackRead/status/2106721184314503174">@HackRead</a> · <a href="https://x.com/securityaffairs/status/2106742615911927904">@securityaffairs</a></li>
+        <li>Artykuły: <a href="https://www.ms.now/news/fbi-hack-shinyhunters-breach-data">MS NOW</a> · <a href="https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html">The Hacker News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="a-hfs" data-cat="zeroday podatnosci">
+      <div class="kicker">Podatność · aktywnie wykorzystywana</div>
+      <h3>Rejetto HFS: klucz sesji z Math.random() pozwala przejąć serwer</h3>
+      <p class="lead">Napastnicy atakują serwery plików Rejetto HFS w wersjach 3.0.0–3.2.0 przez lukę CVE-2026-61500 (CVSS 9,3). Daje ona sfałszowaną sesję administratora i zdalne wykonanie kodu.</p>
+      <div class="body">
+        <p>HFS wylicza klucz do podpisywania ciasteczek sesji z niekryptograficznego generatora <code>Math.random()</code>, a jednocześnie podczas logowania ujawnia niezalogowanym klientom wyniki tego samego generatora. Atakujący zbiera kilka odpowiedzi strony logowania, odtwarza stan generatora i odzyskuje klucz. Potem podpisuje sobie ciasteczko administratora i przez funkcję <code>server_code</code> uruchamia własny kod. Wystarczy dostęp do publicznej strony logowania.</p>
+        <p>Lukę nadał VulnCheck w lipcu. Teraz, po publikacji działającego PoC, firma widzi próby ataków na podatne serwery w USA. Poprawka jest w wersji 3.2.1.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj HFS do 3.2.1 lub nowszej wersji, a do tego czasu zdejmij panel z internetu. Po aktualizacji unieważnij sesje i sprawdź konfigurację <code>server_code</code> pod kątem obcego kodu.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/TheHackersNews/status/2107020956338405511">@TheHackersNews</a> · <a href="https://app.opencve.io/cve/CVE-2026-61500">OpenCVE: CVE-2026-61500</a> · <a href="https://cve.halosecurity.com/cve-advisory/cve-2026-61500-rejetto-hfs-predictable-session-key-allows-rce">Halo Security</a></div>
+    </article>
+    <article class="full" id="a-warlock" data-cat="ransomware apt">
+      <div class="kicker">Ransomware · APT</div>
+      <h3>Warlock wciąż wchodzi przez rok stare luki w SharePoincie</h3>
+      <p class="lead">Symantec opisuje nowe ataki ransomware Warlock na infrastrukturę krytyczną. Napastnicy nadal wykorzystują łańcuch luk ToolShell w lokalnym SharePoincie, który był zero-dayem w połowie 2025 r.</p>
+      <div class="body">
+        <p>Za atakami stoi grupa Longlegs (Storm-2603), łączona z chińskimi klastrami CL-CRI-1040, CamoFei i ChamelGang. Ostatnie ofiary to wodociągi, operator telekomunikacyjny, samorząd regionalny i uczelnia w krajach portugalsko- i hiszpańskojęzycznych w Europie, Afryce i Ameryce Łacińskiej.</p>
+        <p>Symantec opisuje przykładowy przebieg. 22 lipca na serwerze SharePoint pojawił się web shell w katalogu LAYOUTS i napastnicy ukradli klucze maszynowe ASP.NET. Potem przyszedł rekonesans i DLL sideloading z plikami z <code>catbox[.]moe</code> i <code>wasabisys[.]com</code>. Następnie napastnicy wykonali kod przez deserializację i użyli tuneli Visual Studio Code. Na koniec podatnym sterownikiem K7RKScan wyłączyli EDR na ponad 40 hostach i przez SYSVOL rozesłali ransomware na ponad 33 maszyny. Założyli też fałszywe konto administratora <code>SPSEPRDSetup</code>.</p>
+        <div class="todo"><b>Jak wykrywać:</b> szukaj nowych plików .aspx w LAYOUTS, procesów <code>code.exe tunnel</code> na serwerach, ładowania sterownika K7RKScan i nietypowych plików w SYSVOL. Po włamaniu przez ToolShell sama poprawka nie wystarczy: trzeba wymienić klucze maszynowe ASP.NET.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/securityaffairs/status/2106653140095221811">@securityaffairs</a> · <a href="https://securityaffairs.com/200304/malware/warlock-ransomware-still-exploits-year-old-sharepoint-flaws-to-hit-critical-infrastructure.html">Security Affairs (za raportem Symanteca)</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-ta419" data-cat="apt phishing">
+      <div class="kicker">APT · phishing</div>
+      <h3>TA419 udaje ekspertów od polityki AI i kradnie sesje Microsoft 365</h3>
+      <p class="lead">Proofpoint opisał kampanie chińskiej grupy szpiegowskiej TA419 wymierzone w ekspertów od AI w amerykańskich think tankach, na uczelniach i w kancelariach prawnych.</p>
+      <div class="body">
+        <p>Od 8 lipca napastnicy wysyłali e-maile w imieniu Lynne Parker, byłej zastępczyni dyrektora Biura Polityki Naukowej i Technologicznej Białego Domu, a później ekonomistki Heidi Crebo-Rediker. W lutym podszyli się też pod znanego pracownika Anthropic. Pierwsza wiadomość jest niewinna: zaproszenie do fikcyjnego „AI Policy Advisory Committee” albo do pracy nad raportem senackiej komisji o kontroli eksportu AI. Dopiero osoba, która odpowie, dostaje skrócony link.</p>
+        <p>Link prowadzi przez kilka przekierowań na fałszywe logowanie OneDrive zbudowane z otwartego zestawu Frameless BitB, który rysuje w stronie fałszywe okno przeglądarki. To proxy typu adversary-in-the-middle przekazuje logowanie do Microsoftu na żywo. Hasło, kod MFA i dostęp warunkowy przechodzą, a napastnik przejmuje ciasteczka sesji.</p>
+        <div class="todo"><b>Co zrobić:</b> dla osób narażonych na ataki ukierunkowane włącz uwierzytelnianie odporne na phishing (FIDO2/passkeys) i wiązanie tokenów. Monitoruj logowania z nowych adresów zaraz po kliknięciu linku.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/TheHackersNews/status/2106646436159082519">@TheHackersNews</a> · <a href="https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy">Proofpoint</a> · <a href="https://www.infosecurity-magazine.com/news/ta419-impersonates-ai-experts-us/">Infosecurity Magazine</a></div>
+    </article>
+    <article class="full" id="a-osaka" data-cat="ransomware">
+      <div class="kicker">Ransomware</div>
+      <h3>Osaka Metropolitan University sparaliżowana: 500 serwerów wyłączonych, kopie zapasowe zaszyfrowane</h3>
+      <p class="lead">Jedna z największych publicznych uczelni Japonii potwierdziła, że 2 października ransomware zaatakował jej infrastrukturę wirtualizacyjną.</p>
+      <div class="body">
+        <p>Uczelnia wyłączyła ok. 500 serwerów, a większość kopii zapasowych została zaszyfrowana i nie nadaje się do użytku. Awaria objęła wszystkie pięć kampusów: nie działa strona internetowa, system zapisów na zajęcia ani inne systemy dydaktyczne i administracyjne. Zajęcia od 2 do 8 października odwołano. Według MBS News zajęcia stacjonarne mają ruszyć od 9 października, ale uczelnia nie podaje terminu pełnego odtworzenia systemów.</p>
+        <p>Sprawca nie jest znany i nie wiadomo, czy wyciekły dane. To kolejny atak, w którym napastnicy uderzyli w hiperwizory i kopie zapasowe, a nie w pojedyncze stacje.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> kopie zapasowe w tej samej domenie i sieci co wirtualizacja padają razem z nią. Potrzebna jest kopia odizolowana (offline lub niezmienna) i osobne poświadczenia do zarządzania hiperwizorami.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/H4ckmanac/status/2107021356986470850">@H4ckmanac</a> · <a href="https://x.com/H4ckmanac/status/2107021623354331245">@H4ckmanac: źródło MBS News</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-kirey" data-cat="wycieki polska">
+      <div class="kicker pl">Wyciek · dotyczy Polski</div>
+      <h3>„Golden Ticket” do włoskiego MSP na sprzedaż. W tle banki i centrum danych w Polsce</h3>
+      <p class="lead">Na podziemnym forum ktoś oferuje pełny dostęp do Kirey Group, mediolańskiego dostawcy usług IT (ok. 1600 pracowników), i przez niego do sieci jego klientów. Informacje pochodzą wyłącznie od sprzedającego i nie są potwierdzone.</p>
+      <div class="body">
+        <p>Ogłoszenie zatytułowane „GOLDEN TICKET” twierdzi, że sprzedający ma trwały dostęp na poziomie administratora domeny dzięki skradzionemu kluczowi KRBTGT. Według niego przez stacje przesiadkowe i VPN dostał się też do sieci Banca Mediolanum, Generali, Unicoop Firenze i UniCredit. Oferta obejmuje zrzuty Active Directory, 11 prywatnych kluczy EC2 (jeden opisany jako <code>ec2-unicredit-sftp-prod</code>), działający dostęp do VPN Check Point bez MFA i sekrety OAuth2 do Microsoft 365 zapisane otwartym tekstem. Sprzedający wskazuje też lokalizacje centrów danych firmy w Polsce i we Frankfurcie.</p>
+        <p>Ani Kirey Group, ani wymienione instytucje nie potwierdziły incydentu. Jeśli oferta jest prawdziwa, to podręcznikowy przykład ataku na łańcuch dostaw: jeden dostawca usług IT daje dostęp do wielu banków.</p>
+        <div class="todo"><b>Co zrobić:</b> klienci Kirey, także w Polsce, powinni przejrzeć dostępy dostawcy (VPN, stacje przesiadkowe, konta serwisowe), wymusić MFA i obrócić klucze oraz sekrety udostępnione MSP. Po podejrzeniu Golden Ticket trzeba dwukrotnie zresetować hasło konta KRBTGT.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/MonThreat/status/2107018581787508876">@MonThreat</a></div>
+    </article>
+    <article class="full" id="a-daiwa" data-cat="wycieki">
+      <div class="kicker">Wyciek</div>
+      <h3>Daiwa Securities: wyciek u obsługi zapytań klientów</h3>
+      <p class="lead">Japoński dom maklerski ujawnił włamanie do Scala Communications, firmy obsługującej zapytania jego klientów.</p>
+      <div class="body">
+        <p>Serwery podwykonawcy były dostępne dla nieuprawnionych osób 2 i 3 października. Mogły wyciec imiona i nazwiska, adresy e-mail, numery rachunków i treść zapytań ok. 110 tys. klientów, łącznie ok. 220 tys. rekordów. Sprawca nie jest znany.</p>
+        <p>Japońskie domy maklerskie są od ubiegłego roku celem fali przejęć kont i nieautoryzowanych transakcji. Dane z wycieku, w tym numery rachunków w połączeniu z adresami e-mail, to gotowy materiał do wiarygodnego phishingu.</p>
+        <div class="todo"><b>Dla klientów:</b> spodziewaj się e-maili „od Daiwa” z prośbą o logowanie lub potwierdzenie danych. Loguj się tylko przez aplikację lub wpisany ręcznie adres.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/H4ckmanac/status/2106989427700416693">@H4ckmanac</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-capcut" data-cat="malware phishing">
+      <div class="kicker">Malware · malvertising</div>
+      <h3>„Darmowy CapCut AI Pro” z reklamy na Facebooku instaluje ScreenConnect</h3>
+      <p class="lead">Badacz Gi7w0rm opisał kampanię reklamową na Facebooku wymierzoną w użytkowników z Wielkiej Brytanii w wieku od 32 do ponad 65 lat.</p>
+      <div class="body">
+        <p>Reklamy obiecują darmowy CapCut AI Pro i poganiają ofiarę fałszywym licznikiem czasu. Prowadzą do stron <code>cutstudios[.]life</code> lub <code>onlinecapcutedit[.]top</code>, skąd pobiera się archiwum ZIP z plikiem wykonywalnym i plikami-wabikami. Po uruchomieniu program przez <code>curl.exe</code> pobiera z dwóch kubełków <code>r2[.]dev</code> agenta ConnectWise ScreenConnect (jako <code>Trade-Journal-Setup.msi</code>) oraz prawdziwy instalator CapCut. Oba uruchamia przez PowerShell z uprawnieniami administratora. Ofiara dostaje działający program, a napastnik zdalny dostęp przez serwer <code>relay.goruf[.]top</code>.</p>
+        <div class="todo"><b>Jak wykrywać:</b> szukaj instalacji ScreenConnect spoza listy zatwierdzonych narzędzi, połączeń do <code>relay.goruf[.]top</code> i plików MSI pobieranych przez <code>curl.exe</code> z <code>*.r2[.]dev</code>. Zablokuj instalację narzędzi RMM przez zwykłych użytkowników.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Gi7w0rm/status/2106873854668718523">@Gi7w0rm</a> · <a href="https://tria.ge/261004-z6gfxaxdqa/behavioral1">analiza w tria.ge</a></div>
+    </article>
+    <article class="full" id="a-rmm" data-cat="malware intel">
+      <div class="kicker">Threat intel</div>
+      <h3>Huntress: narzędzia RMM w 45% incydentów na stacjach końcowych</h3>
+      <p class="lead">Nadużywanie legalnych narzędzi do zdalnego zarządzania to dziś najczęściej obserwowana technika ataku. Wynika to z raportu Huntress omówionego przez Help Net Security.</p>
+      <div class="body">
+        <p>W I kwartale 2026 r. narzędzia RMM pojawiły się w 45% incydentów na stacjach końcowych, a w 2025 r. liczba takich przypadków wzrosła o 277% rok do roku. W jednym z opisanych ataków ofiara dostała fałszywą umowę serwisową i zainstalowała Tiflux. Napastnicy dołożyli potem na tym samym komputerze UltraVNC, Splashtop i ScreenConnect, żeby mieć kilka niezależnych dróg powrotu. „Po co budować coś od zera, skoro można wziąć legalne narzędzie z półki” – mówi Jamie Levy z Huntress.</p>
+        <p>Raport ocenia 11 technik według częstotliwości i skutków. Najwyżej obok RMM stoją manipulacja skrzynkami pocztowymi i kradzież tokenów sesji (AiTM). AI przyspiesza co najmniej sześć z nich.</p>
+        <div class="todo"><b>Co zrobić:</b> spisz zatwierdzone narzędzia RMM i alarmuj o każdym innym. Sprawdź limity czasu sesji i to, czy dostęp z nowego urządzenia wymaga ponownego uwierzytelnienia.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/helpnetsecurity/status/2106987243374063710">@helpnetsecurity</a> · <a href="https://www.helpnetsecurity.com/2026/10/05/remote-monitoring-and-management-rmm-abuse/">Help Net Security</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-google-vrp" data-cat="narzedzia">
+      <div class="kicker">Badania · bug bounty</div>
+      <h3>Google zamyka na razie OSS VRP. Za dużo raportów od AI</h3>
+      <p class="lead">Od 1 października Google nie przyjmuje zgłoszeń podatności w produktach w ramach programu nagród Open Source Software VRP.</p>
+      <div class="body">
+        <p>Firma tłumaczy to „znaczącym wzrostem automatycznych zgłoszeń, z których zdecydowana większość jest nieprawidłowa”. Nadal przyjmowane są zgłoszenia dotyczące łańcucha dostaw, raporty wysłane przed 1 października, zgłoszenia do Patch Rewards (do 15 tys. dolarów) i do Cloud VRP. Google zapowiada przebudowę programu i informacje w I kwartale 2027 r. Dotychczas OSS VRP płacił od 100 do 31 337 dolarów.</p>
+        <p>Wcześniej z podobnych powodów zgłoszenia ograniczyły curl i Intel. Wśród badaczy narasta frustracja: LiveOverflow skarży się, że ograniczenia antyspamowe utrudniają nawet zgłoszenie prawdziwego błędu. Problem pokazuje też wpis Jasona Haddixa: koszt jednego zautomatyzowanego testu klienta może sięgać tysięcy dolarów w tokenach.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Dinosn/status/2106980833374388708">@Dinosn (TechCrunch)</a> · <a href="https://x.com/BleepinComputer/status/2107024994391781650">@BleepinComputer</a> · <a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a> · <a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix</a> · <a href="https://www.bleepingcomputer.com/news/google/google-halts-open-source-bug-bounty-program-amid-ai-spam-surge/">BleepingComputer</a></div>
+    </article>
+    <article class="full" id="a-macos" data-cat="narzedzia">
+      <div class="kicker">Bezpieczeństwo AI</div>
+      <h3>Apple utrudni nadawanie „pełnego dostępu do dysku” w macOS</h3>
+      <p class="lead">Apple zapowiada dodatkowe zabezpieczenia uprawnienia Full Disk Access. Użytkownik będzie musiał je świadomie i jednoznacznie potwierdzić.</p>
+      <div class="body">
+        <p>Firma uzasadnia zmianę rosnącym ryzykiem dla prywatności, gdy agenci AI stają się coraz bardziej samodzielni. Program z pełnym dostępem do dysku widzi m.in. wiadomości, historię przeglądania i bazy innych aplikacji. Apple zauważa, że część twórców już dziś korzysta z tego uprawnienia tak, że użytkownicy nie rozumieją, co udostępniają. Firma nie podała wersji systemu ani daty wdrożenia.</p>
+        <p>Dla administratorów to sygnał, by przejrzeć, które aplikacje i narzędzia agentowe mają dziś pełny dostęp do dysku na firmowych Makach. W środowiskach zarządzanych uprawnienie to nadaje się profilem PPPC w MDM.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/helpnetsecurity/status/2107023257614348730">@helpnetsecurity</a> · <a href="https://www.helpnetsecurity.com/2026/10/05/macos-full-disk-access-updates/">Help Net Security</a></div>
+    </article>
+  </div>
+
+  <!-- ============ WSZYSTKIE NEWSY ============ -->
+  <h2 class="section" id="newsy">Wszystkie newsy</h2>
+  <div class="news">
+    <div class="news-tools">
+      <input class="news-filter" type="search" placeholder="Szukaj w newsach (np. CVE, Fortinet, ransomware)…" aria-label="Szukaj w newsach">
+      <div class="chips">
+        <button type="button" data-filter="all" class="on">Wszystkie</button>
+        <button type="button" data-filter="polska">Polska</button>
+        <button type="button" data-filter="podatnosci">Podatności i poprawki</button>
+        <button type="button" data-filter="ransomware">Ransomware</button>
+        <button type="button" data-filter="wycieki">Wycieki danych</button>
+        <button type="button" data-filter="malware">Malware i kampanie</button>
+        <button type="button" data-filter="phishing">Phishing i oszustwa</button>
+        <button type="button" data-filter="chmura">Chmura i tożsamość</button>
+        <button type="button" data-filter="intel">Threat intel i IOC</button>
+        <button type="button" data-filter="prawo">Prawo i śledztwa</button>
+        <button type="button" data-filter="narzedzia">Narzędzia i badania</button>
+        <button type="button" data-filter="lektury">Lektury i poradniki</button>
+      </div>
+    </div>
+    <p class="filter-note">Filtr: <span></span> · <button type="button">pokaż wszystko</button></p>
+    <p class="no-results">Brak newsów pasujących do wyszukiwania.</p>
+
+    <section class="cat pl" id="k-polska" data-cat="polska">
+      <h3>Polska <span class="count">1</span></h3>
+      <ul class="brief">
+        <li><b>„Algorytm starzeje się szybciej niż procedura”.</b> CyberDefence24 publikuje wywiad z prof. Tomaszem Trzcińskim o tym, jak skrócić drogę rozwiązań uczenia maszynowego z laboratorium do wojska. Wieloletnie cykle zakupowe sprawdzają się przy czołgach, ale nie przy modelach AI. <span class="src"><a href="https://x.com/CyberDefence24/status/2106998714732597634">@CyberDefence24</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-podatnosci" data-cat="podatnosci">
+      <h3>Podatności i poprawki <span class="count">1</span></h3>
+      <ul class="brief">
+        <li id="n-vercel"><b>Zero-day w KVM: ucieczka z maszyny wirtualnej w Vercel Sandbox.</b> Paulos Yibelo zgłosił w tym tygodniu ucieczkę z maszyny wirtualnej. Vercel potwierdził w ramach programu nagród za wyjście z piaskownicy (pula do 1 mln dolarów), że chodzi o zero-day w KVM. Pełny opis ma się dopiero ukazać. <span class="src"><a href="https://x.com/LiveOverflow/status/2107024415578063346">@LiveOverflow</a> · <a href="https://vercel.com/blog/one-million-dollar-hacker-challenge-for-vercel-sandbox">Vercel: program nagród</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-ransomware" data-cat="ransomware">
+      <h3>Ransomware <span class="count">10</span></h3>
+      <ul class="brief">
+        <li><b>Storm atakuje szpital w Kanadzie.</b> Grupa Storm przypisuje sobie atak na Nipigon District Memorial Hospital w Ontario i grozi publikacją danych w ciągu 4–5 dni. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106816480994095181">@FalconFeedsio</a></span></li>
+        <li><b>Booba Team i MorseLife Health System.</b> Grupa twierdzi, że zaatakowała amerykańskiego operatora opieki senioralnej i zdrowotnej MorseLife z Florydy. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106795047345676556">@FalconFeedsio</a></span></li>
+        <li><b>LockBit 5.0 i bank na Haiti.</b> LockBit wpisał na listę ofiar Capital Bank S.A. i zapowiada publikację danych za 14–15 dni. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106884216248234172">@FalconFeedsio</a></span></li>
+        <li><b>Nowa grupa ransomware: BYOD.</b> Na forum i we własnym serwisie w sieci Tor grupa ogłosiła pierwszą ofiarę, Royal Selango. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106889864964964710">@DarkWebInformer</a></span></li>
+        <li><b>Qilin: japońska firma budowlana.</b> Na stronie wycieków Qilin pojawiła się Mutsumi Group, firma z branży inżynierii lądowej. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106750732032761914">@FalconFeedsio</a></span></li>
+        <li><b>Qilin: cztery kolejne ofiary.</b> COTESMA, Enginyeria Emser, Chadwick Switchboards i Unident Group. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106794475863339358">@FalconFeedsio</a></span></li>
+        <li><b>Dire Wolf i Softruck.</b> Grupa twierdzi, że wyniosła 30 GB danych brazylijskiej firmy programistycznej Softruck. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106794673561800825">@FalconFeedsio</a></span></li>
+        <li><b>Emperador i turecka hurtownia.</b> Nowa grupa Emperador przypisuje sobie atak na Omur Hırdavat i 3,4 GB danych. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106817386909475124">@FalconFeedsio</a></span></li>
+        <li><b>Play: dwie ofiary w USA.</b> Bold Spring Nursery i Silicon Valley Glass. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106844653051847000">@FalconFeedsio</a></span></li>
+        <li><b>Krybit: trzy ofiary.</b> Dar Al Teb, Euroditel i SuperPack. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106755402545389698">@FalconFeedsio</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-wycieki" data-cat="wycieki">
+      <h3>Wycieki danych <span class="count">4</span></h3>
+      <ul class="brief">
+        <li><b>17 TB od wykonawcy stadionu na mundial 2034?</b> Grupa WallStreet twierdzi, że włamała się do konsorcjum CRCC Saudi Branch / Sama Construction, które buduje stadion na piłkarskie mistrzostwa świata w Arabii Saudyjskiej. Niepotwierdzone. <span class="src"><a href="https://x.com/H4ckmanac/status/2106994957084987512">@H4ckmanac</a></span></li>
+        <li><b>8,2 mln rekordów hiszpańskiej firmy marketingowej.</b> Na sprzedaż wystawiono zbiór przypisywany CoRegistros, firmie zajmującej się generowaniem leadów i bazami danych B2B/B2C. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106853949684818281">@DarkWebInformer</a></span></li>
+        <li><b>Lamashtu i Fluge Audiovisuales.</b> Grupa twierdzi, że ukradła ok. 40 GB (95 tys. plików) hiszpańskiej firmie audiowizualnej i spółkom z jej grupy. <span class="src"><a href="https://x.com/H4ckmanac/status/2107019832881295592">@H4ckmanac</a></span></li>
+        <li><b>SPIRALS i Seven Seas Group.</b> Grupa publikuje próbki rzekomo wykradzione firmie z ZEA: informacje o hostach wewnętrznych i dokumenty pracownicze. <span class="src"><a href="https://x.com/H4ckmanac/status/2106992074524373218">@H4ckmanac</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-malware" data-cat="malware">
+      <h3>Malware i kampanie <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>ReverseLoader rośnie pięciokrotnie.</b> W tygodniowym zestawieniu ANY.RUN liderzy rankingu złośliwego oprogramowania się nie zmienili, ale ReverseLoader zanotował pięciokrotny wzrost. W górę poszły też Remcos, SilentNet, LokiBot i FormBook. <span class="src"><a href="https://x.com/anyrun_app/status/2107003149349240912">@anyrun_app</a></span></li>
+        <li><b>Jednostronicowy dokument z obrazkiem namawia do włączenia makr.</b> The DFIR Report pokazuje fragment nowego raportu z włamania, które zaczęło się od klasycznej przynęty z makrami. <span class="src"><a href="https://x.com/TheDFIRReport/status/2106852094627995785">@TheDFIRReport</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-phishing" data-cat="phishing">
+      <h3>Phishing i oszustwa <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Phishing przez prawdziwe powiadomienia GitHuba.</b> Napastnik założył repozytorium nazwane jak login ofiary i otworzył w nim zgłoszenie (issue) z fałszywym alertem o dostępie do konta, oznaczając ofiarę. GitHub sam wysłał e-mail z notifications@github.com z linkiem do przejęcia konta przez OAuth. Bert-Jan Pals potwierdza, że strony zdjęto już z sieci. <span class="src"><a href="https://x.com/BertJanCyber/status/2106780699600785640">@BertJanCyber</a></span></li>
+        <li><b>Przejęte konto Microsoftu na X: aktualizacja.</b> SecurityWeek uzupełnił tekst o przejęciu oficjalnego konta Microsoftu przez oszustów kryptowalutowych o oświadczenie i wyjaśnienia firmy. <span class="src"><a href="https://x.com/SecurityWeek/status/2106718979536339455">@SecurityWeek</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-chmura" data-cat="chmura">
+      <h3>Chmura i tożsamość <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Klucze odzyskiwania BitLockera w Entra ID jako droga ataku.</b> Altered Security opisuje, jak klucze BitLockera maszyn wirtualnych Azure zapisane w Entra ID mogą posłużyć do odczytania zaszyfrowanych dysków. Warto sprawdzić, kto w tenancie może je czytać. <span class="src"><a href="https://x.com/CyberWarship/status/2106738107139625295">@CyberWarship</a></span></li>
+        <li><b>CSP na stronach logowania Entra ID kontra zestawy phishingowe.</b> Eli Shlomo zauważa, że nowa polityka Content Security Policy Microsoftu może zablokować starsze zestawy PhaaS i stealery wstrzykujące skrypty, ale nie nowsze proxy AiTM. <span class="src"><a href="https://x.com/ellishlomo/status/2107002545591799821">@ellishlomo</a> · <a href="https://learn.microsoft.com/en-us/entra/identity-platform/content-security-policy">Microsoft Learn</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-intel" data-cat="intel">
+      <h3>Threat intel i IOC <span class="count">5</span></h3>
+      <ul class="brief">
+        <li id="n-noname"><b>NoName057(16) uderza we Francję.</b> Prorosyjska grupa ogłasza ataki DDoS na strony służb państwowych w departamentach Haute-Saône i Vienne oraz prefektury Gers. <span class="src"><a href="https://x.com/FalconFeedsio/status/2107027949455368655">@FalconFeedsio</a></span></li>
+        <li><b>Dostęp do sieci amerykańskiego szpitala za 5 tys. dolarów.</b> Sprzedający oferuje dostęp do sieci wewnętrznej nienazwanego szpitala w USA, płatny w Monero, i proponuje pokaz na żywo. Nie jest to administrator domeny, ale ma umożliwiać kradzież bardzo wrażliwych danych. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106847241935757666">@DarkWebInformer</a></span></li>
+        <li><b>Klucz VirusTotal Enterprise na sprzedaż.</b> Ktoś oferuje za 450 dolarów klucz API z miesięcznym limitem 55 tys. zapytań. Taki dostęp pozwala przestępcom sprawdzać, czy ich próbki są już wykrywane. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106865703001158027">@DarkWebInformer</a></span></li>
+        <li><b>Yemen Cyber Group atakuje izraelską firmę.</b> Grupa przypisuje sobie atak DDoS na stronę AllTest. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106742168551669838">@FalconFeedsio</a></span></li>
+        <li><b>Tunisian Maskers Cyber Force i włoski bank.</b> Grupa ogłasza DDoS na stronę Bibanca. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106871628328042770">@FalconFeedsio</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-prawo" data-cat="prawo">
+      <h3>Prawo i śledztwa <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Irańczyk oskarżony o kradzież 31 TB z uczelnianych skrzynek w USA.</b> Security Affairs dodaje szczegóły do sprawy ekstradycji hakera z Instytutu Mabna, opisanej wczoraj: zarzuca mu się wyniesienie 31 TB danych ze skrzynek pocztowych uczelni. <span class="src"><a href="https://x.com/securityaffairs/status/2107026808545665034">@securityaffairs</a> · <a href="https://x.com/SecurityWeek/status/2106719986454564886">@SecurityWeek</a></span></li>
+        <li><b>„Rey” był na radarze od stycznia.</b> FalconFeeds twierdzi, że już w styczniu 2026 r. powiązał zatrzymanego w Jordanii członka ShinyHunters z ekosystemem Scattered LAPSUS$ Hunters, m.in. przez identyfikator na Telegramie. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106655089368944668">@FalconFeedsio</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-narzedzia" data-cat="narzedzia">
+      <h3>Narzędzia i badania <span class="count">9</span></h3>
+      <ul class="brief">
+        <li><b>XRanges for AI ocenia agentów do pentestów.</b> Środowisko obserwuje cel od środka: postęp łańcucha exploitów, pokrycie, naruszenia zakresu i to, czy środowisko przetrwało test. Sprawdza więc, czy agent AI naprawdę wykorzystał błąd. <span class="src"><a href="https://x.com/TheHackersNews/status/2107013892362977283">@TheHackersNews</a></span></li>
+        <li><b>OpenAI pokazuje GPT-5.6 Sol z ograniczonym dostępem.</b> Model ma mieć mocniejsze zabezpieczenia przed nadużyciami w obszarze cyberbezpieczeństwa. <span class="src"><a href="https://x.com/blueteamsec1/status/2106892508680925354">@blueteamsec1</a></span></li>
+        <li><b>Błąd w celu Pwn2Own na żywo.</b> Alisa Esage pokazuje sesję badawczą, w której znalazła błąd w jednym z celów konkursu Pwn2Own. <span class="src"><a href="https://x.com/alisaesage/status/2107005840247136627">@alisaesage</a></span></li>
+        <li><b>Function stomping jako BOF dla Adaptix C2.</b> Wpis o technice nadpisywania funkcji w załadowanych modułach, wraz z gotowym BOF-em. <span class="src"><a href="https://x.com/G3tSyst3m/status/2106873059953009039">@G3tSyst3m</a></span></li>
+        <li><b>Sliver GUI.</b> Graficzny interfejs do frameworka C2 Sliver w repozytorium sliverarmory. <span class="src"><a href="https://x.com/LittleJoeTables/status/2106957831928963490">@LittleJoeTables</a></span></li>
+        <li><b>Dumplyzer.</b> Otwarte, lokalne środowisko do analizy zrzutów pamięci na potrzeby DFIR i threat huntingu. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106724189109375073">@DirectoryRanger</a></span></li>
+        <li><b>spoonmap.</b> Nakładka w Pythonie na masscan i nmap do skanowania dużych sieci, zbierania banerów i skryptów NSE. <span class="src"><a href="https://x.com/KitPloit/status/2106897252006400382">@KitPloit</a></span></li>
+        <li><b>Keyorix.</b> Otwarty system zarządzania sekretami do instalacji lokalnej, dla zespołów, które nie mogą używać usług SaaS. <span class="src"><a href="https://x.com/helpnetsecurity/status/2107002856846815399">@helpnetsecurity</a></span></li>
+        <li><b>Agenci, którzy ze sobą rozmawiają.</b> Jason Haddix z Arcanum buduje platformę czatu dla agentów AI. Jego zdaniem agenci współpracujący przy zadaniach bezpieczeństwa dają lepsze wyniki. <span class="src"><a href="https://x.com/Jhaddix/status/2106867828737617975">@Jhaddix</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-lektury" data-cat="lektury">
+      <h3>Lektury i poradniki <span class="count">14</span></h3>
+      <ul class="brief">
+        <li><b>GraphQL jako niedoceniany cel bug bounty.</b> theXSSrat opisuje, jak znaleźć endpoint i odtworzyć schemat narzędziem clairvoyance, nawet gdy introspekcja jest wyłączona. Każde pole wymaga osobnej kontroli uprawnień. <span class="src"><a href="https://x.com/theXSSrat/status/2107006733365149846">@theXSSrat</a></span></li>
+        <li><b>HTB: Reactor.</b> Rozwiązanie maszyny z panelem do monitoringu reaktora na Next.js: wersje frameworka da się wyczytać z paczek JavaScript. <span class="src"><a href="https://x.com/Dinosn/status/2106770609820909733">@Dinosn</a></span></li>
+        <li><b>SANS DFIR Summit Europe: agenci AI w triażu hostów.</b> Matias Bevilacqua o tym, jak systemy agentowe mogą przejąć powtarzalną analizę stacji. <span class="src"><a href="https://x.com/sansforensics/status/2106743105936314541">@sansforensics</a></span></li>
+        <li><b>SANS: szybciej nie znaczy lepiej.</b> Oren Biderman i Amnon Kushnir o tym, gdzie AI przyspiesza informatykę śledczą, a gdzie daje szybkie, ale błędne odpowiedzi. <span class="src"><a href="https://x.com/sansforensics/status/2106711341830435197">@sansforensics</a></span></li>
+        <li><b>SANS: pochodzenie zdjęcia z iPhone’a.</b> Elliot Glendye o mało znanych artefaktach iOS, które pomagają ustalić, skąd pochodzi obraz. <span class="src"><a href="https://x.com/sansforensics/status/2106721220515565989">@sansforensics</a></span></li>
+        <li><b>SANS: czego uczy tworzenie danych testowych.</b> Wykład otwierający o interpretowaniu i weryfikowaniu dowodów cyfrowych. <span class="src"><a href="https://x.com/sansforensics/status/2106664268598837446">@sansforensics</a></span></li>
+        <li><b>Agent AI jak asystent: dostęp stopniowo.</b> Rob T. Lee radzi, by osobistemu agentowi nadawać uprawnienia po kolei, tak jak nowemu asystentowi, a nie podłączać go od razu do wszystkiego. <span class="src"><a href="https://x.com/robtlee/status/2106905072248442968">@robtlee</a></span></li>
+        <li><b>Łatanie Maców to nie fanaberia.</b> Nathan McNulty o tym, że zarządzanie aktualizacjami przez MDM da się zautomatyzować (VPP, Patch My PC, skrypt brew w Self Service). <span class="src"><a href="https://x.com/NathanMcNulty/status/2106976104842150204">@NathanMcNulty</a></span></li>
+        <li><b>Trzy pytania szpitalnego CISO do dostawcy fintech.</b> Help Net Security o ocenie ryzyka dostawców usług finansowych w ochronie zdrowia. <span class="src"><a href="https://x.com/helpnetsecurity/status/2107017957318541563">@helpnetsecurity</a></span></li>
+        <li><b>Co się stało z 36-miesięczną mapą drogową bezpieczeństwa?</b> CSO o tym, dlaczego wieloletnie plany przestały działać. <span class="src"><a href="https://x.com/CSOonline/status/2106778160838697317">@CSOonline</a></span></li>
+        <li><b>Przeglądy tygodnia Security Affairs.</b> Wydanie nr 117 przeglądu malware i drugie wydanie przeglądu AI w cyberbezpieczeństwie. <span class="src"><a href="https://x.com/securityaffairs/status/2106746722265297172">malware</a> · <a href="https://x.com/securityaffairs/status/2106772497115000958">AI</a></span></li>
+        <li><b>Agenci AI i MCP: nowe klucze do firmy.</b> Unicorn Dispatch na żywo 14 października z Jake’iem Williamsem i Brysonem Bortem. <span class="src"><a href="https://x.com/scythe_io/status/2106715963798241412">@scythe_io</a></span></li>
+        <li><b>Black Hat Asia 2027: nabór na sesje szczytów.</b> Propozycje można zgłaszać do 12 października. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106893403564720156">@BlackHatEvents</a></span></li>
+        <li><b>SecTor 2026 w Toronto.</b> Konferencja rusza w tym tygodniu. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106855402398798288">@BlackHatEvents</a></span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od wybranych kont o cyberbezpieczeństwie na X oraz raporty, do których te wpisy się odnoszą.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 5 October 2026</span><span>Issue no. 4</span><span>168 posts · 398 accounts · 52 news items</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-artykuly">Stories</a>
+    <a href="#en-newsy">All news</a>
+    <a class="sub" href="#en-k-polska">Poland</a>
+    <a class="sub" href="#en-k-podatnosci">Vulnerabilities</a>
+    <a class="sub" href="#en-k-ransomware">Ransomware</a>
+    <a class="sub" href="#en-k-wycieki">Breaches</a>
+    <a class="sub" href="#en-k-malware">Malware</a>
+    <a class="sub" href="#en-k-phishing">Phishing</a>
+    <a class="sub" href="#en-k-chmura">Cloud</a>
+    <a class="sub" href="#en-k-intel">Threat intel</a>
+    <a class="sub" href="#en-k-prawo">Law</a>
+    <a class="sub" href="#en-k-narzedzia">Tools</a>
+    <a class="sub" href="#en-k-lektury">Reading</a>
+  </nav>
+
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+      <div class="hero">
+        <div class="kicker">Top story</div>
+        <h2>Another Citrix NetScaler zero-day, and it is hitting appliances patched only days ago</h2>
+        <p>CVE-2026-88779 (CVSS 8.7) affects NetScaler ADC and Gateway configured as a SAML service provider or identity provider. Citrix calls it a denial-of-service bug, but researchers see shell commands injected into the username field and web shells dropped. CISA has given federal agencies until 7 October.</p>
+        <a class="more" href="#en-a-netscaler">Read the full story →</a>
+      </div>
+      <div class="hero second">
+        <div class="kicker">Second story</div>
+        <h2>FBI breach bigger than thought: data on almost all employees and 8,000 police officers</h2>
+        <p>According to MS NOW, ShinyHunters used the FBIJobs.gov portal to take home addresses, phone numbers and Social Security numbers for nearly the entire Bureau workforce. More than 8,000 state and local officers on FBI task forces are also affected.</p>
+        <a class="more" href="#en-a-fbi">Read the full story →</a>
+      </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><a href="#en-a-netscaler">Citrix patches NetScaler zero-day CVE-2026-88779</a>: the sixth NetScaler flaw in the KEV catalog this year.</span></li>
+        <li><span><a href="#en-a-fbi">The FBI breach hit almost every employee</a>, and it started with an Oracle PeopleSoft hole.</span></li>
+        <li><span><a href="#en-a-hfs">Rejetto HFS 3.x: a predictable session key leads to RCE</a>; VulnCheck sees attacks after a PoC went public.</span></li>
+        <li><span><a href="#en-a-warlock">Warlock still breaks in through old ToolShell SharePoint flaws</a>, hitting a water utility and a telco among others.</span></li>
+        <li><span><a href="#en-a-osaka">Ransomware takes about 500 Osaka Metropolitan University servers offline</a>; classes cancelled until 8 October.</span></li>
+        <li><span><a href="#en-a-kirey">Someone is selling a “Golden Ticket” to Italian MSP Kirey Group</a>, with alleged access to UniCredit and Generali.</span></li>
+        <li><span><a href="#en-a-daiwa">Daiwa Securities: a breach at a contractor</a> exposes data on about 110,000 customers.</span></li>
+        <li><span><a href="#en-a-ta419">Chinese group TA419 poses as AI policy experts</a> and steals Microsoft 365 sessions.</span></li>
+        <li><span><a href="#en-a-capcut">Facebook ads for a “free CapCut AI Pro”</a> install ScreenConnect.</span></li>
+        <li><span><a href="#en-a-google-vrp">Google pauses OSS VRP submissions</a> after a flood of AI-generated reports.</span></li>
+        <li><span><a href="#en-a-rmm">Huntress: RMM tools in 45% of endpoint incidents</a> in Q1.</span></li>
+        <li><span><a href="#en-n-vercel">Vercel confirms a KVM zero-day</a> reported through its sandbox escape bounty.</span></li>
+        <li><span><a href="#en-n-noname">NoName057(16) hits French government websites with DDoS</a>.</span></li>
+      </ol>
+    </div>
+  </section>
+  <div class="stats">
+    <button class="stat" type="button" data-filter="zeroday"><b>2</b><span>Actively exploited</span></button>
+    <button class="stat" type="button" data-filter="ransomware wycieki"><b>19</b><span>Ransomware &amp; breaches</span></button>
+    <button class="stat" type="button" data-filter="polska"><b>2</b><span>From Poland</span></button>
+    <button class="stat" type="button" data-filter="all"><b>52</b><span>News items</span></button>
+  </div>
+
+  <h2 class="section" id="en-artykuly">Stories</h2>
+
+  <article class="full" id="en-a-netscaler" data-cat="zeroday podatnosci">
+    <div class="kicker">Zero-day · actively exploited</div>
+    <h3>Citrix patches another NetScaler zero-day. Attacks hit appliances patched days earlier</h3>
+    <p class="lead">CVE-2026-88779 is a memory overflow bug in NetScaler ADC and NetScaler Gateway acting as a SAML service provider (SP) or identity provider (IdP). It was exploited before a fix existed, and CISA added it to the KEV catalog on 4 October.</p>
+    <div class="body">
+      <p>Citrix rates the flaw 8.7 on CVSS and officially describes denial of service: triggering it repeatedly takes the service down. According to BleepingComputer, crafted login requests crash the <code>nsaaad</code> process again and again. Once the Pitboss watchdog exceeds its restart limit, the whole appliance reboots. What attackers are doing looks worse, though. Admins found authentication requests whose username field contained shell commands. The commands fetched a file from <code>213.209.159[.]55</code>, saved it as <code>/v</code> and ran it. Kevin Beaumont confirmed attacks on his honeypots, including ones that already had the earlier patches. On one he found a downloaded malware binary. SecurityWeek describes scripts that install web shells, survive reboots and exfiltrate the configuration. The flaw was reported by Bishop Fox and watchTowr.</p>
+      <p>This is the third serious NetScaler problem in a short time. A few days earlier admins were patching the actively exploited CVE-2026-88771 and CVE-2026-88772 (dubbed “PitScaler”), and some organisations had to disconnect their appliances entirely. It is the sixth NetScaler flaw added to KEV this year. US federal agencies must fix it by 7 October.</p>
+      <h4>Who is affected</h4>
+      <p>Only appliances using SAML. Check the configuration for <code>add authentication samlAction</code> (SP) or <code>add authentication samlIdPProfile</code> (IdP). Fixed versions are 14.1-73.41, 13.1-64.28, 14.1-73.41 FIPS, and 13.1-37.282 for the FIPS and NDcPP branch.</p>
+      <div class="todo"><b>What to do:</b> update SAML-enabled appliances immediately. Review authentication logs for usernames containing shell commands, check for unexpected reboots and <code>nsaaad</code> crashes, and look for new files (such as <code>/v</code>) and web shells. If an appliance was exposed without the patch, treat it as compromised: rotate passwords and secrets stored in the configuration, including SAML keys and certificates.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106866524543741986">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2106998501901275383">@TheHackersNews</a> · <a href="https://x.com/CISAgov/status/2106846535371956241">@CISAgov: KEV addition</a> · <a href="https://x.com/SecurityWeek/status/2106976570716099046">@SecurityWeek</a> · <a href="https://x.com/CSOonline/status/2106959353651548175">@CSOonline</a> · <a href="https://x.com/DarkWebInformer/status/2106868403403407643">@DarkWebInformer</a> · <a href="https://x.com/blueteamsec1/status/2106867688807239712">@blueteamsec1</a></li>
+        <li>Articles: <a href="https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html">The Hacker News</a> · <a href="https://www.securityweek.com/exploitation-of-citrix-netscaler-zero-day-hits-appliances-patched-days-earlier/">SecurityWeek</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-a-fbi" data-cat="wycieki prawo">
+    <div class="kicker">Breach · update</div>
+    <h3>FBI breach covered almost every employee and more than 8,000 police officers</h3>
+    <p class="lead">New reporting by MS NOW shows that the September ShinyHunters breach of the FBI is far more serious than first reports suggested. According to the outlet's sources, personal data on nearly the entire Bureau workforce leaked, along with data on state and local officers serving on FBI task forces.</p>
+    <div class="body">
+      <p>The group got in through the FBIJobs.gov recruitment portal and a previously unknown flaw in the Oracle PeopleSoft HR module. Google had warned about the vulnerability in June. The FBI tried to patch it, but the attackers found a workaround. The stolen data includes names, home addresses, mobile numbers, work and personal email addresses, employee ID numbers, emergency contacts and Social Security numbers. More than 8,000 state and local police officers on FBI task forces are affected too.</p>
+      <p>One FBI cybersecurity agent told the outlet bluntly that it was “incompetence”: the data should never have been connected to the internet, and someone moved it to an internet-facing system. The FBI only confirms that the incident involved “a failure of a platform managed by a third-party vendor”. Experts compare it to the 2015 US Office of Personnel Management breach and call it one of the worst counterintelligence failures in recent years.</p>
+      <h4>The “Rey” case</h4>
+      <p>Meanwhile the hunt for group members continues. Citing three sources, Reuters reported that Saif al-Din Khader, known as “Rey” or “ReyXBF”, was detained in Jordan on 29 September. He was one of the administrators of Scattered LAPSUS$ Hunters, ran leak sites for the Hellcat group and administered BreachForums. He is now said to be helping the FBI identify other members. Brian Krebs writes that he had been cooperating with law enforcement since at least June 2025. FalconFeeds claims it linked him to the ShinyHunters ecosystem back in January using Telegram data. Neither the FBI nor the Jordanian authorities have issued a statement.</p>
+      <div class="todo"><b>Why it matters:</b> data identifying agents and their families is material for foreign intelligence services, extortionists and stalkers. The lesson for companies is simple: HR systems holding sensitive data should not be exposed to the internet, and known flaws in applications such as PeopleSoft need patching, with checks that the fixes actually work.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/SwiftOnSecurity/status/2106885398894932263">@SwiftOnSecurity, quoting MS NOW</a> · <a href="https://x.com/TheHackersNews/status/2106646901915553906">@TheHackersNews</a> · <a href="https://x.com/HackRead/status/2106721184314503174">@HackRead</a> · <a href="https://x.com/securityaffairs/status/2106742615911927904">@securityaffairs</a></li>
+        <li>Articles: <a href="https://www.ms.now/news/fbi-hack-shinyhunters-breach-data">MS NOW</a> · <a href="https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html">The Hacker News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-a-hfs" data-cat="zeroday podatnosci">
+      <div class="kicker">Vulnerability · actively exploited</div>
+      <h3>Rejetto HFS: a session key from Math.random() lets attackers take over the server</h3>
+      <p class="lead">Attackers are going after Rejetto HFS file servers, versions 3.0.0–3.2.0, through CVE-2026-61500 (CVSS 9.3). The flaw yields a forged admin session and remote code execution.</p>
+      <div class="body">
+        <p>HFS derives the key that signs session cookies from the non-cryptographic <code>Math.random()</code> generator, and during login it reveals outputs of that same generator to unauthenticated clients. An attacker collects a few login responses, reconstructs the generator state and recovers the key. They then sign their own admin cookie and run code through the <code>server_code</code> feature. Access to the public login page is all it takes.</p>
+        <p>VulnCheck assigned the CVE in July. Now that a working PoC is public, the company sees exploitation attempts against vulnerable servers in the US. The fix is in version 3.2.1.</p>
+        <div class="todo"><b>What to do:</b> update HFS to 3.2.1 or later, and take the panel off the internet until then. After updating, invalidate sessions and check the <code>server_code</code> setting for foreign code.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/TheHackersNews/status/2107020956338405511">@TheHackersNews</a> · <a href="https://app.opencve.io/cve/CVE-2026-61500">OpenCVE: CVE-2026-61500</a> · <a href="https://cve.halosecurity.com/cve-advisory/cve-2026-61500-rejetto-hfs-predictable-session-key-allows-rce">Halo Security</a></div>
+    </article>
+    <article class="full" id="en-a-warlock" data-cat="ransomware apt">
+      <div class="kicker">Ransomware · APT</div>
+      <h3>Warlock still gets in through year-old SharePoint flaws</h3>
+      <p class="lead">Symantec describes new Warlock ransomware attacks on critical infrastructure. The attackers still exploit the ToolShell chain in on-premises SharePoint, which was a zero-day in mid-2025.</p>
+      <div class="body">
+        <p>The attacks are attributed to Longlegs (Storm-2603), linked to the Chinese clusters CL-CRI-1040, CamoFei and ChamelGang. Recent victims include a water utility, a telecoms operator, a regional government and a university in Portuguese- and Spanish-speaking countries across Europe, Africa and Latin America.</p>
+        <p>Symantec walks through one example. On 22 July a web shell appeared in the SharePoint LAYOUTS directory and the attackers stole ASP.NET machine keys. Reconnaissance and DLL sideloading followed, with files hosted on <code>catbox[.]moe</code> and <code>wasabisys[.]com</code>. Next came code execution through deserialization and Visual Studio Code tunnels. Finally, the vulnerable K7RKScan driver was used to disable EDR on more than 40 hosts, and the ransomware was pushed to more than 33 machines through SYSVOL. The attackers also created a fake admin account, <code>SPSEPRDSetup</code>.</p>
+        <div class="todo"><b>How to detect:</b> look for new .aspx files in LAYOUTS, <code>code.exe tunnel</code> processes on servers, loading of the K7RKScan driver and unusual files in SYSVOL. After a ToolShell compromise, patching alone is not enough: the ASP.NET machine keys must be rotated.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/securityaffairs/status/2106653140095221811">@securityaffairs</a> · <a href="https://securityaffairs.com/200304/malware/warlock-ransomware-still-exploits-year-old-sharepoint-flaws-to-hit-critical-infrastructure.html">Security Affairs (on Symantec's report)</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-ta419" data-cat="apt phishing">
+      <div class="kicker">APT · phishing</div>
+      <h3>TA419 poses as AI policy experts and steals Microsoft 365 sessions</h3>
+      <p class="lead">Proofpoint has described campaigns by the Chinese espionage group TA419 aimed at AI experts at US think tanks, universities and law firms.</p>
+      <div class="body">
+        <p>From 8 July the attackers sent emails in the name of Lynne Parker, former principal deputy director of the White House Office of Science and Technology Policy, and later of economist Heidi Crebo-Rediker. In February they also impersonated a well-known Anthropic employee. The first message is harmless: an invitation to a fictitious “AI Policy Advisory Committee” or to work on a Senate committee report on AI export controls. Only those who reply get a shortened link.</p>
+        <p>The link goes through several redirects to a fake OneDrive login built with the open-source Frameless BitB kit, which draws a fake browser window inside the page. This adversary-in-the-middle proxy relays the login to Microsoft in real time. The password, MFA code and conditional access checks all pass, and the attacker walks away with the session cookies.</p>
+        <div class="todo"><b>What to do:</b> give people at risk of targeted attacks phishing-resistant authentication (FIDO2/passkeys) and token binding. Watch for sign-ins from new addresses right after a link is clicked.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/TheHackersNews/status/2106646436159082519">@TheHackersNews</a> · <a href="https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy">Proofpoint</a> · <a href="https://www.infosecurity-magazine.com/news/ta419-impersonates-ai-experts-us/">Infosecurity Magazine</a></div>
+    </article>
+    <article class="full" id="en-a-osaka" data-cat="ransomware">
+      <div class="kicker">Ransomware</div>
+      <h3>Osaka Metropolitan University paralysed: 500 servers offline, backups encrypted</h3>
+      <p class="lead">One of Japan's largest public universities has confirmed that ransomware hit its virtualisation infrastructure on 2 October.</p>
+      <div class="body">
+        <p>The university shut down about 500 servers, and most backups were encrypted and are unusable. All five campuses are affected: the website, course registration and other teaching and administrative systems are down. Classes from 2 to 8 October were cancelled. According to MBS News, in-person teaching should resume from 9 October, but the university gives no date for a full recovery.</p>
+        <p>The attacker is unknown, and it is not clear whether data was stolen. It is another attack in which hypervisors and backups, not individual workstations, were the target.</p>
+        <div class="todo"><b>Why it matters:</b> backups in the same domain and network as the virtualisation platform go down with it. You need an isolated copy (offline or immutable) and separate credentials for managing hypervisors.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/H4ckmanac/status/2107021356986470850">@H4ckmanac</a> · <a href="https://x.com/H4ckmanac/status/2107021623354331245">@H4ckmanac: MBS News source</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-kirey" data-cat="wycieki polska">
+      <div class="kicker pl">Breach · affects Poland</div>
+      <h3>A “Golden Ticket” to an Italian MSP for sale, with banks and a Polish data centre in the background</h3>
+      <p class="lead">Someone on an underground forum is offering full access to Kirey Group, a Milan-based IT service provider with about 1,600 staff, and through it to its customers' networks. The information comes only from the seller and is unverified.</p>
+      <div class="body">
+        <p>The listing, titled “GOLDEN TICKET”, claims persistent domain admin access via a stolen KRBTGT key. The seller says they have also reached the networks of Banca Mediolanum, Generali, Unicoop Firenze and UniCredit through jump hosts and VPN. The offer includes Active Directory dumps, 11 EC2 private keys (one labelled <code>ec2-unicredit-sftp-prod</code>), working Check Point VPN access without MFA and Microsoft 365 OAuth2 secrets stored in plain text. The seller also names the company's data centre locations in Poland and Frankfurt.</p>
+        <p>Neither Kirey Group nor the institutions named have confirmed an incident. If the offer is real, it is a textbook supply-chain attack: one IT service provider opens the door to several banks.</p>
+        <div class="todo"><b>What to do:</b> Kirey's customers, including in Poland, should review the provider's access (VPN, jump hosts, service accounts), enforce MFA and rotate keys and secrets shared with the MSP. If a Golden Ticket is suspected, reset the KRBTGT account password twice.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/MonThreat/status/2107018581787508876">@MonThreat</a></div>
+    </article>
+    <article class="full" id="en-a-daiwa" data-cat="wycieki">
+      <div class="kicker">Breach</div>
+      <h3>Daiwa Securities: a breach at its customer inquiry contractor</h3>
+      <p class="lead">The Japanese brokerage disclosed an intrusion at Scala Communications, the company that handles its customers' inquiries.</p>
+      <div class="body">
+        <p>The contractor's servers were accessed without authorisation on 2 and 3 October. Names, email addresses, account numbers and inquiry details of about 110,000 customers may have leaked, roughly 220,000 records in total. The attacker is unknown.</p>
+        <p>Japanese brokerages have faced a wave of account takeovers and unauthorised trades since last year. Leaked account numbers combined with email addresses are ready-made material for convincing phishing.</p>
+        <div class="todo"><b>For customers:</b> expect emails “from Daiwa” asking you to log in or confirm details. Only log in through the app or an address you type yourself.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/H4ckmanac/status/2106989427700416693">@H4ckmanac</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-capcut" data-cat="malware phishing">
+      <div class="kicker">Malware · malvertising</div>
+      <h3>A “free CapCut AI Pro” from a Facebook ad installs ScreenConnect</h3>
+      <p class="lead">Researcher Gi7w0rm has described a Facebook ad campaign aimed at users in the UK aged 32 to over 65.</p>
+      <div class="body">
+        <p>The ads promise a free CapCut AI Pro and rush the victim with a fake countdown timer. They lead to <code>cutstudios[.]life</code> or <code>onlinecapcutedit[.]top</code>, which serve a ZIP archive with an executable and decoy files. When run, the program uses <code>curl.exe</code> to download a ConnectWise ScreenConnect agent (as <code>Trade-Journal-Setup.msi</code>) and a genuine CapCut installer from two <code>r2[.]dev</code> buckets. It runs both through PowerShell with admin rights. The victim gets working software, and the attacker gets remote access through the <code>relay.goruf[.]top</code> server.</p>
+        <div class="todo"><b>How to detect:</b> look for ScreenConnect installs outside your approved tools, connections to <code>relay.goruf[.]top</code> and MSI files fetched by <code>curl.exe</code> from <code>*.r2[.]dev</code>. Block regular users from installing RMM tools.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Gi7w0rm/status/2106873854668718523">@Gi7w0rm</a> · <a href="https://tria.ge/261004-z6gfxaxdqa/behavioral1">tria.ge analysis</a></div>
+    </article>
+    <article class="full" id="en-a-rmm" data-cat="malware intel">
+      <div class="kicker">Threat intel</div>
+      <h3>Huntress: RMM tools in 45% of endpoint incidents</h3>
+      <p class="lead">Abuse of legitimate remote management tools is now the most frequently observed attack technique, according to a Huntress report covered by Help Net Security.</p>
+      <div class="body">
+        <p>In Q1 2026 RMM tools appeared in 45% of endpoint incidents, and in 2025 such cases grew 277% year on year. In one case the victim received a fake service agreement and installed Tiflux. The attackers then added UltraVNC, Splashtop and ScreenConnect to the same machine, giving themselves several independent ways back in. “Why would you build from scratch when you can pull a legitimate tool off the shelf?” says Jamie Levy of Huntress.</p>
+        <p>The report ranks 11 techniques by frequency and impact. Alongside RMM, mailbox manipulation and session token theft (AiTM) sit at the top. AI is accelerating at least six of them.</p>
+        <div class="todo"><b>What to do:</b> list your approved RMM tools and alert on any other. Check session timeouts and whether access from a new device requires fresh authentication.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/helpnetsecurity/status/2106987243374063710">@helpnetsecurity</a> · <a href="https://www.helpnetsecurity.com/2026/10/05/remote-monitoring-and-management-rmm-abuse/">Help Net Security</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-google-vrp" data-cat="narzedzia">
+      <div class="kicker">Research · bug bounty</div>
+      <h3>Google pauses OSS VRP for now: too many AI reports</h3>
+      <p class="lead">Since 1 October Google has stopped accepting product vulnerability reports under its Open Source Software VRP reward programme.</p>
+      <div class="body">
+        <p>The company cites “a significant rise in automated submissions, the vast majority of which are not valid”. Supply-chain reports, reports filed before 1 October, Patch Rewards submissions (up to $15,000) and Cloud VRP reports are still accepted. Google plans to rework the programme and promises an update in Q1 2027. OSS VRP paid between $100 and $31,337.</p>
+        <p>curl and Intel previously restricted submissions for similar reasons. Researchers are growing frustrated: LiveOverflow complains that anti-spam limits make it hard even to report a real bug. Jason Haddix's post shows another side of the problem: one automated client test can cost thousands of dollars in tokens.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Dinosn/status/2106980833374388708">@Dinosn (TechCrunch)</a> · <a href="https://x.com/BleepinComputer/status/2107024994391781650">@BleepinComputer</a> · <a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a> · <a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix</a> · <a href="https://www.bleepingcomputer.com/news/google/google-halts-open-source-bug-bounty-program-amid-ai-spam-surge/">BleepingComputer</a></div>
+    </article>
+    <article class="full" id="en-a-macos" data-cat="narzedzia">
+      <div class="kicker">AI security</div>
+      <h3>Apple will make “Full Disk Access” harder to grant in macOS</h3>
+      <p class="lead">Apple plans extra safeguards for the Full Disk Access permission. Users will have to confirm it explicitly and knowingly.</p>
+      <div class="body">
+        <p>The company justifies the change by rising privacy risks as AI agents become more autonomous. A program with full disk access can see messages, browsing history and other apps' databases. Apple notes that some developers already use the permission in ways users do not understand. It has not given a macOS version or rollout date.</p>
+        <p>For admins, this is a signal to review which apps and agent tools currently have full disk access on company Macs. In managed environments the permission is granted through a PPPC profile in MDM.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/helpnetsecurity/status/2107023257614348730">@helpnetsecurity</a> · <a href="https://www.helpnetsecurity.com/2026/10/05/macos-full-disk-access-updates/">Help Net Security</a></div>
+    </article>
+  </div>
+
+  <h2 class="section" id="en-newsy">All news</h2>
+  <div class="news">
+    <div class="news-tools">
+      <input class="news-filter" type="search" placeholder="Search the news (e.g. CVE, Fortinet, ransomware)…" aria-label="Search the news">
+      <div class="chips">
+        <button type="button" data-filter="all" class="on">All</button>
+        <button type="button" data-filter="polska">Poland</button>
+        <button type="button" data-filter="podatnosci">Vulnerabilities &amp; patches</button>
+        <button type="button" data-filter="ransomware">Ransomware</button>
+        <button type="button" data-filter="wycieki">Data breaches</button>
+        <button type="button" data-filter="malware">Malware &amp; campaigns</button>
+        <button type="button" data-filter="phishing">Phishing &amp; fraud</button>
+        <button type="button" data-filter="chmura">Cloud &amp; identity</button>
+        <button type="button" data-filter="intel">Threat intel &amp; IOCs</button>
+        <button type="button" data-filter="prawo">Law &amp; investigations</button>
+        <button type="button" data-filter="narzedzia">Tools &amp; research</button>
+        <button type="button" data-filter="lektury">Reading &amp; guides</button>
+      </div>
+    </div>
+    <p class="filter-note">Filter: <span></span> · <button type="button">show all</button></p>
+    <p class="no-results">No news matches your search.</p>
+
+    <section class="cat pl" id="en-k-polska" data-cat="polska">
+      <h3>Poland <span class="count">1</span></h3>
+      <ul class="brief">
+        <li><b>“The algorithm ages faster than the procedure.”</b> CyberDefence24 publishes an interview with Prof. Tomasz Trzciński on shortening the path of machine-learning solutions from the lab to the army. Multi-year procurement cycles work for tanks, but not for AI models. <span class="src"><a href="https://x.com/CyberDefence24/status/2106998714732597634">@CyberDefence24</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-podatnosci" data-cat="podatnosci">
+      <h3>Vulnerabilities &amp; patches <span class="count">1</span></h3>
+      <ul class="brief">
+        <li id="en-n-vercel"><b>KVM zero-day: a VM escape in Vercel Sandbox.</b> Paulos Yibelo reported a virtual machine escape this week. Vercel confirmed through its sandbox escape bounty programme (a pool of up to $1 million) that it is a KVM zero-day. A full write-up is still to come. <span class="src"><a href="https://x.com/LiveOverflow/status/2107024415578063346">@LiveOverflow</a> · <a href="https://vercel.com/blog/one-million-dollar-hacker-challenge-for-vercel-sandbox">Vercel: bounty programme</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-ransomware" data-cat="ransomware">
+      <h3>Ransomware <span class="count">10</span></h3>
+      <ul class="brief">
+        <li><b>Storm hits a Canadian hospital.</b> The Storm group claims an attack on Nipigon District Memorial Hospital in Ontario and threatens to publish data within 4–5 days. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106816480994095181">@FalconFeedsio</a></span></li>
+        <li><b>Booba Team and MorseLife Health System.</b> The group claims an attack on MorseLife, a US senior care and health provider in Florida. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106795047345676556">@FalconFeedsio</a></span></li>
+        <li><b>LockBit 5.0 and a Haitian bank.</b> LockBit has listed Capital Bank S.A. as a victim and says it will publish data in 14–15 days. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106884216248234172">@FalconFeedsio</a></span></li>
+        <li><b>New ransomware group: BYOD.</b> On a forum and its own Tor site the group announced its first victim, Royal Selango. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106889864964964710">@DarkWebInformer</a></span></li>
+        <li><b>Qilin: a Japanese construction firm.</b> Mutsumi Group, a civil engineering company, has appeared on Qilin's leak site. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106750732032761914">@FalconFeedsio</a></span></li>
+        <li><b>Qilin: four more victims.</b> COTESMA, Enginyeria Emser, Chadwick Switchboards and Unident Group. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106794475863339358">@FalconFeedsio</a></span></li>
+        <li><b>Dire Wolf and Softruck.</b> The group claims to have taken 30 GB of data from Brazilian software company Softruck. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106794673561800825">@FalconFeedsio</a></span></li>
+        <li><b>Emperador and a Turkish wholesaler.</b> The new Emperador group claims an attack on Omur Hırdavat and 3.4 GB of data. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106817386909475124">@FalconFeedsio</a></span></li>
+        <li><b>Play: two US victims.</b> Bold Spring Nursery and Silicon Valley Glass. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106844653051847000">@FalconFeedsio</a></span></li>
+        <li><b>Krybit: three victims.</b> Dar Al Teb, Euroditel and SuperPack. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106755402545389698">@FalconFeedsio</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-wycieki" data-cat="wycieki">
+      <h3>Data breaches <span class="count">4</span></h3>
+      <ul class="brief">
+        <li><b>17 TB from a 2034 World Cup stadium contractor?</b> The WallStreet group claims to have breached the CRCC Saudi Branch / Sama Construction consortium, which is building a stadium for the football World Cup in Saudi Arabia. Unverified. <span class="src"><a href="https://x.com/H4ckmanac/status/2106994957084987512">@H4ckmanac</a></span></li>
+        <li><b>8.2 million records from a Spanish marketing firm.</b> A dataset attributed to CoRegistros, a lead generation and B2B/B2C database company, has been put up for sale. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106853949684818281">@DarkWebInformer</a></span></li>
+        <li><b>Lamashtu and Fluge Audiovisuales.</b> The group claims to have stolen about 40 GB (95,000 files) from the Spanish audiovisual company and related group firms. <span class="src"><a href="https://x.com/H4ckmanac/status/2107019832881295592">@H4ckmanac</a></span></li>
+        <li><b>SPIRALS and Seven Seas Group.</b> The group publishes samples allegedly stolen from the UAE company: internal host information and employee documents. <span class="src"><a href="https://x.com/H4ckmanac/status/2106992074524373218">@H4ckmanac</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-malware" data-cat="malware">
+      <h3>Malware &amp; campaigns <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>ReverseLoader grows fivefold.</b> In ANY.RUN's weekly roundup the malware leaders stayed the same, but ReverseLoader saw a fivefold surge. Remcos, SilentNet, LokiBot and FormBook also rose. <span class="src"><a href="https://x.com/anyrun_app/status/2107003149349240912">@anyrun_app</a></span></li>
+        <li><b>A one-page document with a picture urges victims to enable macros.</b> The DFIR Report shares a snippet from a new intrusion report that began with a classic macro lure. <span class="src"><a href="https://x.com/TheDFIRReport/status/2106852094627995785">@TheDFIRReport</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-phishing" data-cat="phishing">
+      <h3>Phishing &amp; fraud <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Phishing through real GitHub notifications.</b> The attacker created a repository named after the victim's username and opened an issue with a fake account-access alert, mentioning the victim. GitHub itself then sent an email from notifications@github.com with a link to an OAuth account takeover. Bert-Jan Pals confirms the sites are already offline. <span class="src"><a href="https://x.com/BertJanCyber/status/2106780699600785640">@BertJanCyber</a></span></li>
+        <li><b>Microsoft's hijacked X account: update.</b> SecurityWeek has updated its story about crypto scammers taking over Microsoft's official account with a statement and clarifications from the company. <span class="src"><a href="https://x.com/SecurityWeek/status/2106718979536339455">@SecurityWeek</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-chmura" data-cat="chmura">
+      <h3>Cloud &amp; identity <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>BitLocker recovery keys in Entra ID as an attack path.</b> Altered Security describes how BitLocker keys for Azure VMs stored in Entra ID can be used to read encrypted disks. Worth checking who in your tenant can read them. <span class="src"><a href="https://x.com/CyberWarship/status/2106738107139625295">@CyberWarship</a></span></li>
+        <li><b>CSP on Entra ID sign-in pages vs phishing kits.</b> Eli Shlomo notes that Microsoft's new Content Security Policy may block older PhaaS kits and stealers that inject scripts, but not newer AiTM proxies. <span class="src"><a href="https://x.com/ellishlomo/status/2107002545591799821">@ellishlomo</a> · <a href="https://learn.microsoft.com/en-us/entra/identity-platform/content-security-policy">Microsoft Learn</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-intel" data-cat="intel">
+      <h3>Threat intel &amp; IOCs <span class="count">5</span></h3>
+      <ul class="brief">
+        <li id="en-n-noname"><b>NoName057(16) strikes France.</b> The pro-Russian group announces DDoS attacks on state services websites in the Haute-Saône and Vienne departments and the Gers prefecture. <span class="src"><a href="https://x.com/FalconFeedsio/status/2107027949455368655">@FalconFeedsio</a></span></li>
+        <li><b>Access to a US hospital network for $5,000.</b> A seller offers access to the internal network of an unnamed US hospital, paid in Monero, with live demonstrations. It is not domain admin, but supposedly allows theft of very sensitive data. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106847241935757666">@DarkWebInformer</a></span></li>
+        <li><b>A VirusTotal Enterprise key for sale.</b> Someone is offering an API key with a monthly quota of 55,000 requests for $450. Such access lets criminals check whether their samples are already detected. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106865703001158027">@DarkWebInformer</a></span></li>
+        <li><b>Yemen Cyber Group targets an Israeli company.</b> The group claims a DDoS attack on the AllTest website. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106742168551669838">@FalconFeedsio</a></span></li>
+        <li><b>Tunisian Maskers Cyber Force and an Italian bank.</b> The group announces a DDoS on the Bibanca website. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106871628328042770">@FalconFeedsio</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-prawo" data-cat="prawo">
+      <h3>Law &amp; investigations <span class="count">2</span></h3>
+      <ul class="brief">
+        <li><b>Iranian accused of stealing 31 TB from US university mailboxes.</b> Security Affairs adds detail to yesterday's story on the extradition of the Mabna Institute hacker: he is accused of exfiltrating 31 TB of data from university mailboxes. <span class="src"><a href="https://x.com/securityaffairs/status/2107026808545665034">@securityaffairs</a> · <a href="https://x.com/SecurityWeek/status/2106719986454564886">@SecurityWeek</a></span></li>
+        <li><b>“Rey” was on the radar since January.</b> FalconFeeds claims that back in January 2026 it linked the ShinyHunters member detained in Jordan to the Scattered LAPSUS$ Hunters ecosystem, partly through a Telegram ID. <span class="src"><a href="https://x.com/FalconFeedsio/status/2106655089368944668">@FalconFeedsio</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-narzedzia" data-cat="narzedzia">
+      <h3>Tools &amp; research <span class="count">9</span></h3>
+      <ul class="brief">
+        <li><b>XRanges for AI scores pentesting agents.</b> The environment watches the target from the inside: exploit-chain progress, coverage, scope violations and whether the environment survived the run. It checks whether an AI agent really exploited a bug. <span class="src"><a href="https://x.com/TheHackersNews/status/2107013892362977283">@TheHackersNews</a></span></li>
+        <li><b>OpenAI previews GPT-5.6 Sol with restricted access.</b> The model is said to have stronger safeguards against cyber misuse. <span class="src"><a href="https://x.com/blueteamsec1/status/2106892508680925354">@blueteamsec1</a></span></li>
+        <li><b>A Pwn2Own target bug, live.</b> Alisa Esage shares a research session in which she found a bug in one of the Pwn2Own targets. <span class="src"><a href="https://x.com/alisaesage/status/2107005840247136627">@alisaesage</a></span></li>
+        <li><b>Function stomping as a BOF for Adaptix C2.</b> A post on overwriting functions in loaded modules, with a ready-made BOF. <span class="src"><a href="https://x.com/G3tSyst3m/status/2106873059953009039">@G3tSyst3m</a></span></li>
+        <li><b>Sliver GUI.</b> A graphical interface for the Sliver C2 framework, in the sliverarmory repository. <span class="src"><a href="https://x.com/LittleJoeTables/status/2106957831928963490">@LittleJoeTables</a></span></li>
+        <li><b>Dumplyzer.</b> An open, local-first workbench for memory dump analysis for DFIR and threat hunting. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106724189109375073">@DirectoryRanger</a></span></li>
+        <li><b>spoonmap.</b> A Python wrapper around masscan and nmap for scanning large networks, banner grabbing and NSE scripts. <span class="src"><a href="https://x.com/KitPloit/status/2106897252006400382">@KitPloit</a></span></li>
+        <li><b>Keyorix.</b> Open-source, on-premises secrets management for teams that cannot use SaaS. <span class="src"><a href="https://x.com/helpnetsecurity/status/2107002856846815399">@helpnetsecurity</a></span></li>
+        <li><b>Agents that talk to each other.</b> Jason Haddix of Arcanum is building a chat platform for AI agents. In his experience, agents that collaborate on security tasks do better work. <span class="src"><a href="https://x.com/Jhaddix/status/2106867828737617975">@Jhaddix</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-lektury" data-cat="lektury">
+      <h3>Reading &amp; guides <span class="count">14</span></h3>
+      <ul class="brief">
+        <li><b>GraphQL as an underrated bug bounty target.</b> theXSSrat explains how to find the endpoint and rebuild the schema with clairvoyance, even when introspection is disabled. Every field needs its own authorisation check. <span class="src"><a href="https://x.com/theXSSrat/status/2107006733365149846">@theXSSrat</a></span></li>
+        <li><b>HTB: Reactor.</b> A walkthrough of a box with a Next.js reactor monitoring dashboard: the framework versions can be read from the JavaScript chunks. <span class="src"><a href="https://x.com/Dinosn/status/2106770609820909733">@Dinosn</a></span></li>
+        <li><b>SANS DFIR Summit Europe: AI agents for host triage.</b> Matias Bevilacqua on how agentic systems can take over repetitive host analysis. <span class="src"><a href="https://x.com/sansforensics/status/2106743105936314541">@sansforensics</a></span></li>
+        <li><b>SANS: faster is not better.</b> Oren Biderman and Amnon Kushnir on where AI speeds up forensics and where it produces fast but wrong answers. <span class="src"><a href="https://x.com/sansforensics/status/2106711341830435197">@sansforensics</a></span></li>
+        <li><b>SANS: where did that iPhone photo come from?</b> Elliot Glendye on little-known iOS artefacts that help establish an image's origin. <span class="src"><a href="https://x.com/sansforensics/status/2106721220515565989">@sansforensics</a></span></li>
+        <li><b>SANS: what creating test data teaches.</b> The opening talk on interpreting and validating digital evidence. <span class="src"><a href="https://x.com/sansforensics/status/2106664268598837446">@sansforensics</a></span></li>
+        <li><b>An AI agent is like an assistant: grant access gradually.</b> Rob T. Lee advises giving a personal agent permissions one step at a time, as with a new assistant, rather than connecting it to everything at once. <span class="src"><a href="https://x.com/robtlee/status/2106905072248442968">@robtlee</a></span></li>
+        <li><b>Patching Macs is not optional.</b> Nathan McNulty on how update management through MDM can be automated (VPP, Patch My PC, a brew script in Self Service). <span class="src"><a href="https://x.com/NathanMcNulty/status/2106976104842150204">@NathanMcNulty</a></span></li>
+        <li><b>Three questions a hospital CISO should ask a fintech vendor.</b> Help Net Security on assessing the risk of financial service providers in healthcare. <span class="src"><a href="https://x.com/helpnetsecurity/status/2107017957318541563">@helpnetsecurity</a></span></li>
+        <li><b>Whatever happened to the 36-month security roadmap?</b> CSO on why multi-year plans stopped working. <span class="src"><a href="https://x.com/CSOonline/status/2106778160838697317">@CSOonline</a></span></li>
+        <li><b>Security Affairs weekly roundups.</b> Issue 117 of the malware roundup and the second AI-in-cybersecurity roundup. <span class="src"><a href="https://x.com/securityaffairs/status/2106746722265297172">malware</a> · <a href="https://x.com/securityaffairs/status/2106772497115000958">AI</a></span></li>
+        <li><b>AI agents and MCP: new keys to the enterprise.</b> Unicorn Dispatch live on 14 October with Jake Williams and Bryson Bort. <span class="src"><a href="https://x.com/scythe_io/status/2106715963798241412">@scythe_io</a></span></li>
+        <li><b>Black Hat Asia 2027: call for summit sessions.</b> Proposals are due by 12 October. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106893403564720156">@BlackHatEvents</a></span></li>
+        <li><b>SecTor 2026 in Toronto.</b> The conference kicks off this week. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106855402398798288">@BlackHatEvents</a></span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Sources: posts from the last ~24 h by selected cybersecurity accounts on X, plus the reports those posts refer to.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<button class="to-top" id="toTop" type="button" aria-label="Na górę / Back to top">↑</button>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber — 05.10.2026', en: 'Cyber Daily — 5 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-cyber-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-cyber-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      set(root.getAttribute('data-lang') === 'en' ? 'pl' : 'en');
+      window.scrollTo(0, 0);
+    });
+
+    // wyszukiwarka newsów: filtruje pozycje w obrębie jednej wersji językowej
+    document.querySelectorAll('.news').forEach(function (news) {
+      var input = news.querySelector('.news-filter'), empty = news.querySelector('.no-results');
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase(), any = false;
+        news.querySelectorAll('.cat').forEach(function (cat) {
+          var shown = 0;
+          cat.querySelectorAll('li').forEach(function (li) {
+            var ok = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+            li.hidden = !ok; if (ok) shown++;
+          });
+          cat.hidden = shown === 0; if (shown) any = true;
+        });
+        empty.style.display = any ? 'none' : 'block';
+      });
+    });
+
+    // filtrowanie po kategorii: liczniki na stronie 1 i chipy w „Wszystkie newsy”
+    document.querySelectorAll('div.lang-pl, div.lang-en').forEach(function (block) {
+      var note = block.querySelector('.filter-note');
+      var current = 'all';
+      function apply(f) {
+        current = f;
+        var wanted = f === 'all' ? null : f.split(' ');
+        function match(el) {
+          if (!wanted) return true;
+          var cats = (el.getAttribute('data-cat') || '').split(' ');
+          return wanted.some(function (w) { return cats.indexOf(w) !== -1; });
+        }
+        block.querySelectorAll('article.full').forEach(function (a) { a.classList.toggle('f-off', !match(a)); });
+        block.querySelectorAll('.pair').forEach(function (p) {
+          var shown = p.querySelectorAll('article.full:not(.f-off)').length;
+          p.classList.toggle('f-off', shown === 0);
+          p.classList.toggle('solo', shown === 1);
+        });
+        block.querySelectorAll('section.cat').forEach(function (s) { s.classList.toggle('f-off', !match(s)); });
+        block.querySelectorAll('[data-filter]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-filter') === f && f !== 'all'); });
+        var allChip = block.querySelector('.chips [data-filter="all"]'); if (allChip) allChip.classList.toggle('on', f === 'all');
+        if (note) {
+          var label = block.querySelector('.chips [data-filter="' + f.split(' ')[0] + '"]');
+          note.querySelector('span').textContent = label ? label.textContent : f;
+          note.classList.toggle('show', f !== 'all');
+        }
+      }
+      block.querySelectorAll('[data-filter]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var f = b.getAttribute('data-filter');
+          apply(f === current ? 'all' : f);
+          if (b.classList.contains('stat')) {
+            var target = block.querySelector('h2.section');
+            if (target) target.scrollIntoView();
+          }
+        });
+      });
+      if (note) note.querySelector('button').addEventListener('click', function () { apply('all'); });
+    });
+
+    // przycisk „na górę”
+    var up = document.getElementById('toTop');
+    window.addEventListener('scroll', function () { up.classList.toggle('show', window.scrollY > 800); });
+    up.addEventListener('click', function () { window.scrollTo(0, 0); });  })();
+</script>
+</body>
+</html>
