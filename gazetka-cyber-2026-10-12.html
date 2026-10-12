@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber — 12.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ef; --paper: #fffdf9; --ink: #1b1a18; --muted: #6a655c; --rule: #dad4c7;
+    --accent: #b3261e; --accent-soft: #fbe9e7; --hot: #8a1c14;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea; --pl: #7a2e8c; --pl-soft: #f4e8f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312; --paper: #1c1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #36322d;
+      --accent: #ff8a80; --accent-soft: #3a1f1d; --hot: #ffb4ab;
+      --ok: #7fd49b; --ok-soft: #18301f; --pl: #e2a8f0; --pl-soft: #33203a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { position: relative; text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(38px, 8vw, 72px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead h1 .red { color: var(--accent); }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 820px) { .front { grid-template-columns: 1fr; } }
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(24px, 3.8vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero.second h2 { font-size: clamp(21px, 3vw, 26px); }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--accent); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+  .kicker.pl { color: var(--pl); }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+
+  /* liczniki na stronie 1 */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0 0; }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+  .stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1.1; }
+  .stat span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(21px, 3vw, 27px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 820px) { .pair { grid-template-columns: 1fr; } }
+
+  /* wszystkie newsy */
+  .news-tools { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 12px 0; display: flex; flex-direction: column; gap: 10px; }
+  .news-filter { width: 100%; font: 15px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 14px; }
+  .news-filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips a { font-size: 12px; font-weight: 600; text-decoration: none; padding: 4px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); }
+  .chips a:hover { color: var(--ink); border-color: var(--ink); }
+  .cat { scroll-margin-top: 110px; }
+  .cat h3 { font-family: Fraunces, Georgia, serif; font-size: 22px; margin: 28px 0 0; display: flex; align-items: baseline; gap: 10px; }
+  .cat h3 .count { font: 600 12px Inter, sans-serif; color: var(--muted); }
+  .cat.pl h3 { color: var(--pl); }
+  ul.brief { list-style: none; padding: 0; margin: 10px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 12px 18px; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.5; }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  ul.brief .hot { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--paper); background: var(--hot); border-radius: 4px; padding: 0 6px; margin-right: 6px; vertical-align: 1px; }
+  .no-results { display: none; color: var(--muted); font-size: 15px; padding: 16px 0; }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+  /* filtrowanie, nawigacja */
+  button.stat { font: inherit; color: inherit; text-align: left; width: 100%; cursor: pointer; }
+  button.stat:hover, button.stat.on { border-color: var(--accent); }
+  button.stat.on b { color: var(--accent); }
+  .chips button { font: 600 12px Inter, sans-serif; padding: 4px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); cursor: pointer; }
+  .chips button:hover { color: var(--ink); border-color: var(--ink); }
+  .chips button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .f-off { display: none !important; }
+  .pair.solo { grid-template-columns: 1fr; }
+  .filter-note { display: none; margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+  .filter-note.show { display: block; }
+  .filter-note button { font: 600 13px Inter, sans-serif; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+  nav.toc .sub { font-weight: 500; }
+  .to-top { position: fixed; right: 16px; bottom: 16px; z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: 600 18px Inter, sans-serif; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .to-top.show { opacity: 1; pointer-events: auto; }
+  .to-top:hover { border-color: var(--accent); color: var(--accent); }</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka <span class="red">Cyber</span></span><span class="lang-en"><span class="red">Cyber</span> Daily</span></h1>
+  </header>
+
+  <!-- ==================== POLSKI ==================== -->
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 12 października 2026</span><span>Wydanie nr 5</span><span>159 wpisów · 398 kont · 88 newsów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#artykuly">Artykuły</a>
+    <a href="#newsy">Wszystkie newsy</a>
+    <a class="sub" href="#k-polska">Polska</a>
+    <a class="sub" href="#k-zeroday">Zero-day</a>
+    <a class="sub" href="#k-podatnosci">Podatności</a>
+    <a class="sub" href="#k-ransomware">Ransomware</a>
+    <a class="sub" href="#k-wycieki">Wycieki</a>
+    <a class="sub" href="#k-malware">Malware</a>
+    <a class="sub" href="#k-apt">APT</a>
+    <a class="sub" href="#k-phishing">Phishing</a>
+    <a class="sub" href="#k-chmura">Chmura</a>
+    <a class="sub" href="#k-intel">Threat intel</a>
+    <a class="sub" href="#k-narzedzia">Narzędzia</a>
+    <a class="sub" href="#k-lektury">Lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+      <div class="hero">
+        <div class="kicker">Temat dnia</div>
+        <h2>Ktoś zdalnie rozmroził lodówki w setkach francuskich marketów</h2>
+        <p>W nocy z niedzieli na poniedziałek napastnicy przejęli sterowniki chłodnicze Danfoss w sklepach Intermarché, Netto, Leclerc i Super U i włączyli ciągłe odszranianie z nastawą 50°C. Towar świeży i mrożony trzeba wyrzucić, a straty pojedynczych sklepów sięgają 200 tys. euro. Według francuskich mediów atak objął starsze wersje systemu, sprzed wersji 4.</p>
+        <a class="more" href="#a-danfoss">Czytaj cały artykuł →</a>
+      </div>
+      <div class="hero second">
+        <div class="kicker">Drugi temat</div>
+        <h2>Ledger potwierdza implant sprzętowy w portfelu. Sprawa mogła dotrzeć do Europy</h2>
+        <p>Producent portfeli kryptowalutowych przyznał, że w urządzeniu jednego z okradzionych klientów był nieautoryzowany układ. Wszystkie potwierdzone przypadki dotyczą malezyjskiego dystrybutora CryptoBilis, a straty szacuje się na 86–93 mln dolarów. Pojawiło się też niepotwierdzone zgłoszenie o implancie w portfelu kupionym w MediaMarkt.</p>
+        <a class="more" href="#a-ledger">Czytaj cały artykuł →</a>
+      </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><a href="#a-danfoss">Atak na sterowniki chłodnicze Danfoss</a> zniszczył towar w setkach francuskich marketów.</span></li>
+        <li><span><a href="#a-ledger">Ledger potwierdził implant sprzętowy</a> w portfelu od dystrybutora CryptoBilis i wstrzymał jego sprzedaż.</span></li>
+        <li><span><a href="#a-sonicwall">Dwa dni po poprawce ruszyły próby ataków</a> na lukę CVSS 10.0 w SonicWall SMA 1000.</span></li>
+        <li><span><a href="#a-pegasus">ABW: dane z Pegasusa opuszczały Polskę</a>, a CBA nie miało pełnej kontroli nad systemem.</span></li>
+        <li><span><a href="#a-pekao">CSIRT KNF ostrzega przed fałszywą aplikacją Pekao</a>, która przez NFC przekazuje dane karty przestępcom.</span></li>
+        <li><span><a href="#a-cyberxero">CyberXero użył 51 agentów Claude Code</a>, żeby w 61 sekund wgrać 32 web shelle; celował też w ukraińską energetykę.</span></li>
+        <li><span><a href="#a-kimsuky">Kimsuky szpieguje ukraińskich dyplomatów</a> i ukrywa infrastrukturę na GitHubie, GitLabie i Codebergu.</span></li>
+        <li><span><a href="#a-peoplesoft">ShinyHunters omijają reguły WAF jednym znakiem</a> i wracają do masowych ataków na Oracle PeopleSoft.</span></li>
+        <li><span><a href="#a-gentlemen">The Gentlemen wpisali na listę ofiar Deloitte, KFC, Confluent i MoneyGram</a>; żadna z firm tego nie potwierdziła.</span></li>
+        <li><span><a href="#a-nippon">8,6 mln klientów japońskiej sieci karaoke</a> w wycieku po infekcji komputera u podwykonawcy.</span></li>
+        <li><span><a href="#a-mimosa">Midnight Mimosa siedzi w firmware tanich Androidów</a> w ponad 150 krajach.</span></li>
+        <li><span><a href="#n-gitlab">Netlas ostrzega przed luką RCE o ocenie 10.0 w GitLabie</a>, którą można wywołać bez logowania.</span></li>
+        <li><span><a href="#n-caracal">Dark Caracal w przychodni</a>: backdoor w Go rozsyła się mailem jako plik „.rev”.</span></li>
+        <li><span><a href="#n-blik">12 zatrzymanych za wyłudzenia „na pracownika banku”</a> z użyciem kodów BLIK.</span></li>
+      </ol>
+    </div>
+  </section>
+  <div class="stats">
+    <button class="stat" type="button" data-filter="zeroday"><b>3</b><span>Aktywnie wykorzystywane</span></button>
+    <button class="stat" type="button" data-filter="ransomware wycieki"><b>15</b><span>Ransomware i wycieki</span></button>
+    <button class="stat" type="button" data-filter="polska"><b>6</b><span>Z Polski</span></button>
+    <button class="stat" type="button" data-filter="all"><b>88</b><span>Newsów łącznie</span></button>
+  </div>
+
+  <!-- ============ ARTYKUŁY ============ -->
+  <h2 class="section" id="artykuly">Artykuły</h2>
+
+  <article class="full" id="a-danfoss" data-cat="ics">
+    <div class="kicker">ICS/OT · atak z fizycznymi skutkami</div>
+    <h3>Ktoś zdalnie rozmroził lodówki w setkach francuskich marketów</h3>
+    <p class="lead">W nocy z 11 na 12 października napastnicy zmienili nastawy sterowników chłodniczych Danfoss w sklepach kilku największych francuskich sieci. Urządzenia zamiast chłodzić, grzały.</p>
+    <div class="body">
+      <p>Według BFMTV, na które powołuje się Zaufana Trzecia Strona, ktoś przejął systemy regulacji chłodzenia i włączył w nich wymuszone, ciągłe odszranianie. Odszranianie to normalnie krótkie podgrzanie parownika, które topi szron. Tutaj nie kończyło się wcale, a nastawę temperatury ustawiono na 50°C. Rano w ladach i mroźniach leżał rozmrożony towar.</p>
+      <p>Poszkodowane są sklepy sieci Intermarché, Netto, Leclerc i Super U. Media piszą o setkach placówek. Zerwanie łańcucha chłodniczego oznacza, że produkty świeże i mrożone trzeba zutylizować. W Haguenau jeden sklep szacuje straty na kilkadziesiąt tysięcy euro, a inny na ponad 200 tys. euro. W skali kraju mowa o milionach. Cytowani przez BFMTV przedstawiciele branży mówią o zdarzeniu „skrajnie poważnym, bezprecedensowym i niedopuszczalnym”.</p>
+      <p>Francuskie serwisy podają, że atak objął starsze wersje systemów regulacji Danfoss, sprzed wersji 4. Nie wiadomo jeszcze, jak napastnicy uzyskali dostęp: przez sterowniki wystawione do internetu, przez konta serwisowe, czy przez firmę obsługującą instalacje. Nikt się też do ataku nie przyznał. To rzadki przypadek, w którym zmiana jednego parametru w automatyce budynkowej daje natychmiastowe, policzalne straty w wielu firmach naraz.</p>
+      <div class="todo"><b>Co zrobić:</b> jeśli zarządzasz chłodnictwem handlowym, sprawdź, czy panele i sterowniki nie są dostępne z internetu (dostęp serwisowy tylko przez VPN z MFA), zmień domyślne i współdzielone hasła, zaktualizuj oprogramowanie sterowników do bieżącej wersji i ustaw niezależny alarm temperatury, którego nie da się wyłączyć z tego samego systemu. Przejrzyj logi pod kątem nocnych zmian harmonogramu i nastaw odszraniania.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Zaufana3Strona/status/2109613367065301358">@Zaufana3Strona: atak na sieci handlowe we Francji</a></li>
+        <li>Raporty: <a href="https://www.bfmtv.com/economie/consommation/la-temperature-est-montee-jusqu-a-50-degres-une-cyberattaque-contre-les-systemes-frigorifiques-provoque-la-destruction-de-produits-frais-dans-des-centaines-d-intermarche-et-de-super-u_AN-202610120327.html">BFMTV</a> · <a href="https://www.cyberattaque.org/danfoss-au-coeur-de-la-cyberattaque-qui-fait-chauffer-les-frigos-dintermarche-super-u-et-leclerc/">cyberattaque.org</a> · <a href="https://www.letribunaldunet.fr/actualites/cyberattaque-frigos-supermarches-50-degres-danfoss.html">Le Tribunal du Net</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="a-ledger" data-cat="malware intel">
+    <div class="kicker">Łańcuch dostaw · sprzęt</div>
+    <h3>Ledger potwierdza implant sprzętowy w portfelu. Sprawa mogła dotrzeć do Europy</h3>
+    <p class="lead">Ledger przyznał, że w urządzeniu jednego z okradzionych użytkowników znaleziono nieautoryzowany układ. Wszystkie potwierdzone przypadki łączą się z jednym dystrybutorem z Azji Południowo-Wschodniej, ale w weekend pojawiły się zgłoszenia z Europy.</p>
+    <div class="body">
+      <p>Sprawa zaczęła się od klientów, którzy kupili portfele sprzętowe u CryptoBilis, autoryzowanego partnera Ledgera na Malezję, Indonezję i Filipiny z siedzibą w Kuala Lumpur, a potem stracili środki. Analityk on-chain o pseudonimie Specter powiązał z tą sprawą kradzieże na ponad 86 mln dolarów w sieciach Ethereum, Tron i Bitcoin. Inne szacunki mówią o 93 mln dolarów z ponad 300 portfeli. Ledger tych kwot nie potwierdził.</p>
+      <p>10 października firma poinformowała, że „urządzenie jednego z poszkodowanych zawierało nieautoryzowany implant sprzętowy”. Ledger poprosił CryptoBilis o wstrzymanie sprzedaży i wysyłek, a dystrybutor zawiesił obrót całym asortymentem do końca dochodzenia. Producent utrzymuje, że jego własna infrastruktura nie została naruszona i że problem dotyczy tego jednego sprzedawcy.</p>
+      <p>Tę ostatnią tezę podważają wpisy z weekendu. Użytkownik X pokazał zdjęcia podobnego implantu w portfelu, który miał kupić w MediaMarkt, czyli w sieci działającej także w Polsce. Eric Parker nazwał to „bardzo dziwnym” zwrotem: MediaMarkt to renomowana niemiecka firma i raczej nie sprowadza francuskich urządzeń z Malezji. Costin Raiu pisze, że „ziarnko ryżu” jednak istnieje i że robi się z tego koszmar dla firmy i klientów. Podał dalej wpis, którego autor twierdzi, że zgłoszenia napływają też z Ameryki Łacińskiej. Ledger nie potwierdził, że egzemplarz z MediaMarkt był zmodyfikowany ani że ma związek ze sprawą CryptoBilis.</p>
+      <div class="todo"><b>Co zrobić:</b> kto kupił Ledgera u CryptoBilis w ostatnich 90 dniach, nie powinien uruchamiać nieużywanego urządzenia. Środki z już skonfigurowanego warto przenieść na inne urządzenie z nową frazą odzyskiwania. Pozostałym zostaje kupowanie bezpośrednio u producenta i śledzenie komunikatów Ledgera. Informacje o egzemplarzach z europejskich sklepów są na razie niepotwierdzone.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2109606117827584486">@TheHackersNews: Ledger potwierdza implant</a> · <a href="https://x.com/craiu/status/2109528206487564330">@craiu</a> · <a href="https://x.com/EricParker/status/2109337456630026672">@EricParker: MediaMarkt</a> · <a href="https://x.com/WhichbufferArda/status/2109562143615975660">@WhichbufferArda</a></li>
+        <li>Raporty: <a href="https://www.coindesk.com/tech/2026/10/12/ledger-says-unauthorized-implant-found-in-at-least-one-device-sold-by-cryptobilis">CoinDesk</a> · <a href="https://decrypt.co/380582/ledger-probes-87m-theft-crypto-wallet-reseller">Decrypt</a> · <a href="https://news.bitcoin.com/security/user-exposes-hidden-hardware-implant-in-european-ledger-wallet/">Bitcoin.com News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="a-sonicwall" data-cat="zeroday podatnosci">
+    <div class="kicker">Podatność · próby ataków</div>
+    <h3>SonicWall SMA 1000: dwa dni po poprawce ruszyły próby wykorzystania luki CVSS 10.0</h3>
+    <p class="lead">CVE-2026-102255 to trzeci od lipca błąd SSRF o maksymalnej ocenie w tym samym komponencie bram SMA 1000. Honeypoty rejestrują już żądania, które pasują do tej luki.</p>
+    <div class="body">
+      <p>SonicWall załatał błąd 6 października (biuletyn SNWLID-2026-0017). Luka siedzi w interfejsie WorkPlace i nie wymaga logowania. Napastnik może zmusić urządzenie do wysyłania żądań w jego imieniu i dosięgnąć funkcji dostępnych tylko od środka. Podatne są modele SMA 6210, 7210 i 8200v z firmware 12.4.3-03526 i starszym oraz 12.5.0-02952 i starszym. Seria SMA 100 i SSL-VPN na zaporach SonicWall nie są objęte.</p>
+      <p>8 października Ryan Dewhurst z Previdian i firma Defused zobaczyli na swoich pułapkach nieuwierzytelniony ruch SSRF. Żądanie OPTIONS skierowane do interfejsu Extraweb próbuje dotrzeć do wewnętrznej bazy CouchDB pod adresem <code>127.0.0.1:5984</code>, wejść w dokument projektu i wywołać jego funkcję <code>_rewrite</code>, podając przy tym dane do uwierzytelnienia Basic. The Hacker News pisze o 135 próbach z zaledwie dwóch adresów IP w USA.</p>
+      <p>Źródła różnią się w ocenie sytuacji. SonicWall w biuletynie podawał, że nie ma dowodów wykorzystania tej luki ani trzech pozostałych naprawionych w tym samym wydaniu. Badacze widzą próby, ale Previdian zastrzega, że nie sprawdził, czy na prawdziwym urządzeniu zakończyłyby się powodzeniem. Shadowserver widzi w internecie ponad 400 bram SMA 1000. Poprzednie dwie luki z tej serii, CVE-2026-15409 z lipca i CVE-2026-83548 z września, były wykorzystywane w atakach, pierwsza jeszcze przed wydaniem poprawki.</p>
+      <div class="todo"><b>Co zrobić:</b> zaktualizuj SMA 1000 do wersji z biuletynu SNWLID-2026-0017 i ogranicz dostęp do WorkPlace i konsoli zarządzania. W logach szukaj żądań OPTIONS do interfejsu Extraweb oraz odwołań do <code>127.0.0.1:5984</code> i <code>_rewrite</code>. Jeśli urządzenie stało niezałatane po 8 października, potraktuj je jako potencjalnie przejęte.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2109594982864900505">@TheHackersNews: 135 prób z dwóch adresów IP</a></li>
+        <li>Raporty: <a href="https://bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks">BleepingComputer</a> · <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-sonicwall-sma1000-ssrf-cve-2026-102255-202/">Cloud Security Alliance</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="a-pegasus" data-cat="polska prawo">
+    <div class="kicker pl">Inwigilacja · dotyczy Polski</div>
+    <h3>ABW: dane z Pegasusa opuszczały Polskę, a CBA nie miało pełnej kontroli nad systemem</h3>
+    <p class="lead">Odtajniona część opinii biegłych ABW i raport sejmowej komisji śledczej, przedstawiony po ponad 2,5 roku prac, opisują system, którego kluczowe elementy pozostawały w rękach producenta.</p>
+    <div class="body">
+      <p>Biegli ABW zbadali instalację Pegasusa w siedzibie CBA. Potwierdzili, że system pozwalał bez wiedzy użytkownika pobierać wiadomości, rozmowy, kontakty, historię przeglądania, zdjęcia, lokalizację i pliki, a także na żywo korzystać z mikrofonu i kamer telefonu. Najważniejsze ustalenia dotyczą jednak kontroli. Według opinii CBA nie panowało w pełni nad działaniem systemu, a część elementów była wyłącznie pod kontrolą oprogramowania producenta. Dane pozyskane i przesyłane przez system „opuszczały terytorium Polski”. NSO Group miała techniczną możliwość dostępu do materiałów z kontroli operacyjnej. Opinia nie rozstrzyga, czy producent faktycznie z niej skorzystał.</p>
+      <p>Podczas prezentacji raportu komisji padły kolejne szczegóły. Pegasus nie działał lokalnie w serwerowni CBA, tylko „poprzez sieć anonimizującą rozmieszczoną w różnych częściach świata”. CBA miało nie znać haseł do części kont administratora, które znała NSO Group, a „moduł serwera do infekowania urządzeń był pod wyłączną kontrolą producenta”. Komisja podała też kwoty, w tym wynagrodzenie pośrednika, i wskazała, że w sprawę zamieszani są politycy i szefowie służb.</p>
+      <p>Premier Donald Tusk powiedział, że Polska nie mogła używać systemu wobec numerów pochodzących m.in. z Rosji, Białorusi i Korei Północnej. Przewodnicząca komisji Magdalena Sroka zapowiedziała w rozmowie z CyberDefence24 kolejne zawiadomienia do prokuratury, tym razem dotyczące 11 osób. Wcześniejsze objęły byłych szefów CBA, ABW i SKW.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> to pierwsze oficjalne, oparte na ekspertyzie służb potwierdzenie, że materiały z polskich kontroli operacyjnych przechodziły przez infrastrukturę, nad którą państwo nie miało pełnej władzy. Dla każdego zamawiającego narzędzia tego typu to argument, żeby w umowie i architekturze zapisać, kto ma klucze, konta administratora i dostęp do serwerów.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CyberDefence24/status/2109552755727565154">@CyberDefence24: ustalenia ABW</a> · <a href="https://x.com/CyberDefence24/status/2109611663527747648">@CyberDefence24: raport komisji śledczej</a></li>
+        <li>Raporty: <a href="https://cyberdefence24.pl/armia-i-sluzby/dane-z-pegasusa-trafialy-za-granice-abw-potwierdza">CyberDefence24: Dane z Pegasusa trafiały za granicę</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="a-pekao" data-cat="polska phishing malware">
+      <div class="kicker pl">Oszustwa · dotyczy Polski</div>
+      <h3>Fałszywa aplikacja Pekao prosi o przyłożenie karty do telefonu</h3>
+      <p class="lead">CSIRT KNF ostrzega przed złośliwą aplikacją na Androida, która podszywa się pod Bank Pekao i stosuje atak NFC Relay.</p>
+      <div class="body">
+        <p>Po uruchomieniu aplikacja prosi użytkownika, żeby przyłożył kartę płatniczą do telefonu. Telefon odczytuje wtedy komunikację zbliżeniową karty i przekazuje ją przestępcom, którzy mogą jej użyć na własnym urządzeniu, na przykład przy bankomacie albo terminalu. Sekurak komentuje krótko: to kolejna aplikacja, która próbuje wypłacić cudze pieniądze z bankomatu.</p>
+        <p>Aplikacji nie ma w Google Play. Według CSIRT KNF może trafiać do ofiar przez fałszywe e-maile i SMS-y, komunikatory oraz strony udające bank. Zespół opublikował też nagranie pokazujące, jak fałszywa aplikacja się zachowuje.</p>
+        <div class="todo"><b>Co zrobić:</b> instaluj aplikacje bankowe tylko z oficjalnego sklepu. Żaden bank nie prosi o przykładanie karty do telefonu w celu „weryfikacji” ani o podawanie PIN-u w aplikacji z linku. Jeśli to zrobiłeś, zastrzeż kartę i zadzwoń do banku.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/CSIRT_KNF/status/2109548698392825962">@CSIRT_KNF: ostrzeżenie</a> · <a href="https://x.com/CSIRT_KNF/status/2109548811798614312">@CSIRT_KNF: nagranie</a> · <a href="https://x.com/Sekurak/status/2109572040902521270">@Sekurak</a></div>
+    </article>
+    <article class="full" id="a-cyberxero" data-cat="intel apt">
+      <div class="kicker">AI w atakach · Ukraina</div>
+      <h3>CyberXero: 51 agentów Claude Code i 32 web shelle w 61 sekund</h3>
+      <p class="lead">SOCRadar opisał rosyjskojęzycznego brokera dostępu, który połączył klasyczne narzędzia ofensywne z warstwą agentów AI. Wśród celów jest ukraińska energetyka.</p>
+      <div class="body">
+        <p>Badacze trafili na otwarty katalog z plikami roboczymi napastnika: logami sesji AI, skryptami z tokenami zapisanymi jawnym tekstem i danymi wykradzionymi ofiarom. Z materiałów wynika, że CyberXero uruchamiał do 51 agentów Claude Code oraz wdrożenie PentAGI połączone z Cobalt Strike. Jeden automatyczny przebieg dał dostęp do 429 paneli administratora WordPressa spośród 4708 przeskanowanych celów, a 32 web shelle wgrano w 61 sekund.</p>
+        <p>Operacja miała dwa tory. Pierwszy to masowa, zautomatyzowana eksploatacja WordPressa i sklepów internetowych dla dostępu i danych płatniczych. Drugi to głębszy rekonesans i ręczne ataki na siedem ukraińskich podmiotów z sektora energii i usług komunalnych, w tym krajowego operatora systemu przesyłowego i największy prywatny holding energetyczny. W katalogu były potwierdzone dane ponad 628 tys. obywateli Ukrainy z czterech organizacji, m.in. mieszkańców Charkowa.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> agenci AI nie dali napastnikowi nowych technik, ale skrócili czas między skanem a przejęciem do sekund. Okno na reakcję obrońcy po ujawnieniu luki w popularnej wtyczce robi się bardzo wąskie.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/TheHackersNews/status/2109547555432620104">@TheHackersNews</a> · <a href="https://thehackernews.com/2026/10/cyberxero-uses-claude-code-in-campaign.html">The Hacker News</a> · <a href="https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/">raport SOCRadar</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-kimsuky" data-cat="apt phishing">
+      <div class="kicker">APT · Korea Północna</div>
+      <h3>Operacja GitPower: Kimsuky szpieguje ukraińskich dyplomatów przez platformy dla programistów</h3>
+      <p class="lead">Genians opisał kampanię, w której północnokoreańska grupa najpierw nawiązuje korespondencję, a złośliwy plik wysyła dopiero w odpowiedzi.</p>
+      <div class="body">
+        <p>Celem są ukraińscy eksperci od dyplomacji, bezpieczeństwa i polityki międzynarodowej oraz organizacje pozarządowe, a w drugiej kolejności osoby z Japonii i Korei Południowej. Przynęty to zaproszenie na konferencję KCSCON 2026, prośba o współpracę przy analizie rosyjsko-koreańskiej kooperacji wojskowej, raporty o inicjatywach pokojowych i zaproszenia na Zooma lub Google Meet. Zdaniem badaczy grupę interesują informacje o udziale wojsk KRLD w wojnie i o postępowaniu z północnokoreańskimi jeńcami.</p>
+        <p>Łańcuch zaczyna się od archiwum z plikiem LNK udającym PDF. Skrót uruchamia <code>cmd.exe</code> i <code>curl</code>, który pobiera skrypty z repozytoriów na GitLabie, GitHubie lub Codebergu, zapisane jako pliki „.ini”. Dalej działa skrypt VBE i PowerShell, który zbiera <code>systeminfo</code> i listę plików z folderu Pobrane, wysyła je przez GitHub Contents API i dodaje zadanie harmonogramu <code>GoogleUpdateTaskMachineUA</code> uruchamiane co 15–30 minut. Osobny moduł łączy się z serwerem C2 na porcie TCP 12345. AhnLab opisał równolegle inną kampanię Kimsuky: ransomware Funhouse rozsyłany w dokumencie HWP udającym CV, razem z Quasar RAT.</p>
+        <div class="todo"><b>Jak wykrywać:</b> LNK uruchamiany z archiwum, który startuje <code>cmd.exe</code> i <code>curl</code>; <code>wscript.exe</code> z plikami .vbe; PowerShell z <code>-ep bypass</code> w ukrytym oknie; zadania harmonogramu o nazwach udających aktualizatory; połączenia do <code>111.92.246[.]145:12345</code> i subdomen <code>serveirc[.]com</code> oraz <code>medianewsonline[.]com</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/blackorbird/status/2109475664214753650">@blackorbird</a> · <a href="https://x.com/Cyber_O51NT/status/2109573175470076019">@Cyber_O51NT: Funhouse</a> · <a href="https://www.genians.co.kr/en/blog/threat_intelligence/operation-gitpower">raport Genians</a></div>
+    </article>
+    <article class="full" id="a-blinder" data-cat="apt malware">
+      <div class="kicker">APT · Iran</div>
+      <h3>Nowy wariant Blinder Tunnel: zero wykryć i instrukcje ukryte w zgłoszeniach do VS Code</h3>
+      <p class="lead">Nextron znalazł odmianę loadera irańskiej grupy, której sześć tygodni po przesłaniu do VirusTotal nie wykrywa żaden z 71 silników.</p>
+      <div class="body">
+        <p>Badacze szukali śladów po raporcie Unit 42 o Blinder Tunnel i trafili na wariant ze zmienioną infrastrukturą. Plik <code>StarkMeet (1).zip</code>, przesłany 25 sierpnia z Iraku, zawiera instalator Inno Setup udający test rekrutacyjny IT na lotnisku w Dubaju. Instalator zostawia <code>RuntimeBroker.exe.config</code> i <code>RuntimeBroker.dll</code>. Plik konfiguracyjny wskazuje bibliotekę jako AppDomainManager, więc środowisko .NET ładuje ją przed właściwym programem.</p>
+        <p>Loader co 63 sekundy komunikuje się z GitHubem przez przekaźnik na Cloudflare Workers, wysyła profil ofiary do repozytorium napastnika i pobiera jednorazowe polecenia. Najciekawszy jest mechanizm awaryjny. Gdy token przestaje działać, malware przeszukuje dzisiejsze zgłoszenia w publicznym repozytorium Microsoft/vscode i w komentarzach HTML znajduje nowe dane dostępowe, zaszyfrowane kluczem wyliczanym z daty i identyfikatora ofiary. Odczyta je tylko jeden zainfekowany komputer. Grupa używa nazwy „Peaky Blinders”.</p>
+        <div class="todo"><b>Jak wykrywać:</b> wpis Run <code>MicrosoftRuntime</code> w HKCU, katalog <code>%LOCALAPPDATA%\Microsoft\RuntimeBrokers\</code>, pliki .config wskazujące nietypowy AppDomainManager, ruch do <code>g-prx.itugegape524.workers[.]dev</code>. SHA-256 biblioteki: <code>aa7d4bf74edacba06da7e9d414c0649599fb0e7b118f7c3ddcec09eb3f720c82</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/nextronresearch/status/2109543626552291785">@nextronresearch</a> · <a href="https://github.com/NextronSystems/iocs/tree/master/reports/A%20New%20Variant%20of%20Blinder%20Tunnel%20with%20Zero%20AV%20Detection">raport i IOC Nextron</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-peoplesoft" data-cat="zeroday wycieki malware">
+      <div class="kicker">Aktualizacja · aktywnie wykorzystywana</div>
+      <h3>ShinyHunters i Oracle PeopleSoft: jeden zakodowany znak omija reguły WAF</h3>
+      <p class="lead">O luce w PeopleSoft pisaliśmy przy włamaniu do portalu FBI Jobs. Teraz badacz Squiblydoo rozebrał backdoor z tej kampanii, a raport Google pokazuje, jak napastnicy wrócili mimo zabezpieczeń.</p>
+      <div class="body">
+        <p>Chodzi o CVE-2026-35273, błąd deserializacji Javy w serwlecie Environment Management Hub (PSEMHUB). Grupa UNC6240, znana jako ShinyHunters, wykorzystywała go jako zero-day od 27 maja do 9 czerwca, głównie przeciw uczelniom. Oracle wydał alert 10 czerwca. We wrześniu kampania wróciła na większą skalę i objęła też firmy technologiczne, ochronę zdrowia, transport i administrację. Napastnicy zamiast <code>/PSEMHUB/</code> wysyłają <code>/%50SEMHUB/</code>. Reguły WAF porównujące ścieżkę przed dekodowaniem URL tego nie łapią, a serwer aplikacji dekoduje znak i kieruje żądanie do podatnego serwletu.</p>
+        <p>Po wejściu grupa zostawia web shelle <code>x.jsp</code> i <code>u.jsp</code>, tunele Neo-reGeorg, agenta MeshAgent oraz plik <code>Ple64.exe</code>. To strojanizowany instalator odtwarzacza Light Alloy z ważnym certyfikatem EV wystawionym na „Tobias Weihmann Software Development OU”. Google śledzi ten backdoor jako SIDEEYE. Squiblydoo ocenia, że to zaktualizowana wersja SnappyClient, i opublikował własną analizę. Dane kadrowe, płacowe i studenckie są potem pakowane i używane do szantażu.</p>
+        <div class="todo"><b>Co zrobić:</b> zainstaluj poprawkę Oracle, bo sama reguła WAF nie wystarcza. Wyłącz lub usuń EMHub, jeśli nie jest potrzebny. W logach szukaj <code>/PSEMHUB/</code> we wszystkich wariantach kodowania i żądań POST do <code>/hub</code>, a w katalogu <code>PSEMHUB.war</code> plików .jsp i <code>Ple64.exe</code>. C2 backdoora: <code>162.219.30[.]165</code> (TCP 3333 i 3334).</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/SquiblydooBlog/status/2109274480405282905">@SquiblydooBlog</a> · <a href="https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-renewed-mass-exploitation-campaign-targeting-oracle-peoplesoft">raport Google/Mandiant</a> · <a href="https://t.co/6XfBlvKwJW">analiza SnappyClient</a></div>
+    </article>
+    <article class="full" id="a-gentlemen" data-cat="ransomware">
+      <div class="kicker">Ransomware · niepotwierdzone</div>
+      <h3>The Gentlemen wpisują na listę Deloitte, KFC, Confluent i MoneyGram</h3>
+      <p class="lead">Cztery głośne marki pojawiły się jednego dnia na stronie grupy ransomware. Na razie to wyłącznie deklaracje przestępców.</p>
+      <div class="body">
+        <p>Hackmanac odnotował 10 października cztery nowe wpisy The Gentlemen: Deloitte (z oznaczeniem Wielkiej Brytanii), KFC, Confluent i MoneyGram (wszystkie trzy z oznaczeniem USA). Przy żadnym nie podano ilości ani rodzaju danych, a status każdego to „oczekuje na weryfikację”. Żadna z firm nie potwierdziła incydentu.</p>
+        <p>Ostrożność jest uzasadniona. Wpis na stronie wycieków nie mówi, czy naruszono centralę, spółkę zależną, franczyzobiorcę czy dostawcę. W sierpniu ta sama grupa przyznała się do ataku na KFC w Kosowie, czyli na lokalnego operatora marki. The Gentlemen działają od 2025 roku w modelu partnerskim, deklarują kilkaset ofiar i według firmy KELA są w tym roku jedną z dwóch najaktywniejszych grup ransomware.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> jeśli któraś z tych firm jest twoim dostawcą, to dobry moment na pytanie do opiekuna klienta. Na decyzje przyjdzie czas, gdy pojawi się próbka danych albo oświadczenie firmy.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/H4ckmanac/status/2109321619961450635">@H4ckmanac: Deloitte</a> · <a href="https://x.com/H4ckmanac/status/2109317719749218623">KFC</a> · <a href="https://x.com/H4ckmanac/status/2109317261844492673">Confluent</a> · <a href="https://x.com/H4ckmanac/status/2109316748197450023">MoneyGram</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="a-nippon" data-cat="wycieki">
+      <div class="kicker">Wyciek danych · Japonia</div>
+      <h3>Malware na jednym komputerze podwykonawcy odsłonił dane 8,6 mln klientów karaoke</h3>
+      <p class="lead">Daiichi Kosho, największy operator karaoke w Japonii, poinformował o incydencie u firmy Nippon Columbia Group, która przetwarza dla niego dane osobowe.</p>
+      <div class="body">
+        <p>5 października NCG wykryło złośliwe oprogramowanie na komputerze pracownika i dzień później odizolowało maszynę. Na tym komputerze były dane 8 631 000 klientów i 93 tys. pracowników Daiichi Kosho, firmy prowadzącej 521 lokali, w tym sieć Big Echo. Zakres obejmuje imiona i nazwiska, płeć, daty urodzenia, adresy e-mail i numery telefonów.</p>
+        <p>Spółka ujawniła sprawę 11 października. Zapewnia, że w zbiorze nie było haseł i że nie widać nieuprawnionego użycia punktów lojalnościowych. Nie podano rodzaju malware i nie potwierdzono, że dane faktycznie wyprowadzono. Dochodzenie trwa. Klienci mają uważać na niezamówione wiadomości i telefony z prośbą o płatność lub dane.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/BleepinComputer/status/2109288975684784216">@BleepinComputer</a> · <a href="https://x.com/blueteamsec1/status/2109290963936092349">@blueteamsec1</a> · <a href="https://www.bleepingcomputer.com/news/security/nippon-columbia-malware-incident-exposes-86-million-karaoke-fan-records/">BleepingComputer</a></div>
+    </article>
+    <article class="full" id="a-mimosa" data-cat="malware">
+      <div class="kicker">Malware · Android</div>
+      <h3>Midnight Mimosa: malware wgrany w firmware tanich Androidów w ponad 150 krajach</h3>
+      <p class="lead">Bitdefender opisał złośliwą aplikację systemową, która trafia do urządzeń jeszcze przed sprzedażą i której nie da się zwyczajnie odinstalować.</p>
+      <div class="body">
+        <p>Midnight Mimosa jest częścią firmware budżetowych urządzeń na platformach MediaTek. Działa z uprawnieniami systemowymi: po cichu instaluje i usuwa aplikacje, nadaje im uprawnienia i ładuje zdalny kod. Przed instalacją ładunku wyłącza Sklep Play i oślepia Google Play Protect, a potem włącza je z powrotem. Dziś służy głównie do oszustw reklamowych i automatycznego klikania, ale ten sam mechanizm pozwala wgrać cokolwiek.</p>
+        <p>Przez dwa lata obserwacji Bitdefender naliczył tysiące unikalnych urządzeń w ponad 150 krajach. Najwięcej jest w Meksyku i Francji, dalej we Włoszech, USA, Niemczech, Brazylii i Hiszpanii. Ten sam kod reklamowy znaleziono w 13 aplikacjach w Google Play, podpisanych innymi certyfikatami. Raport nie wskazuje sprawcy.</p>
+        <div class="todo"><b>Co zrobić:</b> w firmie nie dopuszczaj do zasobów urządzeń z Androidem bez certyfikacji Play Protect. Prywatnie unikaj tabletów, przystawek TV i telefonów nieznanych marek. Reset do ustawień fabrycznych nie usuwa składnika wgranego w firmware.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/SecurityWeek/status/2109236567994667221">@SecurityWeek</a> · <a href="https://www.securityweek.com/pre-baked-firmware-malware-hits-budget-android-devices-in-150-countries/">SecurityWeek</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="a-pawns" data-cat="malware intel">
+    <div class="kicker">Threat intel · proxyjacking</div>
+    <h3>Zamiast koparki legalna aplikacja do „zarabiania na łączu”. The DFIR Report o przejętym serwerze Linux</h3>
+    <p class="lead">Napastnik włamał się na wystawiony do internetu serwer i zainstalował na nim Pawns.app, oficjalnego agenta, który płaci za udostępnianie przepustowości. Konto było oczywiście jego.</p>
+    <div class="body">
+      <p>Według The DFIR Report po wejściu napastnik zostawił web shell JSP i zrobił szybki rekonesans (<code>id</code>, <code>uname -a</code>, <code>ip addr</code>). Potem pobrał przez <code>wget</code> klienta Pawns CLI i ukrył kopie pod nazwą <code>.p</code> w <code>/tmp</code>, <code>/var/tmp</code>, <code>/opt</code> i <code>/home</code>. Trwałość próbował uzyskać wpisem <code>@reboot</code> w cronie. Agent startował z parametrami <code>-email=</code>, <code>-device-name=</code> i <code>-accept-tos</code>.</p>
+      <p>Taki model ma dla przestępców kilka zalet. Plik to oryginalna aplikacja dostawcy, więc antywirus nie ma czego wykryć. Procesor nie jest obciążony jak przy koparce, a w sieci widać tylko HTTPS do znanej usługi. Obcy ruch wychodzi z adresu IP ofiary i to do niej trafiają skargi na nadużycia.</p>
+      <div class="todo"><b>Jak wykrywać:</b> procesy serwera WWW uruchamiające <code>wget</code> lub <code>curl</code>; flagi startowe proxyware; ruch z serwerów do usług Pawns, Honeygain, EarnApp i PacketStream; pliki <code>/tmp/.p</code>, <code>/var/tmp/.p</code>, <code>/opt/.p</code>, <code>/home/.p</code>, <code>/tmp/gotoschool</code> i <code>/var/tmp/.config/pawns-cli/pawns-consent.log</code>. Infrastruktura napastnika: <code>144[.]172.86[.]173</code>, <code>209[.]99.190[.]80</code>.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheDFIRReport/status/2109388761943417181">@TheDFIRReport: proxyjacking z Pawns.app</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ WSZYSTKIE NEWSY ============ -->
+  <h2 class="section" id="newsy">Wszystkie newsy</h2>
+  <div class="news">
+    <div class="news-tools">
+      <input class="news-filter" type="search" placeholder="Szukaj w newsach (np. CVE, Fortinet, ransomware)…" aria-label="Szukaj w newsach">
+      <div class="chips">
+        <button type="button" data-filter="all" class="on">Wszystkie</button>
+        <button type="button" data-filter="polska">Polska</button>
+        <button type="button" data-filter="zeroday">Zero-day i aktywne ataki</button>
+        <button type="button" data-filter="podatnosci">Podatności i poprawki</button>
+        <button type="button" data-filter="ransomware">Ransomware</button>
+        <button type="button" data-filter="wycieki">Wycieki danych</button>
+        <button type="button" data-filter="malware">Malware i kampanie</button>
+        <button type="button" data-filter="apt">APT i państwa</button>
+        <button type="button" data-filter="phishing">Phishing i oszustwa</button>
+        <button type="button" data-filter="chmura">Chmura i tożsamość</button>
+        <button type="button" data-filter="intel">Threat intel i IOC</button>
+        <button type="button" data-filter="narzedzia">Narzędzia i badania</button>
+        <button type="button" data-filter="lektury">Lektury i poradniki</button>
+      </div>
+    </div>
+    <p class="filter-note">Filtr: <span></span> · <button type="button">pokaż wszystko</button></p>
+    <p class="no-results">Brak newsów pasujących do wyszukiwania.</p>
+
+    <section class="cat pl" id="k-polska" data-cat="polska">
+      <h3>Polska <span class="count">4</span></h3>
+      <ul class="brief">
+        <li id="n-blik"><b>12 zatrzymanych za wyłudzenia „na pracownika banku”.</b> Grupa podszywała się pod pracowników banków i wyłudzała pieniądze kodami BLIK. Straty ofiar to 250 tys. zł, a śledczy zapowiadają kolejne zatrzymania. W akcji brały udział CBZC, CBŚP i ABW. <span class="src"><a href="https://x.com/CyberDefence24/status/2109572074066915482">@CyberDefence24</a></span></li>
+        <li><b>Jak znaleźć panele ARTEX w Shodanie.</b> Michał Koczwara przejrzał kod ARTEX, autonomicznego systemu do pentestów sterowanego przez LLM, którego repozytorium usunięto. Panel domyślnie słucha na porcie 8787, ma tytuł strony „ARTEX” z charakterystycznym opisem i favicon o hashu -1898746557. <span class="src"><a href="https://x.com/MichalKoczwara/status/2109402558460547204">@MichalKoczwara</a></span></li>
+        <li><b>Sekurak: bezpłatne szkolenie o reagowaniu na wyciek danych.</b> W piątek część techniczna (przegląd ostatnich głośnych wycieków) oraz RODO i NIS2. Nagranie ma być dostępne bezterminowo. <span class="src"><a href="https://x.com/Sekurak/status/2109561202128847207">@Sekurak</a></span></li>
+        <li><b>Cyber24 Days: AI jako szansa czy zagrożenie dla Polski.</b> Eksperci różnili się w ocenach, ale zgodzili się, że państwo musi działać. CyberDefence24 streszcza debatę. <span class="src"><a href="https://x.com/CyberDefence24/status/2109600834577125696">@CyberDefence24</a> · <a href="https://t.co/KZkafhEICV">artykuł</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-zeroday" data-cat="zeroday">
+      <h3>Zero-day i aktywne ataki <span class="count">1</span></h3>
+      <ul class="brief">
+        <li id="n-caracal"><span class="hot">Pilne</span><b>Dark Caracal w przychodni: backdoor w Go rozsyłany jako plik „.rev”.</b> vx-underground przeanalizował próbkę z zainfekowanej placówki medycznej. Plik .rev to archiwum RAR z apletem Panelu sterowania (.cpl). Malware kradnie pocztę i rozsyła do kontaktów załącznik SVG, który namawia do pobrania kolejnego pliku .rev. Autor przypisuje go grupie Dark Caracal (GoCaracal). To ocena jednego źródła. C2: <code>85.192.30[.]227</code>, pierwsze połączenia 20 września. SHA-256: <code>8df20f4fd964c84bce577b3984bb5c65bccb876707cd9d94934a414bce7d7479</code>. <span class="src"><a href="https://x.com/vxunderground/status/2109506448031900103">@vxunderground</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-podatnosci" data-cat="podatnosci">
+      <h3>Podatności i poprawki <span class="count">9</span></h3>
+      <ul class="brief">
+        <li id="n-gitlab"><span class="hot">Pilne</span><b>GitLab: RCE bez uwierzytelnienia z oceną 10.0.</b> Netlas opisuje CVE-2026-97229: specjalnie przygotowane wyrażenie regularne w konfiguracji CI/CD pozwala wykonać kod na serwerze. Publiczne bazy opisują bardzo podobny błąd pod numerem CVE-2026-93577 (przepełnienie w kompilatorze wyrażeń regularnych CI/CD, poprawki w 19.2.7, 19.3.3 i 19.4.1). Numeru podanego przez Netlas nie udało się w nich potwierdzić. <span class="src"><a href="https://x.com/Netlas_io/status/2109575916363899085">@Netlas_io</a></span></li>
+        <li><b>nginx-ui: PoC dla CVE-2026-107806.</b> Uwierzytelnione RCE przez sfałszowaną kopię zapasową w wersjach 2.3.8–2.4.x. <span class="src"><a href="https://x.com/akaclandestine/status/2109377929947783221">@akaclandestine</a> · <a href="https://t.co/0xy1fjTmc3">GitHub</a></span></li>
+        <li><b>Fastjson: exploit dla CVE-2026-16723.</b> Krytyczna luka w wersjach 1.2.68–1.2.83 popularnej biblioteki Javy. <span class="src"><a href="https://x.com/akaclandestine/status/2109444822947750302">@akaclandestine</a> · <a href="https://t.co/cM9vLt865V">GitHub</a></span></li>
+        <li><b>Telegram: repozytorium z kodem dla CVE-2026-107181.</b> Publiczny PoC bez szerszego opisu. Przed uruchomieniem warto go przeczytać. <span class="src"><a href="https://x.com/akaclandestine/status/2109594007898566659">@akaclandestine</a> · <a href="https://t.co/Wzo8mHUB3j">GitHub</a></span></li>
+        <li><b>Exploit w Go dla CVE-2026-102489.</b> Kolejny publiczny PoC od tego samego autora co exploit na Fastjson. <span class="src"><a href="https://x.com/akaclandestine/status/2109444982155423941">@akaclandestine</a> · <a href="https://t.co/PYMMmvuq2J">GitHub</a></span></li>
+        <li><b>Signal-Server: zgłoszenie dotyczące panelu administracyjnego Dropwizard.</b> Raport o zdalnym błędzie wysokiej wagi w wersji v20261007.0.0. <span class="src"><a href="https://x.com/akaclandestine/status/2109390483571245373">@akaclandestine</a> · <a href="https://t.co/FHNYf7IjYW">GitHub</a></span></li>
+        <li><b>CVE-2026-91768: FastCGI porównywał 96 ze 128 bitów adresu IPv6.</b> Lista <code>allowed_clients</code> przepuszczała więc adresy, które różniły się tylko ostatnimi 32 bitami. <span class="src"><a href="https://x.com/Dinosn/status/2109584215322894611">@Dinosn</a> · <a href="https://t.co/R10IRZukep">analiza</a></span></li>
+        <li><b>Windows 11 23H2: koniec wsparcia za 30 dni.</b> Microsoft przypomina, że po tej dacie wydanie przestanie dostawać poprawki bezpieczeństwa. <span class="src"><a href="https://x.com/BleepinComputer/status/2109614770802307274">@BleepinComputer</a> · <a href="https://t.co/7UfqJq51lU">artykuł</a></span></li>
+        <li><b>„Za dużo CVE, które nie powinny być CVE”.</b> Dinosn krytykuje wpisy z czysto teoretycznym scenariuszem ataku i podaje jako przykład CVE-2026-87690. <span class="src"><a href="https://x.com/Dinosn/status/2109603343815561581">@Dinosn</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-ransomware" data-cat="ransomware">
+      <h3>Ransomware <span class="count">5</span></h3>
+      <ul class="brief">
+        <li><b>Rhysida: kancelaria Reed &amp; Giordano.</b> Grupa wpisała amerykańską kancelarię prawną na listę ofiar i grozi publikacją danych za 6–7 dni. Niepotwierdzone. <span class="src"><a href="https://x.com/FalconFeedsio/status/2109307720025489504">@FalconFeedsio</a></span></li>
+        <li><b>Avalon: nowy framework malware z modułem ransomware CrownX.</b> Zestaw łączy funkcje loadera z szyfrowaniem. <span class="src"><a href="https://x.com/blueteamsec1/status/2109304924190413070">@blueteamsec1</a></span></li>
+        <li><b>Majinahanashi aktualizuje stronę wycieków.</b> Grupa dodała też dwa nowe serwery plików. Pełny opis w serwisie The Raven File. <span class="src"><a href="https://x.com/RakeshKrish12/status/2109541760477356313">@RakeshKrish12</a> · <a href="https://t.co/h7PY1Soi7V">The Raven File</a></span></li>
+        <li><b>n0n: kilka nowych, nienazwanych ofiar.</b> Grupa zapowiada publikację danych w ciągu 3–4 dni. <span class="src"><a href="https://x.com/FalconFeedsio/status/2109290335310589970">@FalconFeedsio</a></span></li>
+        <li><b>Qilin: Friendship Christian School.</b> Szkoła pojawiła się 11 października na stronie grupy. <span class="src"><a href="https://x.com/TMRansomMon/status/2109303524370620611">@TMRansomMon</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-wycieki" data-cat="wycieki">
+      <h3>Wycieki danych <span class="count">7</span></h3>
+      <ul class="brief">
+        <li><b>Pathao: 19 mln rekordów zamiast „częściowego” wycieku?</b> Sprzedawca o pseudonimie RedMoonson twierdzi, że włamanie do platformy przewozowej i kurierskiej było znacznie większe, niż podała firma. Wcześniej żądano 400 tys. USDT okupu. Niepotwierdzone. <span class="src"><a href="https://x.com/MonThreat/status/2109442451123380332">@MonThreat</a></span></li>
+        <li><b>Advance Create: ponad 10 mln rekordów japońskiej agencji ubezpieczeniowej.</b> Wpis na forum mówi o kradzieży i publikacji danych klientów. Niepotwierdzone. <span class="src"><a href="https://x.com/MonThreat/status/2109451670304231931">@MonThreat</a></span></li>
+        <li><b>4,8 mln rekordów uczniów z Florydy.</b> Na forum wystawiono bazę z danymi osobowymi uczniów. Niepotwierdzone. <span class="src"><a href="https://x.com/MonThreat/status/2109441089715237115">@MonThreat</a></span></li>
+        <li><b>Rzekoma lista klientów Wells Fargo.</b> Wątek na forum oferuje „pełną listę klientów” banku. Brak próbki, która pozwoliłaby to zweryfikować. <span class="src"><a href="https://x.com/MonThreat/status/2109440384996929884">@MonThreat</a></span></li>
+        <li><b>KIASSURE: 128 243 rekordy francuskiego brokera ubezpieczeń.</b> Aktor „Syrv4x” opublikował zbiór 221 MB z imionami, nazwiskami i adresami e-mail klientów firmy z Marsylii. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109420436261843357">@DarkWebInformer</a></span></li>
+        <li><b>„888” sprzedaje dostęp do amerykańskiej firmy ze sprzętem fitness.</b> Oferta obejmuje bazę MySQL, zasoby Amazon S3 i panel Shopify. Nazwy firmy nie podano. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109440318772814001">@DarkWebInformer</a></span></li>
+        <li><b>GTA 6: „wyciek” uzależniony od kursu memecoina.</b> CyberLeek grozi publikacją grywalnej wersji gry, jeśli jego token na Solanie osiągnie kapitalizację 30 mln dolarów. Istnienia builda nikt nie zweryfikował. <span class="src"><a href="https://x.com/Dinosn/status/2109592109363695998">@Dinosn</a> · <a href="https://t.co/kG0IHVFfig">Security Affairs</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-malware" data-cat="malware">
+      <h3>Malware i kampanie <span class="count">4</span></h3>
+      <ul class="brief">
+        <li><b>Podpisany instalator z captchą nie do przejścia.</b> Niedziałająca captcha odwraca uwagę użytkownika. Instalator jest podpisany na „HOLLIDAY DIGITAL LLC” i zostawia strojanizowaną aplikację do projektowania aerodynamicznego, podpisaną na „Evelyn Paredes”. Oba certyfikaty zgłoszono. <span class="src"><a href="https://x.com/SquiblydooBlog/status/2109602382183293351">@SquiblydooBlog</a> · <a href="https://t.co/FOhpA5jrOf">analiza</a></span></li>
+        <li><b>SilkBypass: panel resellerski dla androidowego RAT-a BTMOB.</b> Pod domeną w DuckDNS działa panel do generowania i dystrybucji zaciemnionych plików APK, pod marką „SilkBypass / Rota da Seda 2.0”. <span class="src"><a href="https://x.com/akaclandestine/status/2109594675111743603">@akaclandestine</a></span></li>
+        <li><b>ANY.RUN: Grandoreiro rośnie ponad 2,5 raza.</b> W zeszłym tygodniu nadal dominowały RAT-y. Zyskały Remcos i XWorm, spadły SilentNet i ReverseLoader. <span class="src"><a href="https://x.com/anyrun_app/status/2109539855180906756">@anyrun_app</a></span></li>
+        <li><b>Fałszywe „rekompilacje gier przez AI” jako przynęta.</b> Eric Parker ostrzega przed kontem, które pod pozorem niemożliwych projektów rozsyła malware. <span class="src"><a href="https://x.com/EricParker/status/2109294878303924388">@EricParker</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-apt" data-cat="apt">
+      <h3>APT i państwa <span class="count">1</span></h3>
+      <ul class="brief">
+        <li id="n-npm"><b>Pakiety npm powiązane z Koreą Północną udają polyfille Rollupa.</b> Złośliwe paczki kradną sekrety z maszyn programistów. <span class="src"><a href="https://x.com/blueteamsec1/status/2109254820154712377">@blueteamsec1</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-phishing" data-cat="phishing">
+      <h3>Phishing i oszustwa <span class="count">1</span></h3>
+      <ul class="brief">
+        <li><b>Nowe znaki pozwalają tworzyć domeny łudząco podobne do prawdziwych.</b> SC World opisuje homoglify, których przeglądarki nie odróżniają wizualnie od znanych adresów. <span class="src"><a href="https://x.com/Dinosn/status/2109477402095096257">@Dinosn</a> · <a href="https://t.co/C31ItvCIhs">SC World</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-chmura" data-cat="chmura">
+      <h3>Chmura i tożsamość <span class="count">5</span></h3>
+      <ul class="brief">
+        <li id="n-bedrock"><b>Amazon Bedrock: luka w agentach pozwalała kraść poświadczenia.</b> Według SC World błąd dawał też dostęp do kodu. <span class="src"><a href="https://x.com/Dinosn/status/2109477657020883204">@Dinosn</a> · <a href="https://t.co/2dGJP4SNjr">SC World</a></span></li>
+        <li><b>Microsoft domyślnie zablokuje logowanie jednokrotne NTLMv1.</b> W październiku klucz rejestru <code>BlockNTLMv1SSO</code> zmienia wartość domyślną z 0 (audyt) na 1 (wymuszanie) na urządzeniach, gdzie nie ustawiono go wcześniej. Nathan McNulty: NTLM i RC4 w 2026 roku to kiepski widok. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109511652865642773">@NathanMcNulty</a></span></li>
+        <li><b>Defender: nowe tabele SubmissionEvents i SubmissionResults.</b> Advanced Hunting pokaże zgłoszenia podejrzanych wiadomości i ich wyniki. Cyb3rMik3 dodaje, że właśnie proces zgłoszeń najczęściej kuleje u klientów MDO. <span class="src"><a href="https://x.com/BertJanCyber/status/2109243088451326251">@BertJanCyber</a> · <a href="https://x.com/Cyb3rMik3/status/2109359300430762262">@Cyb3rMik3</a></span></li>
+        <li><b>Prywatni agenci AI pracowników mają dostęp do firmowych aplikacji.</b> Zgody OAuth, zapisane hasła i tokeny API dają im wejście bez zgłoszenia do IT i poza konsolą zarządzanych agentów. <span class="src"><a href="https://x.com/TheHackersNews/status/2109624001198977425">@TheHackersNews</a></span></li>
+        <li><b>Bitwarden zmienia zasady dla odsprzedawców.</b> Firmy, które przepakowują i sprzedają produkt, mają robić fork i publikować go pod własną marką. Nathan McNulty uważa, że to rozsądne i że reszta licencji się nie zmienia. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109379091720028360">@NathanMcNulty</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-intel" data-cat="intel">
+      <h3>Threat intel i IOC <span class="count">7</span></h3>
+      <ul class="brief">
+        <li><b>Uderzenia w centra danych Yandexa a „rosyjskie boty”.</b> Ukraińskie drony w cztery dni trafiły trzy obiekty Yandexa (Sasowo, Kaługa, Włodzimierz). W sieci krąży wykres Cloudflare ze spadkiem ruchu botów z Rosji. Florian Roth studzi emocje: Yandex to wyszukiwarka, a ruch jej crawlerów nie jest tym samym co boty propagandowe. Brakuje też danych o kontach, które miałyby zamilknąć. <span class="src"><a href="https://x.com/cyb3rops/status/2109561820600057999">@cyb3rops</a> · <a href="https://x.com/cyb3rops/status/2109611515535921615">@cyb3rops (2)</a> · <a href="https://x.com/FalconFeedsio/status/2109370756643901539">@FalconFeedsio</a> · <a href="https://x.com/uwu_underground/status/2109352357226013176">@uwu_underground</a></span></li>
+        <li><b>The Com jako modułowa sieć.</b> Ekosystem rozrasta się w warstwy dostępu, usług i person, które obsługują grupy hakerskie, „IRL” i wymuszeniowe. Wspólne narzędzia i ciągłość marek utrudniają atrybucję. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2109547960488845701">@Cyber_O51NT</a></span></li>
+        <li><b>NetBlocks: Azerbejdżan ogranicza TikToka, Instagram i X.</b> Blokady u wielu operatorów zbiegają się z protestami wokół przepisów o hidżabach w szkołach. <span class="src"><a href="https://x.com/netblocks/status/2109592917644071137">@netblocks</a></span></li>
+        <li><b>NetBlocks: poważne zakłócenia internetu w pakistańskiej prowincji Chajber Pasztunchwa.</b> Stało się to po wprowadzeniu tam rządów nadzwyczajnych przez prezydenta. <span class="src"><a href="https://x.com/netblocks/status/2109347177051148672">@netblocks</a></span></li>
+        <li><b>DDoS: Cyber Team Indonesia.</b> Grupa twierdzi, że zaatakowała rządowy portal informacyjny Indonezji. <span class="src"><a href="https://x.com/FalconFeedsio/status/2109559318920200428">@FalconFeedsio</a></span></li>
+        <li><b>Ankieta Hackmanac: jak firmy sprawdzają dostawców.</b> W 67 głosach z X, Telegrama i LinkedIna wygrał ciągły monitoring. <span class="src"><a href="https://x.com/H4ckmanac/status/2109303720815009957">@H4ckmanac</a></span></li>
+        <li><b>„Więcej danych nie da automatycznie widoczności”.</b> Steve Miller o naiwnej wierze analityków, że nowy dostęp i kolejne źródła same odsłonią działania napastników. <span class="src"><a href="https://x.com/stvemillertime/status/2109350149193396340">@stvemillertime</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-narzedzia" data-cat="narzedzia">
+      <h3>Narzędzia i badania <span class="count">16</span></h3>
+      <ul class="brief">
+        <li><b>RecoverIt: uruchamianie kodu przez akcję naprawczą usługi.</b> Narzędzie wywraca uszkodzoną usługę Windows, a jej akcja po awarii startuje wskazany program. Nie powstaje zdarzenie 7045. Warto dodać do detekcji zmiany konfiguracji odzyskiwania usług. <span class="src"><a href="https://x.com/SEKTOR7net/status/2109609273961390543">@SEKTOR7net</a> · <a href="https://t.co/FNnCnRwoSt">GitHub</a></span></li>
+        <li><b>Jednorazowe agenty Mythic pisane przez LLM.</b> Adam Chester (xpn) pokazuje drogę od promptu do wdrożenia implantu generowanego na jedno użycie. <span class="src"><a href="https://x.com/CyberWarship/status/2109274825038434574">@CyberWarship</a> · <a href="https://t.co/9OTCJO0sLN">blog</a></span></li>
+        <li><b>m365-xdr-cli.</b> Wiersz poleceń do dochodzeń w Microsoft Defender XDR, pomyślany dla ludzi i agentów AI. <span class="src"><a href="https://x.com/Cyb3rMonk/status/2109322802335461596">@Cyb3rMonk</a> · <a href="https://t.co/3AEZBhi9BK">GitHub</a></span></li>
+        <li><b>IRFlow Timeline na Windows i Linuksa.</b> Yamato Security skompilował binaria narzędzia, które ma zastąpić Timeline Explorer. <span class="src"><a href="https://x.com/r3nzsec/status/2109553556327928292">@r3nzsec</a></span></li>
+        <li><b>Overthrone.</b> Framework do ataków na Active Directory w całości w Ruście: enumeracja LDAP/SMB/Kerberos, graf ścieżek ataku, Kerberoasting, przekazywanie NTLM, DCSync. <span class="src"><a href="https://x.com/KitPloit/status/2109272941242270018">@KitPloit</a></span></li>
+        <li><b>red-team-map.</b> Mapa architektury operacji red team, od infrastruktury po skutek. <span class="src"><a href="https://x.com/KitPloit/status/2109313260360970319">@KitPloit</a></span></li>
+        <li><b>kernel-research.</b> Zestaw do budowy exploitów jądra Linuksa: biblioteka, generatory łańcuchów ROP i baza celów. <span class="src"><a href="https://x.com/KitPloit/status/2109353595757867462">@KitPloit</a></span></li>
+        <li><b>osv-scanner 2.7.0.</b> Nowa wersja skanera podatności w zależnościach opartego na bazie OSV. <span class="src"><a href="https://x.com/KitPloit/status/2109595404320801178">@KitPloit</a></span></li>
+        <li><b>chisel 1.13.0.</b> Tunel TCP/UDP przez HTTP z szyfrowaniem SSH. Obrońcom przyda się aktualna sygnatura. <span class="src"><a href="https://x.com/KitPloit/status/2109555071167996241">@KitPloit</a></span></li>
+        <li><b>striga.</b> Eksperymentalny lifter x86-64 do LLVM IR w Pythonie, przydatny przy analizie maszyn wirtualnych w zaciemnionym kodzie. <span class="src"><a href="https://x.com/KitPloit/status/2109514700463435847">@KitPloit</a></span></li>
+        <li><b>icicle-python.</b> Wiązania Pythona do emulatora Icicle, do fuzzingu firmware na x64 i ARM64. <span class="src"><a href="https://x.com/KitPloit/status/2109433962963587446">@KitPloit</a></span></li>
+        <li><b>ASN Scout.</b> Dark Web Informer buduje skaner ASN w Pythonie: zakresy IP, żywe hosty, nagłówki HTTP, porty i certyfikaty TLS. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109436884661207232">@DarkWebInformer</a></span></li>
+        <li><b>PENTEST-SWARM-AI.</b> Otwarte narzędzie, w którym kilku agentów łączy wyszukiwanie subdomen, enumerację hostów i skanowanie w jeden przebieg. <span class="src"><a href="https://x.com/theXSSrat/status/2109550151513592173">@theXSSrat</a></span></li>
+        <li><b>MMFIC-Framework.</b> Pakiet OSINT do pozyskiwania danych z darkwebu. <span class="src"><a href="https://x.com/akaclandestine/status/2109389054185787562">@akaclandestine</a> · <a href="https://t.co/awoHo4aMBC">GitHub</a></span></li>
+        <li><b>Obejście WAF Akamai dla XSS.</b> Ładunek z komentarzem HTML i <code>svg onload</code>, który składa nazwę funkcji z fragmentów wyrażeń regularnych. Dobry przypadek testowy dla własnych reguł. <span class="src"><a href="https://x.com/theXSSrat/status/2109548870049169417">@theXSSrat</a></span></li>
+        <li><b>vx-underground: kolejne 159 tys. próbek malware.</b> Kolekcja jest dostępna za darmo dla badaczy. <span class="src"><a href="https://x.com/vxunderground/status/2109363803930382530">@vxunderground</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="k-lektury" data-cat="lektury">
+      <h3>Lektury i poradniki <span class="count">15</span></h3>
+      <ul class="brief">
+        <li><b>Łatanie podatności przez AI ma problem z ocenianiem.</b> Help Net Security o badaniu Northwestern University: trudno wiarygodnie sprawdzić, czy poprawka wygenerowana przez model naprawdę usuwa błąd. <span class="src"><a href="https://x.com/helpnetsecurity/status/2109532016664301980">@helpnetsecurity</a> · <a href="https://t.co/7h8600KDKK">artykuł</a></span></li>
+        <li><b>90 tys. dolarów za RCE w Google.</b> Simon Koeck opisuje, jak znalazł błąd zdalnego wykonania kodu. <span class="src"><a href="https://x.com/Dinosn/status/2109591553379537050">@Dinosn</a> · <a href="https://t.co/8BQmhQjVSD">opis</a></span></li>
+        <li><b>Darknet Diaries: jak USDoD podszył się i wszedł do FBI.</b> Nowy odcinek podcastu. <span class="src"><a href="https://x.com/DarknetDiaries/status/2109423011812250029">@DarknetDiaries</a></span></li>
+        <li><b>Krótki poradnik OSINT: badanie konta pod pseudonimem.</b> Adresy e-mail z commitów, analiza adresu, dorki na nazwę użytkownika. <span class="src"><a href="https://x.com/d4rk_intel/status/2109620901293555817">@d4rk_intel</a> · <a href="https://x.com/theXSSrat/status/2109547283679502673">@theXSSrat</a></span></li>
+        <li><b>IDOR w 15 minut.</b> Dwa konta, utworzenie wszystkich możliwych obiektów na pierwszym, zapisanie każdego identyfikatora w proxy i podmiana na drugim. <span class="src"><a href="https://x.com/theXSSrat/status/2109543359555482003">@theXSSrat</a></span></li>
+        <li><b>Darmowa ścieżka OSEP na RatCTF.</b> Pięć modułów i 12 maszyn pod PEN-300, m.in. ucieczki z ograniczonych powłok. <span class="src"><a href="https://x.com/theXSSrat/status/2109580169983721580">@theXSSrat</a></span></li>
+        <li><b>Laboratorium SSRF „Blindspot”.</b> Narzędzie do sprawdzania adresów URL, które wykonuje żądania z serwera, i wewnętrzna usługa konfiguracji. Ćwiczenie w przeglądarce. <span class="src"><a href="https://x.com/theXSSrat/status/2109344155486785799">@theXSSrat</a> · <a href="https://t.co/lLJL9oiD8v">RatCTF</a></span></li>
+        <li><b>Inżynieria wsteczna WASM AOT, część 2.</b> Kolejny wpis z serii cocomelonc. <span class="src"><a href="https://x.com/theXSSrat/status/2109549266146316745">@theXSSrat</a></span></li>
+        <li><b>Minifiltry Windows.</b> Seria dla osób pracujących nad EDR i wnętrzem systemu. <span class="src"><a href="https://x.com/theXSSrat/status/2109546472031257088">@theXSSrat</a></span></li>
+        <li><b>Open redirect oceniony jako P2.</b> Przykład z programu Della: „mało groźny” błąd zyskuje wagę, gdy pokaże się łańcuch. <span class="src"><a href="https://x.com/theXSSrat/status/2109545421626335473">@theXSSrat</a></span></li>
+        <li><b>MITRE ATT&amp;CK jako punkt startu do nauki o malware.</b> vx-underground radzi zacząć od technik, a dopiero potem brać się za próbki. <span class="src"><a href="https://x.com/vxunderground/status/2109312064065880470">@vxunderground</a></span></li>
+        <li><b>Czy da się naprawić wszystkie błędy, jeśli zamrozimy rozwój oprogramowania?</b> Ankieta LiveOverflow, ponad 1600 głosów. <span class="src"><a href="https://x.com/LiveOverflow/status/2109295898127692077">@LiveOverflow</a></span></li>
+        <li><b>MCP jako nowa powierzchnia ataku.</b> Webinar Brysona Borta i Jake’a Williamsa o tym, co obrońcy powinni testować. Środa 14 października, 14:30 czasu wschodniego USA. <span class="src"><a href="https://x.com/scythe_io/status/2109252675866968484">@scythe_io</a></span></li>
+        <li><b>Black Hat Asia: szkolenie o dronach.</b> „Advanced Drone Warfare”: technologie, wektory ataku i środki zaradcze. <span class="src"><a href="https://x.com/BlackHatEvents/status/2109425820573765995">@BlackHatEvents</a></span></li>
+        <li><b>VB2026 rusza w Sewilli.</b> Konferencja Virus Bulletin zaczyna się w tym tygodniu. <span class="src"><a href="https://x.com/virusbtn/status/2109586097101844899">@virusbtn</a></span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od wybranych kont o cyberbezpieczeństwie na X oraz raporty, do których te wpisy się odnoszą.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 12 October 2026</span><span>Issue no. 5</span><span>159 posts · 398 accounts · 88 news items</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-artykuly">Stories</a>
+    <a href="#en-newsy">All news</a>
+    <a class="sub" href="#en-k-polska">Poland</a>
+    <a class="sub" href="#en-k-zeroday">Zero-days</a>
+    <a class="sub" href="#en-k-podatnosci">Vulnerabilities</a>
+    <a class="sub" href="#en-k-ransomware">Ransomware</a>
+    <a class="sub" href="#en-k-wycieki">Breaches</a>
+    <a class="sub" href="#en-k-malware">Malware</a>
+    <a class="sub" href="#en-k-apt">APTs</a>
+    <a class="sub" href="#en-k-phishing">Phishing</a>
+    <a class="sub" href="#en-k-chmura">Cloud</a>
+    <a class="sub" href="#en-k-intel">Threat intel</a>
+    <a class="sub" href="#en-k-narzedzia">Tools</a>
+    <a class="sub" href="#en-k-lektury">Reading</a>
+  </nav>
+
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+      <div class="hero">
+        <div class="kicker">Top story</div>
+        <h2>Someone remotely defrosted the fridges in hundreds of French supermarkets</h2>
+        <p>Overnight from Sunday to Monday, attackers took over Danfoss refrigeration controllers in Intermarché, Netto, Leclerc and Super U stores and switched on continuous defrosting with a 50°C setpoint. Fresh and frozen goods have to be thrown away, and losses at single stores reach €200,000. French media say the attack hit older versions of the system, before version 4.</p>
+        <a class="more" href="#en-a-danfoss">Read the full story →</a>
+      </div>
+      <div class="hero second">
+        <div class="kicker">Second story</div>
+        <h2>Ledger confirms a hardware implant in a wallet. The case may have reached Europe</h2>
+        <p>The crypto wallet maker admitted that the device of one robbed customer contained an unauthorised chip. All confirmed cases involve the Malaysian reseller CryptoBilis, and losses are estimated at $86–93 million. There is also an unconfirmed report of an implant in a wallet bought at MediaMarkt.</p>
+        <a class="more" href="#en-a-ledger">Read the full story →</a>
+      </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><a href="#en-a-danfoss">An attack on Danfoss refrigeration controllers</a> destroyed stock in hundreds of French supermarkets.</span></li>
+        <li><span><a href="#en-a-ledger">Ledger confirmed a hardware implant</a> in a wallet from the reseller CryptoBilis and halted its sales.</span></li>
+        <li><span><a href="#en-a-sonicwall">Two days after the patch, attack attempts began</a> against a CVSS 10.0 flaw in SonicWall SMA 1000.</span></li>
+        <li><span><a href="#en-a-pegasus">Poland's ABW: Pegasus data left the country</a>, and the CBA did not fully control the system.</span></li>
+        <li><span><a href="#en-a-pekao">CSIRT KNF warns of a fake Bank Pekao app</a> that relays card data to criminals over NFC.</span></li>
+        <li><span><a href="#en-a-cyberxero">CyberXero used 51 Claude Code agents</a> to plant 32 web shells in 61 seconds; it also targeted Ukrainian energy firms.</span></li>
+        <li><span><a href="#en-a-kimsuky">Kimsuky is spying on Ukrainian diplomats</a> and hiding its infrastructure on GitHub, GitLab and Codeberg.</span></li>
+        <li><span><a href="#en-a-peoplesoft">ShinyHunters bypass WAF rules with one character</a> and return to mass attacks on Oracle PeopleSoft.</span></li>
+        <li><span><a href="#en-a-gentlemen">The Gentlemen listed Deloitte, KFC, Confluent and MoneyGram as victims</a>; none of the companies has confirmed it.</span></li>
+        <li><span><a href="#en-a-nippon">8.6 million customers of a Japanese karaoke chain</a> exposed after malware hit a contractor's computer.</span></li>
+        <li><span><a href="#en-a-mimosa">Midnight Mimosa sits in the firmware of cheap Android devices</a> in more than 150 countries.</span></li>
+        <li><span><a href="#en-n-gitlab">Netlas warns of a 10.0-rated RCE flaw in GitLab</a> that can be triggered without logging in.</span></li>
+        <li><span><a href="#en-n-caracal">Dark Caracal in a clinic</a>: a Go backdoor spreads by email as a ".rev" file.</span></li>
+        <li><span><a href="#en-n-blik">12 people detained in Poland for "bank employee" fraud</a> using BLIK codes.</span></li>
+      </ol>
+    </div>
+  </section>
+  <div class="stats">
+    <button class="stat" type="button" data-filter="zeroday"><b>3</b><span>Actively exploited</span></button>
+    <button class="stat" type="button" data-filter="ransomware wycieki"><b>15</b><span>Ransomware &amp; breaches</span></button>
+    <button class="stat" type="button" data-filter="polska"><b>6</b><span>From Poland</span></button>
+    <button class="stat" type="button" data-filter="all"><b>88</b><span>News items</span></button>
+  </div>
+
+  <h2 class="section" id="en-artykuly">Stories</h2>
+
+  <article class="full" id="en-a-danfoss" data-cat="ics">
+    <div class="kicker">ICS/OT · attack with physical effects</div>
+    <h3>Someone remotely defrosted the fridges in hundreds of French supermarkets</h3>
+    <p class="lead">On the night of 11–12 October, attackers changed the settings of Danfoss refrigeration controllers in stores of several of France's largest chains. Instead of cooling, the equipment heated.</p>
+    <div class="body">
+      <p>According to BFMTV, cited by Zaufana Trzecia Strona, someone took over the refrigeration control systems and switched on forced, continuous defrosting. Defrosting is normally a short warming of the evaporator that melts frost. Here it never stopped, and the temperature setpoint was put at 50°C. In the morning the cabinets and freezers held thawed goods.</p>
+      <p>The affected stores belong to Intermarché, Netto, Leclerc and Super U. Media reports speak of hundreds of outlets. A broken cold chain means fresh and frozen products have to be disposed of. In Haguenau one store puts its losses at tens of thousands of euros and another at more than €200,000. Nationwide the figure runs into millions. Industry representatives quoted by BFMTV call the event "extremely serious, unprecedented and unacceptable".</p>
+      <p>French outlets report that the attack hit older versions of Danfoss control systems, before version 4. It is not yet known how the attackers got access: through controllers exposed to the internet, through service accounts, or through a company that maintains the installations. Nobody has claimed the attack. This is a rare case where changing one parameter in building automation causes immediate, countable losses at many companies at once.</p>
+      <div class="todo"><b>What to do:</b> if you manage commercial refrigeration, check that panels and controllers are not reachable from the internet (service access only over a VPN with MFA), change default and shared passwords, update controller software to the current version, and set up an independent temperature alarm that cannot be switched off from the same system. Review logs for night-time changes to defrost schedules and setpoints.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Zaufana3Strona/status/2109613367065301358">@Zaufana3Strona: attack on retail chains in France</a></li>
+        <li>Reports: <a href="https://www.bfmtv.com/economie/consommation/la-temperature-est-montee-jusqu-a-50-degres-une-cyberattaque-contre-les-systemes-frigorifiques-provoque-la-destruction-de-produits-frais-dans-des-centaines-d-intermarche-et-de-super-u_AN-202610120327.html">BFMTV</a> · <a href="https://www.cyberattaque.org/danfoss-au-coeur-de-la-cyberattaque-qui-fait-chauffer-les-frigos-dintermarche-super-u-et-leclerc/">cyberattaque.org</a> · <a href="https://www.letribunaldunet.fr/actualites/cyberattaque-frigos-supermarches-50-degres-danfoss.html">Le Tribunal du Net</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-a-ledger" data-cat="malware intel">
+    <div class="kicker">Supply chain · hardware</div>
+    <h3>Ledger confirms a hardware implant in a wallet. The case may have reached Europe</h3>
+    <p class="lead">Ledger admitted that an unauthorised chip was found in the device of one robbed user. All confirmed cases trace back to one reseller in Southeast Asia, but reports from Europe appeared over the weekend.</p>
+    <div class="body">
+      <p>The case began with customers who bought hardware wallets from CryptoBilis, Ledger's authorised partner for Malaysia, Indonesia and the Philippines, based in Kuala Lumpur, and then lost their funds. An on-chain analyst known as Specter linked thefts of more than $86 million on Ethereum, Tron and Bitcoin to the case. Other estimates put it at $93 million from more than 300 wallets. Ledger has not confirmed these figures.</p>
+      <p>On 10 October the company said that "one of the impacted users' devices contained an unauthorized hardware implant". Ledger asked CryptoBilis to pause sales and shipments, and the reseller suspended trade in its whole inventory until the investigation ends. The maker maintains that its own infrastructure was not breached and that the problem concerns this one seller.</p>
+      <p>Weekend posts challenge that last claim. An X user showed photos of a similar implant in a wallet he says he bought at MediaMarkt, a chain that also operates in Poland. Eric Parker called it a "very strange" turn: MediaMarkt is a reputable German firm and is unlikely to source French-made devices from Malaysia. Costin Raiu writes that the "grain of rice" does exist and that this is turning into a nightmare for the company and its customers. He reposted a message whose author claims reports are also coming from Latin America. Ledger has not confirmed that the MediaMarkt unit was modified or that it is linked to the CryptoBilis case.</p>
+      <div class="todo"><b>What to do:</b> anyone who bought a Ledger from CryptoBilis in the last 90 days should not set up an unused device. Funds on one that is already configured are best moved to another device with a new recovery phrase. Everyone else can buy directly from the maker and follow Ledger's announcements. Reports about units from European shops are unconfirmed for now.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2109606117827584486">@TheHackersNews: Ledger confirms implant</a> · <a href="https://x.com/craiu/status/2109528206487564330">@craiu</a> · <a href="https://x.com/EricParker/status/2109337456630026672">@EricParker: MediaMarkt</a> · <a href="https://x.com/WhichbufferArda/status/2109562143615975660">@WhichbufferArda</a></li>
+        <li>Reports: <a href="https://www.coindesk.com/tech/2026/10/12/ledger-says-unauthorized-implant-found-in-at-least-one-device-sold-by-cryptobilis">CoinDesk</a> · <a href="https://decrypt.co/380582/ledger-probes-87m-theft-crypto-wallet-reseller">Decrypt</a> · <a href="https://news.bitcoin.com/security/user-exposes-hidden-hardware-implant-in-european-ledger-wallet/">Bitcoin.com News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-a-sonicwall" data-cat="zeroday podatnosci">
+    <div class="kicker">Vulnerability · attack attempts</div>
+    <h3>SonicWall SMA 1000: exploitation attempts against a CVSS 10.0 flaw began two days after the patch</h3>
+    <p class="lead">CVE-2026-102255 is the third maximum-severity SSRF bug since July in the same component of SMA 1000 gateways. Honeypots are already logging requests that match the flaw.</p>
+    <div class="body">
+      <p>SonicWall patched the bug on 6 October (advisory SNWLID-2026-0017). The flaw is in the WorkPlace interface and needs no login. An attacker can make the appliance send requests on their behalf and reach functions available only from the inside. The affected models are SMA 6210, 7210 and 8200v with firmware 12.4.3-03526 and earlier, and 12.5.0-02952 and earlier. The SMA 100 series and SSL-VPN on SonicWall firewalls are not affected.</p>
+      <p>On 8 October, Ryan Dewhurst of Previdian and the firm Defused saw unauthenticated SSRF traffic on their decoys. An OPTIONS request aimed at the Extraweb interface tries to reach the internal CouchDB database at <code>127.0.0.1:5984</code>, get into a design document and call its <code>_rewrite</code> function, supplying Basic authentication credentials along the way. The Hacker News reports 135 attempts from just two IP addresses in the US.</p>
+      <p>The sources differ in how they read the situation. SonicWall's advisory said there was no evidence that this flaw, or the three others fixed in the same release, was being exploited. Researchers see attempts, but Previdian notes it has not checked whether they would succeed on a real appliance. Shadowserver sees more than 400 SMA 1000 gateways on the internet. The previous two flaws in this series, CVE-2026-15409 from July and CVE-2026-83548 from September, were exploited in attacks, the first one before a patch existed.</p>
+      <div class="todo"><b>What to do:</b> update SMA 1000 to the version in advisory SNWLID-2026-0017 and restrict access to WorkPlace and the management console. In logs, look for OPTIONS requests to the Extraweb interface and references to <code>127.0.0.1:5984</code> and <code>_rewrite</code>. If an appliance stayed unpatched after 8 October, treat it as potentially compromised.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2109594982864900505">@TheHackersNews: 135 attempts from two IP addresses</a></li>
+        <li>Reports: <a href="https://bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks">BleepingComputer</a> · <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-sonicwall-sma1000-ssrf-cve-2026-102255-202/">Cloud Security Alliance</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-a-pegasus" data-cat="polska prawo">
+    <div class="kicker pl">Surveillance · affects Poland</div>
+    <h3>ABW: Pegasus data left Poland, and the CBA did not fully control the system</h3>
+    <p class="lead">The declassified part of an expert opinion by the Internal Security Agency (ABW) and the report of the parliamentary investigative committee, presented after more than two and a half years of work, describe a system whose key parts stayed in the vendor's hands.</p>
+    <div class="body">
+      <p>ABW experts examined the Pegasus installation at the headquarters of the Central Anticorruption Bureau (CBA). They confirmed that the system could, without the user's knowledge, collect messages, calls, contacts, browsing history, photos, location and files, and use the phone's microphone and cameras live. The main findings, however, concern control. According to the opinion, the CBA did not fully control how the system worked, and some elements were under the exclusive control of the vendor's software. Data acquired and transmitted by the system "left Polish territory". NSO Group had the technical ability to access material from operational surveillance. The opinion does not settle whether the vendor actually used it.</p>
+      <p>More details came out when the committee presented its report. Pegasus did not run locally in the CBA server room but "through an anonymising network located in various parts of the world". The CBA reportedly did not know the passwords to some administrator accounts, which NSO Group did know, and "the server module for infecting devices was under the exclusive control of the vendor". The committee also gave figures, including the intermediary's fee, and said that politicians and heads of services are implicated.</p>
+      <p>Prime Minister Donald Tusk said Poland could not use the system against numbers from, among others, Russia, Belarus and North Korea. Committee chair Magdalena Sroka told CyberDefence24 that further notifications to prosecutors are coming, this time concerning 11 people. Earlier ones covered the former heads of the CBA, the ABW and the Military Counterintelligence Service (SKW).</p>
+      <div class="todo"><b>Why it matters:</b> this is the first official confirmation, based on an expert assessment by the services, that material from Polish operational surveillance passed through infrastructure the state did not fully control. For anyone buying tools of this kind, it is a reason to write into the contract and the architecture who holds the keys, the administrator accounts and access to the servers.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CyberDefence24/status/2109552755727565154">@CyberDefence24: ABW findings</a> · <a href="https://x.com/CyberDefence24/status/2109611663527747648">@CyberDefence24: committee report</a></li>
+        <li>Reports: <a href="https://cyberdefence24.pl/armia-i-sluzby/dane-z-pegasusa-trafialy-za-granice-abw-potwierdza">CyberDefence24: Pegasus data went abroad (in Polish)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-a-pekao" data-cat="polska phishing malware">
+      <div class="kicker pl">Fraud · affects Poland</div>
+      <h3>A fake Bank Pekao app asks you to hold your card to the phone</h3>
+      <p class="lead">CSIRT KNF warns of a malicious Android app that impersonates Bank Pekao and uses an NFC relay attack.</p>
+      <div class="body">
+        <p>Once launched, the app asks the user to hold a payment card to the phone. The phone then reads the card's contactless communication and passes it to criminals, who can use it on their own device, for example at an ATM or a payment terminal. Sekurak's comment is brief: this is one more app that tries to withdraw someone else's money from an ATM.</p>
+        <p>The app is not on Google Play. According to CSIRT KNF, it may reach victims through fake emails and text messages, messaging apps and websites imitating the bank. The team also published a video showing how the fake app behaves.</p>
+        <div class="todo"><b>What to do:</b> install banking apps only from the official store. No bank asks you to hold a card to your phone for "verification" or to enter a PIN in an app from a link. If you did, block the card and call the bank.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/CSIRT_KNF/status/2109548698392825962">@CSIRT_KNF: warning</a> · <a href="https://x.com/CSIRT_KNF/status/2109548811798614312">@CSIRT_KNF: video</a> · <a href="https://x.com/Sekurak/status/2109572040902521270">@Sekurak</a></div>
+    </article>
+    <article class="full" id="en-a-cyberxero" data-cat="intel apt">
+      <div class="kicker">AI in attacks · Ukraine</div>
+      <h3>CyberXero: 51 Claude Code agents and 32 web shells in 61 seconds</h3>
+      <p class="lead">SOCRadar described a Russian-speaking access broker who combined classic offensive tools with a layer of AI agents. Ukrainian energy companies are among the targets.</p>
+      <div class="body">
+        <p>The researchers came across an open directory with the attacker's working files: AI session logs, scripts with tokens in plain text, and data stolen from victims. The material shows that CyberXero ran up to 51 Claude Code agents and a PentAGI deployment connected to Cobalt Strike. One automated run gave access to 429 WordPress administrator panels out of 4,708 scanned targets, and 32 web shells were uploaded in 61 seconds.</p>
+        <p>The operation had two tracks. The first was mass, automated exploitation of WordPress and online shops for access and payment data. The second was deeper reconnaissance and manual attacks on seven Ukrainian energy and utility entities, including the national transmission system operator and the largest private energy holding. The directory held confirmed data on more than 628,000 Ukrainian citizens from four organisations, including residents of Kharkiv.</p>
+        <div class="todo"><b>Why it matters:</b> the AI agents did not give the attacker new techniques, but they cut the time between scan and takeover to seconds. The defender's window to react after a flaw in a popular plugin is disclosed becomes very narrow.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/TheHackersNews/status/2109547555432620104">@TheHackersNews</a> · <a href="https://thehackernews.com/2026/10/cyberxero-uses-claude-code-in-campaign.html">The Hacker News</a> · <a href="https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/">SOCRadar report</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-kimsuky" data-cat="apt phishing">
+      <div class="kicker">APT · North Korea</div>
+      <h3>Operation GitPower: Kimsuky spies on Ukrainian diplomats through developer platforms</h3>
+      <p class="lead">Genians described a campaign in which the North Korean group first starts a conversation and sends the malicious file only in a reply.</p>
+      <div class="body">
+        <p>The targets are Ukrainian experts in diplomacy, security and international policy and non-governmental organisations, and secondarily people in Japan and South Korea. The lures are an invitation to the KCSCON 2026 conference, a request to collaborate on an analysis of Russian–North Korean military cooperation, reports on peace initiatives, and Zoom or Google Meet invitations. The researchers believe the group wants information on North Korean troops' part in the war and on the handling of North Korean prisoners of war.</p>
+        <p>The chain starts with an archive holding an LNK file posing as a PDF. The shortcut runs <code>cmd.exe</code> and <code>curl</code>, which downloads scripts from repositories on GitLab, GitHub or Codeberg, saved as ".ini" files. Next come a VBE script and PowerShell, which collects <code>systeminfo</code> and a listing of the Downloads folder, sends them through the GitHub Contents API and adds a scheduled task named <code>GoogleUpdateTaskMachineUA</code> that runs every 15–30 minutes. A separate module connects to a C2 server on TCP port 12345. In parallel, AhnLab described another Kimsuky campaign: Funhouse ransomware delivered in an HWP document posing as a CV, together with Quasar RAT.</p>
+        <div class="todo"><b>How to detect:</b> an LNK launched from an archive that starts <code>cmd.exe</code> and <code>curl</code>; <code>wscript.exe</code> with .vbe files; PowerShell with <code>-ep bypass</code> in a hidden window; scheduled tasks named like updaters; connections to <code>111.92.246[.]145:12345</code> and subdomains of <code>serveirc[.]com</code> and <code>medianewsonline[.]com</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/blackorbird/status/2109475664214753650">@blackorbird</a> · <a href="https://x.com/Cyber_O51NT/status/2109573175470076019">@Cyber_O51NT: Funhouse</a> · <a href="https://www.genians.co.kr/en/blog/threat_intelligence/operation-gitpower">Genians report</a></div>
+    </article>
+    <article class="full" id="en-a-blinder" data-cat="apt malware">
+      <div class="kicker">APT · Iran</div>
+      <h3>New Blinder Tunnel variant: zero detections and instructions hidden in VS Code issues</h3>
+      <p class="lead">Nextron found a version of an Iranian group's loader that none of 71 engines detects six weeks after it was submitted to VirusTotal.</p>
+      <div class="body">
+        <p>The researchers went hunting after Unit 42's Blinder Tunnel report and found a variant with changed infrastructure. The file <code>StarkMeet (1).zip</code>, submitted on 25 August from Iraq, contains an Inno Setup installer posing as an IT recruitment assessment for Dubai Airport. The installer drops <code>RuntimeBroker.exe.config</code> and <code>RuntimeBroker.dll</code>. The config file names the library as the AppDomainManager, so the .NET runtime loads it before the actual program.</p>
+        <p>Every 63 seconds the loader talks to GitHub through a relay on Cloudflare Workers, sends the victim's profile to the attacker's repository and fetches one-time commands. The fallback mechanism is the most interesting part. When the token stops working, the malware searches today's issues in the public Microsoft/vscode repository and finds new credentials in HTML comments, encrypted with a key derived from the date and the victim's identifier. Only one infected computer can read them. The group uses the name "Peaky Blinders".</p>
+        <div class="todo"><b>How to detect:</b> the Run entry <code>MicrosoftRuntime</code> in HKCU, the directory <code>%LOCALAPPDATA%\Microsoft\RuntimeBrokers\</code>, .config files naming an unusual AppDomainManager, traffic to <code>g-prx.itugegape524.workers[.]dev</code>. SHA-256 of the library: <code>aa7d4bf74edacba06da7e9d414c0649599fb0e7b118f7c3ddcec09eb3f720c82</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/nextronresearch/status/2109543626552291785">@nextronresearch</a> · <a href="https://github.com/NextronSystems/iocs/tree/master/reports/A%20New%20Variant%20of%20Blinder%20Tunnel%20with%20Zero%20AV%20Detection">Nextron report and IOCs</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-peoplesoft" data-cat="zeroday wycieki malware">
+      <div class="kicker">Update · actively exploited</div>
+      <h3>ShinyHunters and Oracle PeopleSoft: one encoded character bypasses WAF rules</h3>
+      <p class="lead">We covered the PeopleSoft flaw with the FBI Jobs portal breach. Now the researcher Squiblydoo has taken apart a backdoor from this campaign, and Google's report shows how the attackers returned despite the safeguards.</p>
+      <div class="body">
+        <p>The flaw is CVE-2026-35273, a Java deserialisation bug in the Environment Management Hub servlet (PSEMHUB). The group UNC6240, known as ShinyHunters, exploited it as a zero-day from 27 May to 9 June, mostly against universities. Oracle issued an alert on 10 June. In September the campaign came back on a larger scale and also hit technology firms, healthcare, transport and government. Instead of <code>/PSEMHUB/</code> the attackers send <code>/%50SEMHUB/</code>. WAF rules that compare the path before URL decoding miss it, while the application server decodes the character and routes the request to the vulnerable servlet.</p>
+        <p>Once in, the group leaves the web shells <code>x.jsp</code> and <code>u.jsp</code>, Neo-reGeorg tunnels, the MeshAgent agent and a file named <code>Ple64.exe</code>. It is a trojanised installer of the Light Alloy media player with a valid EV certificate issued to "Tobias Weihmann Software Development OU". Google tracks this backdoor as SIDEEYE. Squiblydoo assesses it as an updated version of SnappyClient and published his own analysis. HR, payroll and student data are then archived and used for extortion.</p>
+        <div class="todo"><b>What to do:</b> install Oracle's patch, because a WAF rule alone is not enough. Disable or remove EMHub if it is not needed. In logs, look for <code>/PSEMHUB/</code> in every encoding variant and POST requests to <code>/hub</code>, and in the <code>PSEMHUB.war</code> directory look for .jsp files and <code>Ple64.exe</code>. Backdoor C2: <code>162.219.30[.]165</code> (TCP 3333 and 3334).</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/SquiblydooBlog/status/2109274480405282905">@SquiblydooBlog</a> · <a href="https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-renewed-mass-exploitation-campaign-targeting-oracle-peoplesoft">Google/Mandiant report</a> · <a href="https://t.co/6XfBlvKwJW">SnappyClient analysis</a></div>
+    </article>
+    <article class="full" id="en-a-gentlemen" data-cat="ransomware">
+      <div class="kicker">Ransomware · unconfirmed</div>
+      <h3>The Gentlemen list Deloitte, KFC, Confluent and MoneyGram</h3>
+      <p class="lead">Four well-known brands appeared on the ransomware group's site on a single day. So far these are only the criminals' claims.</p>
+      <div class="body">
+        <p>On 10 October Hackmanac recorded four new entries by The Gentlemen: Deloitte (tagged United Kingdom), KFC, Confluent and MoneyGram (all three tagged United States). None states the amount or type of data, and each is marked "pending verification". None of the companies has confirmed an incident.</p>
+        <p>Caution is justified. A leak-site entry does not say whether the head office, a subsidiary, a franchisee or a supplier was breached. In August the same group claimed an attack on KFC in Kosovo, that is, on a local operator of the brand. The Gentlemen have operated since 2025 under an affiliate model, claim several hundred victims and, according to KELA, are one of the two most active ransomware groups this year.</p>
+        <div class="todo"><b>Why it matters:</b> if one of these firms is your supplier, this is a good moment to ask your account manager. Decisions can wait until a data sample or a company statement appears.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/H4ckmanac/status/2109321619961450635">@H4ckmanac: Deloitte</a> · <a href="https://x.com/H4ckmanac/status/2109317719749218623">KFC</a> · <a href="https://x.com/H4ckmanac/status/2109317261844492673">Confluent</a> · <a href="https://x.com/H4ckmanac/status/2109316748197450023">MoneyGram</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-a-nippon" data-cat="wycieki">
+      <div class="kicker">Data breach · Japan</div>
+      <h3>Malware on one contractor computer exposed the data of 8.6 million karaoke customers</h3>
+      <p class="lead">Daiichi Kosho, Japan's largest karaoke operator, reported an incident at Nippon Columbia Group, which processes personal data for it.</p>
+      <div class="body">
+        <p>On 5 October NCG detected malware on an employee's computer and isolated the machine a day later. That computer held the data of 8,631,000 customers and 93,000 employees of Daiichi Kosho, which runs 521 venues, including the Big Echo chain. The scope covers full names, gender, dates of birth, email addresses and phone numbers.</p>
+        <p>The company disclosed the case on 11 October. It says the data set contained no passwords and that there is no sign of unauthorised use of loyalty points. The type of malware has not been given, and it has not been confirmed that the data was actually taken out. The investigation continues. Customers are told to watch out for unsolicited messages and calls asking for payment or data.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/BleepinComputer/status/2109288975684784216">@BleepinComputer</a> · <a href="https://x.com/blueteamsec1/status/2109290963936092349">@blueteamsec1</a> · <a href="https://www.bleepingcomputer.com/news/security/nippon-columbia-malware-incident-exposes-86-million-karaoke-fan-records/">BleepingComputer</a></div>
+    </article>
+    <article class="full" id="en-a-mimosa" data-cat="malware">
+      <div class="kicker">Malware · Android</div>
+      <h3>Midnight Mimosa: malware baked into the firmware of cheap Android devices in more than 150 countries</h3>
+      <p class="lead">Bitdefender described a malicious system app that reaches devices before they are sold and cannot be uninstalled in the normal way.</p>
+      <div class="body">
+        <p>Midnight Mimosa is part of the firmware of budget devices on MediaTek platforms. It runs with system privileges: it silently installs and removes apps, grants them permissions and loads remote code. Before installing a payload it disables the Play Store and blinds Google Play Protect, then turns them back on. Today it is used mainly for ad fraud and automated clicking, but the same mechanism can install anything.</p>
+        <p>Over two years of observation Bitdefender counted thousands of unique devices in more than 150 countries. Most are in Mexico and France, followed by Italy, the US, Germany, Brazil and Spain. The same ad-fraud code was found in 13 apps on Google Play, signed with different certificates. The report does not name a perpetrator.</p>
+        <div class="todo"><b>What to do:</b> at work, do not let Android devices without Play Protect certification reach company resources. At home, avoid tablets, TV boxes and phones from unknown brands. A factory reset does not remove a component built into the firmware.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/SecurityWeek/status/2109236567994667221">@SecurityWeek</a> · <a href="https://www.securityweek.com/pre-baked-firmware-malware-hits-budget-android-devices-in-150-countries/">SecurityWeek</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-a-pawns" data-cat="malware intel">
+    <div class="kicker">Threat intel · proxyjacking</div>
+    <h3>Not a miner but a legitimate "earn from your bandwidth" app. The DFIR Report on a hijacked Linux server</h3>
+    <p class="lead">An attacker broke into an internet-facing server and installed Pawns.app on it, an official agent that pays for sharing bandwidth. The account, of course, was the attacker's.</p>
+    <div class="body">
+      <p>According to The DFIR Report, after getting in the attacker dropped a JSP web shell and ran quick reconnaissance (<code>id</code>, <code>uname -a</code>, <code>ip addr</code>). They then pulled the Pawns CLI client with <code>wget</code> and hid copies named <code>.p</code> in <code>/tmp</code>, <code>/var/tmp</code>, <code>/opt</code> and <code>/home</code>. They tried to persist with an <code>@reboot</code> cron entry. The agent was started with the parameters <code>-email=</code>, <code>-device-name=</code> and <code>-accept-tos</code>.</p>
+      <p>This model has several advantages for criminals. The file is the vendor's original app, so antivirus has nothing to detect. The CPU is not loaded as with a miner, and the network shows only HTTPS to a well-known service. Strangers' traffic leaves from the victim's IP address, and the abuse complaints go to the victim.</p>
+      <div class="todo"><b>How to detect:</b> web server processes spawning <code>wget</code> or <code>curl</code>; proxyware launch flags; traffic from servers to Pawns, Honeygain, EarnApp and PacketStream; the files <code>/tmp/.p</code>, <code>/var/tmp/.p</code>, <code>/opt/.p</code>, <code>/home/.p</code>, <code>/tmp/gotoschool</code> and <code>/var/tmp/.config/pawns-cli/pawns-consent.log</code>. Attacker infrastructure: <code>144[.]172.86[.]173</code>, <code>209[.]99.190[.]80</code>.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheDFIRReport/status/2109388761943417181">@TheDFIRReport: proxyjacking with Pawns.app</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <h2 class="section" id="en-newsy">All news</h2>
+  <div class="news">
+    <div class="news-tools">
+      <input class="news-filter" type="search" placeholder="Search the news (e.g. CVE, Fortinet, ransomware)…" aria-label="Search the news">
+      <div class="chips">
+        <button type="button" data-filter="all" class="on">All</button>
+        <button type="button" data-filter="polska">Poland</button>
+        <button type="button" data-filter="zeroday">Zero-days &amp; active attacks</button>
+        <button type="button" data-filter="podatnosci">Vulnerabilities &amp; patches</button>
+        <button type="button" data-filter="ransomware">Ransomware</button>
+        <button type="button" data-filter="wycieki">Data breaches</button>
+        <button type="button" data-filter="malware">Malware &amp; campaigns</button>
+        <button type="button" data-filter="apt">APTs &amp; nation states</button>
+        <button type="button" data-filter="phishing">Phishing &amp; fraud</button>
+        <button type="button" data-filter="chmura">Cloud &amp; identity</button>
+        <button type="button" data-filter="intel">Threat intel &amp; IOCs</button>
+        <button type="button" data-filter="narzedzia">Tools &amp; research</button>
+        <button type="button" data-filter="lektury">Reading &amp; guides</button>
+      </div>
+    </div>
+    <p class="filter-note">Filter: <span></span> · <button type="button">show all</button></p>
+    <p class="no-results">No news matches your search.</p>
+
+    <section class="cat pl" id="en-k-polska" data-cat="polska">
+      <h3>Poland <span class="count">4</span></h3>
+      <ul class="brief">
+        <li id="en-n-blik"><b>12 people detained for "bank employee" fraud.</b> The group posed as bank staff and extracted money using BLIK codes. Victims lost PLN 250,000, and investigators expect more detentions. The CBZC, the CBŚP and the ABW took part in the operation. <span class="src"><a href="https://x.com/CyberDefence24/status/2109572074066915482">@CyberDefence24</a></span></li>
+        <li><b>How to find ARTEX panels on Shodan.</b> Michał Koczwara went through the code of ARTEX, an LLM-driven autonomous pentesting system whose repository was deleted. The panel listens on port 8787 by default, has the page title "ARTEX" with a distinctive description and a favicon with the hash -1898746557. <span class="src"><a href="https://x.com/MichalKoczwara/status/2109402558460547204">@MichalKoczwara</a></span></li>
+        <li><b>Sekurak: free training on responding to a data breach.</b> On Friday: a technical part (a review of recent high-profile breaches) plus GDPR and NIS2. The recording is to stay available indefinitely. <span class="src"><a href="https://x.com/Sekurak/status/2109561202128847207">@Sekurak</a></span></li>
+        <li><b>Cyber24 Days: AI as an opportunity or a threat for Poland.</b> Experts differed in their assessments but agreed that the state has to act. CyberDefence24 sums up the debate. <span class="src"><a href="https://x.com/CyberDefence24/status/2109600834577125696">@CyberDefence24</a> · <a href="https://t.co/KZkafhEICV">article</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-zeroday" data-cat="zeroday">
+      <h3>Zero-days &amp; active attacks <span class="count">1</span></h3>
+      <ul class="brief">
+        <li id="en-n-caracal"><span class="hot">Urgent</span><b>Dark Caracal in a clinic: a Go backdoor sent as a ".rev" file.</b> vx-underground analysed a sample from an infected healthcare facility. The .rev file is a RAR archive holding a Control Panel applet (.cpl). The malware steals email and sends contacts an SVG attachment that urges them to download another .rev file. The author attributes it to the Dark Caracal group (GoCaracal). This is one source's assessment. C2: <code>85.192.30[.]227</code>, first connections on 20 September. SHA-256: <code>8df20f4fd964c84bce577b3984bb5c65bccb876707cd9d94934a414bce7d7479</code>. <span class="src"><a href="https://x.com/vxunderground/status/2109506448031900103">@vxunderground</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-podatnosci" data-cat="podatnosci">
+      <h3>Vulnerabilities &amp; patches <span class="count">9</span></h3>
+      <ul class="brief">
+        <li id="en-n-gitlab"><span class="hot">Urgent</span><b>GitLab: unauthenticated RCE rated 10.0.</b> Netlas describes CVE-2026-97229: a specially crafted regular expression in a CI/CD configuration allows code execution on the server. Public databases describe a very similar bug under CVE-2026-93577 (an overflow in the CI/CD regular expression compiler, fixed in 19.2.7, 19.3.3 and 19.4.1). The number given by Netlas could not be confirmed there. <span class="src"><a href="https://x.com/Netlas_io/status/2109575916363899085">@Netlas_io</a></span></li>
+        <li><b>nginx-ui: PoC for CVE-2026-107806.</b> Authenticated RCE through a forged backup in versions 2.3.8–2.4.x. <span class="src"><a href="https://x.com/akaclandestine/status/2109377929947783221">@akaclandestine</a> · <a href="https://t.co/0xy1fjTmc3">GitHub</a></span></li>
+        <li><b>Fastjson: exploit for CVE-2026-16723.</b> A critical flaw in versions 1.2.68–1.2.83 of the popular Java library. <span class="src"><a href="https://x.com/akaclandestine/status/2109444822947750302">@akaclandestine</a> · <a href="https://t.co/cM9vLt865V">GitHub</a></span></li>
+        <li><b>Telegram: a repository with code for CVE-2026-107181.</b> A public PoC with little description. Read it before you run it. <span class="src"><a href="https://x.com/akaclandestine/status/2109594007898566659">@akaclandestine</a> · <a href="https://t.co/Wzo8mHUB3j">GitHub</a></span></li>
+        <li><b>Go exploit for CVE-2026-102489.</b> Another public PoC from the author of the Fastjson exploit. <span class="src"><a href="https://x.com/akaclandestine/status/2109444982155423941">@akaclandestine</a> · <a href="https://t.co/PYMMmvuq2J">GitHub</a></span></li>
+        <li><b>Signal-Server: a report on the Dropwizard admin panel.</b> A write-up of a high-severity remote bug in version v20261007.0.0. <span class="src"><a href="https://x.com/akaclandestine/status/2109390483571245373">@akaclandestine</a> · <a href="https://t.co/FHNYf7IjYW">GitHub</a></span></li>
+        <li><b>CVE-2026-91768: FastCGI compared 96 of an IPv6 address's 128 bits.</b> The <code>allowed_clients</code> list therefore let through addresses that differed only in the last 32 bits. <span class="src"><a href="https://x.com/Dinosn/status/2109584215322894611">@Dinosn</a> · <a href="https://t.co/R10IRZukep">analysis</a></span></li>
+        <li><b>Windows 11 23H2: end of support in 30 days.</b> Microsoft reminds users that the release will stop receiving security fixes after that date. <span class="src"><a href="https://x.com/BleepinComputer/status/2109614770802307274">@BleepinComputer</a> · <a href="https://t.co/7UfqJq51lU">article</a></span></li>
+        <li><b>"Too many CVEs that should not be CVEs."</b> Dinosn criticises entries with a purely theoretical attack scenario and gives CVE-2026-87690 as an example. <span class="src"><a href="https://x.com/Dinosn/status/2109603343815561581">@Dinosn</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-ransomware" data-cat="ransomware">
+      <h3>Ransomware <span class="count">5</span></h3>
+      <ul class="brief">
+        <li><b>Rhysida: the law firm Reed &amp; Giordano.</b> The group added the US law firm to its victim list and threatens to publish data in 6–7 days. Unconfirmed. <span class="src"><a href="https://x.com/FalconFeedsio/status/2109307720025489504">@FalconFeedsio</a></span></li>
+        <li><b>Avalon: a new malware framework with the CrownX ransomware module.</b> The kit combines loader functions with encryption. <span class="src"><a href="https://x.com/blueteamsec1/status/2109304924190413070">@blueteamsec1</a></span></li>
+        <li><b>Majinahanashi updates its leak site.</b> The group also added two new file servers. Full write-up at The Raven File. <span class="src"><a href="https://x.com/RakeshKrish12/status/2109541760477356313">@RakeshKrish12</a> · <a href="https://t.co/h7PY1Soi7V">The Raven File</a></span></li>
+        <li><b>n0n: several new, unnamed victims.</b> The group says it will publish data within 3–4 days. <span class="src"><a href="https://x.com/FalconFeedsio/status/2109290335310589970">@FalconFeedsio</a></span></li>
+        <li><b>Qilin: Friendship Christian School.</b> The school appeared on the group's site on 11 October. <span class="src"><a href="https://x.com/TMRansomMon/status/2109303524370620611">@TMRansomMon</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-wycieki" data-cat="wycieki">
+      <h3>Data breaches <span class="count">7</span></h3>
+      <ul class="brief">
+        <li><b>Pathao: 19 million records instead of a "partial" breach?</b> A seller using the name RedMoonson claims the break-in at the ride-hailing and delivery platform was far larger than the company said. A ransom of 400,000 USDT was demanded earlier. Unconfirmed. <span class="src"><a href="https://x.com/MonThreat/status/2109442451123380332">@MonThreat</a></span></li>
+        <li><b>Advance Create: more than 10 million records of a Japanese insurance agency.</b> A forum post claims customer data was stolen and published. Unconfirmed. <span class="src"><a href="https://x.com/MonThreat/status/2109451670304231931">@MonThreat</a></span></li>
+        <li><b>4.8 million Florida student records.</b> A database with students' personal data was put up on a forum. Unconfirmed. <span class="src"><a href="https://x.com/MonThreat/status/2109441089715237115">@MonThreat</a></span></li>
+        <li><b>An alleged Wells Fargo customer list.</b> A forum thread offers the bank's "full customer list". There is no sample that would allow verification. <span class="src"><a href="https://x.com/MonThreat/status/2109440384996929884">@MonThreat</a></span></li>
+        <li><b>KIASSURE: 128,243 records of a French insurance broker.</b> The actor "Syrv4x" published a 221 MB data set with the names and email addresses of customers of the Marseille-based firm. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109420436261843357">@DarkWebInformer</a></span></li>
+        <li><b>"888" sells access to a US fitness equipment company.</b> The offer covers a MySQL database, Amazon S3 storage and the Shopify panel. The company is not named. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109440318772814001">@DarkWebInformer</a></span></li>
+        <li><b>GTA 6: a "leak" tied to a meme coin's price.</b> CyberLeek threatens to release a playable build of the game if his Solana token reaches a $30 million market cap. Nobody has verified that the build exists. <span class="src"><a href="https://x.com/Dinosn/status/2109592109363695998">@Dinosn</a> · <a href="https://t.co/kG0IHVFfig">Security Affairs</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-malware" data-cat="malware">
+      <h3>Malware &amp; campaigns <span class="count">4</span></h3>
+      <ul class="brief">
+        <li><b>A signed installer with a captcha you cannot pass.</b> The non-working captcha distracts the user. The installer is signed by "HOLLIDAY DIGITAL LLC" and drops a trojanised aerodynamic design app signed by "Evelyn Paredes". Both certificates have been reported. <span class="src"><a href="https://x.com/SquiblydooBlog/status/2109602382183293351">@SquiblydooBlog</a> · <a href="https://t.co/FOhpA5jrOf">analysis</a></span></li>
+        <li><b>SilkBypass: a reseller panel for the BTMOB Android RAT.</b> A DuckDNS domain hosts a panel for generating and distributing obfuscated APK files, branded "SilkBypass / Rota da Seda 2.0". <span class="src"><a href="https://x.com/akaclandestine/status/2109594675111743603">@akaclandestine</a></span></li>
+        <li><b>ANY.RUN: Grandoreiro grows more than 2.5 times.</b> RATs still dominated last week. Remcos and XWorm gained, SilentNet and ReverseLoader fell. <span class="src"><a href="https://x.com/anyrun_app/status/2109539855180906756">@anyrun_app</a></span></li>
+        <li><b>Fake "AI game recompilations" as a lure.</b> Eric Parker warns about an account that spreads malware under the cover of impossible projects. <span class="src"><a href="https://x.com/EricParker/status/2109294878303924388">@EricParker</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-apt" data-cat="apt">
+      <h3>APTs &amp; nation states <span class="count">1</span></h3>
+      <ul class="brief">
+        <li id="en-n-npm"><b>North Korea-linked npm packages pose as Rollup polyfills.</b> The malicious packages steal secrets from developers' machines. <span class="src"><a href="https://x.com/blueteamsec1/status/2109254820154712377">@blueteamsec1</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-phishing" data-cat="phishing">
+      <h3>Phishing &amp; fraud <span class="count">1</span></h3>
+      <ul class="brief">
+        <li><b>New characters make it possible to create domains that look just like real ones.</b> SC World describes homoglyphs that browsers do not visually tell apart from known addresses. <span class="src"><a href="https://x.com/Dinosn/status/2109477402095096257">@Dinosn</a> · <a href="https://t.co/C31ItvCIhs">SC World</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-chmura" data-cat="chmura">
+      <h3>Cloud &amp; identity <span class="count">5</span></h3>
+      <ul class="brief">
+        <li id="en-n-bedrock"><b>Amazon Bedrock: an agent flaw allowed credential theft.</b> According to SC World, the bug also gave access to code. <span class="src"><a href="https://x.com/Dinosn/status/2109477657020883204">@Dinosn</a> · <a href="https://t.co/2dGJP4SNjr">SC World</a></span></li>
+        <li><b>Microsoft will block NTLMv1 single sign-on by default.</b> In October the default value of the <code>BlockNTLMv1SSO</code> registry key changes from 0 (audit) to 1 (enforce) on devices where it was not set before. Nathan McNulty: NTLM and RC4 in 2026 is a rough look. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109511652865642773">@NathanMcNulty</a></span></li>
+        <li><b>Defender: new SubmissionEvents and SubmissionResults tables.</b> Advanced Hunting will show submissions of suspicious messages and their results. Cyb3rMik3 adds that the submission process is what most often limps along at MDO customers. <span class="src"><a href="https://x.com/BertJanCyber/status/2109243088451326251">@BertJanCyber</a> · <a href="https://x.com/Cyb3rMik3/status/2109359300430762262">@Cyb3rMik3</a></span></li>
+        <li><b>Employees' personal AI agents can reach company apps.</b> OAuth grants, saved passwords and API tokens let them in without an IT ticket and outside the managed-agent console. <span class="src"><a href="https://x.com/TheHackersNews/status/2109624001198977425">@TheHackersNews</a></span></li>
+        <li><b>Bitwarden changes the rules for resellers.</b> Companies that repackage and sell the product are to fork it and publish it under their own brand. Nathan McNulty thinks this is reasonable and that the rest of the licence is not changing. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109379091720028360">@NathanMcNulty</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-intel" data-cat="intel">
+      <h3>Threat intel &amp; IOCs <span class="count">7</span></h3>
+      <ul class="brief">
+        <li><b>Strikes on Yandex data centres and "Russian bots".</b> Ukrainian drones hit three Yandex sites (Sasovo, Kaluga, Vladimir) in four days. A Cloudflare chart showing a drop in bot traffic from Russia is circulating online. Florian Roth cools things down: Yandex is a search engine, and its crawler traffic is not the same thing as propaganda bots. Data on the accounts that supposedly went silent is also missing. <span class="src"><a href="https://x.com/cyb3rops/status/2109561820600057999">@cyb3rops</a> · <a href="https://x.com/cyb3rops/status/2109611515535921615">@cyb3rops (2)</a> · <a href="https://x.com/FalconFeedsio/status/2109370756643901539">@FalconFeedsio</a> · <a href="https://x.com/uwu_underground/status/2109352357226013176">@uwu_underground</a></span></li>
+        <li><b>The Com as a modular network.</b> The ecosystem is growing into layers of access, services and personas that serve hacker, "IRL" and extortion groups. Shared tools and brand continuity make attribution harder. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2109547960488845701">@Cyber_O51NT</a></span></li>
+        <li><b>NetBlocks: Azerbaijan restricts TikTok, Instagram and X.</b> The blocks at many providers coincide with protests over rules on hijabs in schools. <span class="src"><a href="https://x.com/netblocks/status/2109592917644071137">@netblocks</a></span></li>
+        <li><b>NetBlocks: major internet disruption in Pakistan's Khyber Pakhtunkhwa province.</b> It followed the president's imposition of emergency rule there. <span class="src"><a href="https://x.com/netblocks/status/2109347177051148672">@netblocks</a></span></li>
+        <li><b>DDoS: Cyber Team Indonesia.</b> The group claims it attacked Indonesia's government information portal. <span class="src"><a href="https://x.com/FalconFeedsio/status/2109559318920200428">@FalconFeedsio</a></span></li>
+        <li><b>Hackmanac poll: how companies check their suppliers.</b> Continuous monitoring won among 67 votes from X, Telegram and LinkedIn. <span class="src"><a href="https://x.com/H4ckmanac/status/2109303720815009957">@H4ckmanac</a></span></li>
+        <li><b>"More data will not automatically deliver visibility."</b> Steve Miller on analysts' naive belief that new access and more sources will by themselves reveal what attackers are doing. <span class="src"><a href="https://x.com/stvemillertime/status/2109350149193396340">@stvemillertime</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-narzedzia" data-cat="narzedzia">
+      <h3>Tools &amp; research <span class="count">16</span></h3>
+      <ul class="brief">
+        <li><b>RecoverIt: running code through a service recovery action.</b> The tool crashes a broken Windows service, and its failure action starts the chosen program. No event 7045 is created. Changes to service recovery configuration are worth adding to detections. <span class="src"><a href="https://x.com/SEKTOR7net/status/2109609273961390543">@SEKTOR7net</a> · <a href="https://t.co/FNnCnRwoSt">GitHub</a></span></li>
+        <li><b>Disposable Mythic agents written by an LLM.</b> Adam Chester (xpn) shows the path from prompt to deployment of an implant generated for a single use. <span class="src"><a href="https://x.com/CyberWarship/status/2109274825038434574">@CyberWarship</a> · <a href="https://t.co/9OTCJO0sLN">blog</a></span></li>
+        <li><b>m365-xdr-cli.</b> A command line for Microsoft Defender XDR investigations, built for humans and AI agents. <span class="src"><a href="https://x.com/Cyb3rMonk/status/2109322802335461596">@Cyb3rMonk</a> · <a href="https://t.co/3AEZBhi9BK">GitHub</a></span></li>
+        <li><b>IRFlow Timeline for Windows and Linux.</b> Yamato Security compiled binaries of the tool meant to replace Timeline Explorer. <span class="src"><a href="https://x.com/r3nzsec/status/2109553556327928292">@r3nzsec</a></span></li>
+        <li><b>Overthrone.</b> An Active Directory attack framework written entirely in Rust: LDAP/SMB/Kerberos enumeration, attack-path graph, Kerberoasting, NTLM relay, DCSync. <span class="src"><a href="https://x.com/KitPloit/status/2109272941242270018">@KitPloit</a></span></li>
+        <li><b>red-team-map.</b> An architecture map of red team operations, from infrastructure to impact. <span class="src"><a href="https://x.com/KitPloit/status/2109313260360970319">@KitPloit</a></span></li>
+        <li><b>kernel-research.</b> A kit for building Linux kernel exploits: a library, ROP chain generators and a target database. <span class="src"><a href="https://x.com/KitPloit/status/2109353595757867462">@KitPloit</a></span></li>
+        <li><b>osv-scanner 2.7.0.</b> A new version of the dependency vulnerability scanner based on the OSV database. <span class="src"><a href="https://x.com/KitPloit/status/2109595404320801178">@KitPloit</a></span></li>
+        <li><b>chisel 1.13.0.</b> A TCP/UDP tunnel over HTTP with SSH encryption. Defenders will want a current signature. <span class="src"><a href="https://x.com/KitPloit/status/2109555071167996241">@KitPloit</a></span></li>
+        <li><b>striga.</b> An experimental x86-64 to LLVM IR lifter in Python, useful for analysing virtual machines in obfuscated code. <span class="src"><a href="https://x.com/KitPloit/status/2109514700463435847">@KitPloit</a></span></li>
+        <li><b>icicle-python.</b> Python bindings for the Icicle emulator, for firmware fuzzing on x64 and ARM64. <span class="src"><a href="https://x.com/KitPloit/status/2109433962963587446">@KitPloit</a></span></li>
+        <li><b>ASN Scout.</b> Dark Web Informer is building a Python ASN scanner: IP ranges, live hosts, HTTP headers, ports and TLS certificates. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109436884661207232">@DarkWebInformer</a></span></li>
+        <li><b>PENTEST-SWARM-AI.</b> An open tool in which several agents chain subdomain discovery, host enumeration and scanning into one run. <span class="src"><a href="https://x.com/theXSSrat/status/2109550151513592173">@theXSSrat</a></span></li>
+        <li><b>MMFIC-Framework.</b> An OSINT suite for acquiring data from the dark web. <span class="src"><a href="https://x.com/akaclandestine/status/2109389054185787562">@akaclandestine</a> · <a href="https://t.co/awoHo4aMBC">GitHub</a></span></li>
+        <li><b>An Akamai WAF bypass for XSS.</b> A payload with an HTML comment and <code>svg onload</code> that builds the function name from fragments of regular expressions. A good test case for your own rules. <span class="src"><a href="https://x.com/theXSSrat/status/2109548870049169417">@theXSSrat</a></span></li>
+        <li><b>vx-underground: another 159,000 malware samples.</b> The collection is free for researchers. <span class="src"><a href="https://x.com/vxunderground/status/2109363803930382530">@vxunderground</a></span></li>
+      </ul>
+    </section>
+
+    <section class="cat" id="en-k-lektury" data-cat="lektury">
+      <h3>Reading &amp; guides <span class="count">15</span></h3>
+      <ul class="brief">
+        <li><b>AI vulnerability patching has a grading problem.</b> Help Net Security on a Northwestern University study: it is hard to check reliably whether a model-generated fix really removes the bug. <span class="src"><a href="https://x.com/helpnetsecurity/status/2109532016664301980">@helpnetsecurity</a> · <a href="https://t.co/7h8600KDKK">article</a></span></li>
+        <li><b>$90,000 for an RCE at Google.</b> Simon Koeck describes how he found a remote code execution bug. <span class="src"><a href="https://x.com/Dinosn/status/2109591553379537050">@Dinosn</a> · <a href="https://t.co/8BQmhQjVSD">write-up</a></span></li>
+        <li><b>Darknet Diaries: how USDoD faked his way into the FBI.</b> A new episode of the podcast. <span class="src"><a href="https://x.com/DarknetDiaries/status/2109423011812250029">@DarknetDiaries</a></span></li>
+        <li><b>A short OSINT guide: investigating a pseudonymous account.</b> Email addresses from commits, analysis of the address, dorks for the username. <span class="src"><a href="https://x.com/d4rk_intel/status/2109620901293555817">@d4rk_intel</a> · <a href="https://x.com/theXSSrat/status/2109547283679502673">@theXSSrat</a></span></li>
+        <li><b>IDOR in 15 minutes.</b> Two accounts, create every possible object on the first, note each identifier in the proxy and swap it on the second. <span class="src"><a href="https://x.com/theXSSrat/status/2109543359555482003">@theXSSrat</a></span></li>
+        <li><b>A free OSEP track on RatCTF.</b> Five modules and 12 machines aimed at PEN-300, including restricted-shell breakouts. <span class="src"><a href="https://x.com/theXSSrat/status/2109580169983721580">@theXSSrat</a></span></li>
+        <li><b>The "Blindspot" SSRF lab.</b> A URL-checking tool that makes requests from the server, and an internal configuration service. An exercise in the browser. <span class="src"><a href="https://x.com/theXSSrat/status/2109344155486785799">@theXSSrat</a> · <a href="https://t.co/lLJL9oiD8v">RatCTF</a></span></li>
+        <li><b>Reverse engineering WASM AOT, part 2.</b> The next post in cocomelonc's series. <span class="src"><a href="https://x.com/theXSSrat/status/2109549266146316745">@theXSSrat</a></span></li>
+        <li><b>Windows minifilters.</b> A series for people working on EDR and system internals. <span class="src"><a href="https://x.com/theXSSrat/status/2109546472031257088">@theXSSrat</a></span></li>
+        <li><b>An open redirect rated P2.</b> An example from Dell's programme: a "low-impact" bug gains weight once the chain is shown. <span class="src"><a href="https://x.com/theXSSrat/status/2109545421626335473">@theXSSrat</a></span></li>
+        <li><b>MITRE ATT&amp;CK as a starting point for learning about malware.</b> vx-underground advises starting with techniques and only then moving on to samples. <span class="src"><a href="https://x.com/vxunderground/status/2109312064065880470">@vxunderground</a></span></li>
+        <li><b>Could all bugs be fixed if software development were frozen?</b> A LiveOverflow poll, more than 1,600 votes. <span class="src"><a href="https://x.com/LiveOverflow/status/2109295898127692077">@LiveOverflow</a></span></li>
+        <li><b>MCP as a new attack surface.</b> A webinar by Bryson Bort and Jake Williams on what defenders should test. Wednesday 14 October, 2:30 PM US Eastern time. <span class="src"><a href="https://x.com/scythe_io/status/2109252675866968484">@scythe_io</a></span></li>
+        <li><b>Black Hat Asia: drone training.</b> "Advanced Drone Warfare": technologies, attack vectors and countermeasures. <span class="src"><a href="https://x.com/BlackHatEvents/status/2109425820573765995">@BlackHatEvents</a></span></li>
+        <li><b>VB2026 opens in Seville.</b> The Virus Bulletin conference starts this week. <span class="src"><a href="https://x.com/virusbtn/status/2109586097101844899">@virusbtn</a></span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    Sources: posts from the last ~24 h by selected cybersecurity accounts on X, plus the reports those posts refer to.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<button class="to-top" id="toTop" type="button" aria-label="Na górę / Back to top">↑</button>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber — 12.10.2026', en: 'Cyber Daily — 12 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-cyber-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-cyber-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      set(root.getAttribute('data-lang') === 'en' ? 'pl' : 'en');
+      window.scrollTo(0, 0);
+    });
+
+    // wyszukiwarka newsów: filtruje pozycje w obrębie jednej wersji językowej
+    document.querySelectorAll('.news').forEach(function (news) {
+      var input = news.querySelector('.news-filter'), empty = news.querySelector('.no-results');
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase(), any = false;
+        news.querySelectorAll('.cat').forEach(function (cat) {
+          var shown = 0;
+          cat.querySelectorAll('li').forEach(function (li) {
+            var ok = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+            li.hidden = !ok; if (ok) shown++;
+          });
+          cat.hidden = shown === 0; if (shown) any = true;
+        });
+        empty.style.display = any ? 'none' : 'block';
+      });
+    });
+
+    // filtrowanie po kategorii: liczniki na stronie 1 i chipy w „Wszystkie newsy”
+    document.querySelectorAll('div.lang-pl, div.lang-en').forEach(function (block) {
+      var note = block.querySelector('.filter-note');
+      var current = 'all';
+      function apply(f) {
+        current = f;
+        var wanted = f === 'all' ? null : f.split(' ');
+        function match(el) {
+          if (!wanted) return true;
+          var cats = (el.getAttribute('data-cat') || '').split(' ');
+          return wanted.some(function (w) { return cats.indexOf(w) !== -1; });
+        }
+        block.querySelectorAll('article.full').forEach(function (a) { a.classList.toggle('f-off', !match(a)); });
+        block.querySelectorAll('.pair').forEach(function (p) {
+          var shown = p.querySelectorAll('article.full:not(.f-off)').length;
+          p.classList.toggle('f-off', shown === 0);
+          p.classList.toggle('solo', shown === 1);
+        });
+        block.querySelectorAll('section.cat').forEach(function (s) { s.classList.toggle('f-off', !match(s)); });
+        block.querySelectorAll('[data-filter]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-filter') === f && f !== 'all'); });
+        var allChip = block.querySelector('.chips [data-filter="all"]'); if (allChip) allChip.classList.toggle('on', f === 'all');
+        if (note) {
+          var label = block.querySelector('.chips [data-filter="' + f.split(' ')[0] + '"]');
+          note.querySelector('span').textContent = label ? label.textContent : f;
+          note.classList.toggle('show', f !== 'all');
+        }
+      }
+      block.querySelectorAll('[data-filter]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var f = b.getAttribute('data-filter');
+          apply(f === current ? 'all' : f);
+          if (b.classList.contains('stat')) {
+            var target = block.querySelector('h2.section');
+            if (target) target.scrollIntoView();
+          }
+        });
+      });
+      if (note) note.querySelector('button').addEventListener('click', function () { apply('all'); });
+    });
+
+    // przycisk „na górę”
+    var up = document.getElementById('toTop');
+    window.addEventListener('scroll', function () { up.classList.toggle('show', window.scrollY > 800); });
+    up.addEventListener('click', function () { window.scrollTo(0, 0); });  })();
+</script>
+</body>
+</html>
